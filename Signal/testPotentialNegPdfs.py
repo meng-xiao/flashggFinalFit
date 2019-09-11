@@ -18,7 +18,8 @@ rvwv=['rv','wv']
 
 for proc in procs:
   for cat in cats:
-    f = r.TFile("outdir_%s/CMS-HGG_sigfit_%s_%s_%s.root"%(ext,ext,proc,cat))
+#    f = r.TFile("outdir_%s/CMS-HGG_sigfit_%s_%s_%s.root"%(ext,ext,proc,cat))
+    f = r.TFile("outdir_%s/CMS-HGG_mva_13TeV_sigfit.root")
     w = f.Get("wsig_13TeV")
     #w.Print();
     #exit(1)

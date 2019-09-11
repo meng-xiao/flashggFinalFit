@@ -149,9 +149,9 @@ int main (int argc, char *argv[]){
     tmpWS->import(inWS->getWsList()[i]->allPdfs(),RecycleConflictNodes());
     inWS->getWsList()[i]->allPdfs().Print();
     std::list<RooAbsData*> data =  (inWS->getWsList()[i]->allData()) ;
-    for (std::list<RooAbsData*>::const_iterator iterator = data.begin(), end = data.end(); iterator != end; ++iterator )  {
-     tmpWS->import(**iterator);
-    } 
+//    for (std::list<RooAbsData*>::const_iterator iterator = data.begin(), end = data.end(); iterator != end; ++iterator )  {
+//     tmpWS->import(**iterator);
+//    } 
     std::list<TObject*> stuff =  (inWS->getWsList()[i]->allGenericObjects()) ;
     for (std::list<TObject*>::const_iterator iterator = stuff.begin(), end = stuff.end(); iterator != end; ++iterator )  {
      tmpWS->import(**iterator);

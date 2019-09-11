@@ -21,6 +21,8 @@ DATACARDONLY=1
 COMBINEONLY=1
 COMBINEPLOTSONLY=0
 SIMULATENOUSMASSPOINTFITTING=0
+BOUNDARIES="0.99,1"
+BDT_BOUNDARY=0
 USEDCBP1G=0
 COUNTER=0
 CONTINUELOOP=0
@@ -69,7 +71,7 @@ echo "--batch) which batch system to use (LSF,IC) (default $BATCH)) "
 
 
 # options may be followed by one colon to indicate they have a required argument
-if ! options=$(getopt -u -o hi:p:f: -l help,inputFile:,procs:,bs:,flashggCats:,uepsFile:,newGghScheme,doSTXS,ext:,smears:,massList:,scales:,scalesCorr:,scalesGlobal:,,pseudoDataDat:,sigFile:,combine,combineOnly,combinePlotsOnly,signalOnly,backgroundOnly,datacardOnly,useSSF:,useDCB_1G:,continueLoop:,intLumi:,unblind,isData,isFakeData,dataFile:,batch:,verbose -- "$@")
+if ! options=$(getopt -u -o hi:p:f: -l help,inputFile:,procs:,bs:,boundaries:,bdt_boundary:,flashggCats:,uepsFile:,newGghScheme,doSTXS,ext:,smears:,massList:,scales:,scalesCorr:,scalesGlobal:,,pseudoDataDat:,sigFile:,combine,combineOnly,combinePlotsOnly,signalOnly,backgroundOnly,datacardOnly,useSSF:,useDCB_1G:,continueLoop:,intLumi:,unblind,isData,isFakeData,dataFile:,batch:,verbose -- "$@")
 then
 # something went wrong, getopt will put out an error message for us
 exit 1
@@ -82,6 +84,8 @@ case $1 in
 -h|--help) usage; exit 0;;
 -i|--inputFile) FILE=$2; shift ;;
 -p|--procs) PROCS=$2; shift ;;
+--boundaries) BOUNDARIES=$2; shift ;;
+--bdt_boundary) BDT_BOUNDARY=$2; shift ;;
 --scales) SCALES=$2; shift ;;
 --scalesCorr) SCALESCORR=$2; shift ;;
 --scalesGlobal) SCALESGLOBAL=$2; shift ;;
@@ -151,8 +155,8 @@ echo "------------------------------------------------"
 echo "------------>> Running SIGNAL"
 echo "------------------------------------------------"
 cd Signal
-echo "./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST"
-./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST
+echo "./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST" --boundaries $BOUDARY --bdt_boundary $BDT_BOUNDARY
+./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY
 cd -
 if [ $USER == lcorpe ]; then
 echo " Processing of the Signal model for final fit exercice $EXT is done, see output here: https://lcorpe.web.cern.ch/lcorpe/$OUTDIR/ " |  mail -s "FINAL FITS: $EXT " lc1113@imperial.ac.uk

@@ -101,7 +101,7 @@ DEFAULTQUEUE="hep.q"
 BATCHQUERY=qstat
 fi
 if [[ $BATCH == "LSF" ]]; then
-DEFAULTQUEUE=1nh
+DEFAULTQUEUE=cmscaf1nd
 BATCHQUERY=bjobs
 fi
 

@@ -11,7 +11,10 @@ SCALESCORR="MaterialCentral,MaterialForward"
 #SCALESGLOBAL="NonLinearity:0:2.6"
 SCALESGLOBAL="NonLinearity,Geant4,LightYield,Absolute"
 SMEARS="HighR9EE,LowR9EE,HighR9EB,LowR9EB" #DRY RUN
-MASSLIST="120,125,130"
+BOUNDARIES="0.99,1"
+BDT_BOUNDARY=0
+MASSLIST="120,125,128"
+#MASSLIST="130"
 FTESTONLY=0
 CALCPHOSYSTONLY=0
 SIMULATENOUSMASSPOINTFITTING=0
@@ -49,7 +52,7 @@ usage(){
 
 
 # options may be followed by one colon to indicate they have a required argument
-if ! options=$(getopt -u -o hi:p:f: -l help,inputFile:,procs:,bs:,smears:,massList:,scales:,scalesCorr:,useSSF:,useDCB_1G:,scalesGlobal:,flashggCats:,ext:,fTestOnly,calcPhoSystOnly,sigFitOnly,sigPlotsOnly,intLumi:,batch: -- "$@")
+if ! options=$(getopt -u -o hi:p:f: -l help,inputFile:,procs:,bs:,smears:,boundaries:,bdt_boundary:,massList:,scales:,scalesCorr:,useSSF:,useDCB_1G:,scalesGlobal:,flashggCats:,ext:,fTestOnly,calcPhoSystOnly,sigFitOnly,sigPlotsOnly,intLumi:,batch: -- "$@")
 then
 # something went wrong, getopt will put out an error message for us
 exit 1
@@ -65,6 +68,8 @@ case $1 in
 --massList) MASSLIST=$2; shift ;;
 --smears) SMEARS=$2; shift ;;
 --scales) SCALES=$2; shift ;;
+--boundaries) BOUNDARIES=$2; shift ;;
+--bdt_boundary) BDT_BOUNDARY=$2; shift ;;
 --scalesCorr) SCALESCORR=$2; shift ;;
 --scalesGlobal) SCALESGLOBAL=$2; shift ;;
 --bs) BS=$2; shift ;;
@@ -73,7 +78,7 @@ case $1 in
 --useSSF) SIMULATENOUSMASSPOINTFITTING=$2 ; shift;;
 --useDCB_1G) USEDCBP1G=$2 ; shift;;
 --fTestOnly) FTESTONLY=1 ;;
---calcPhoSystOnly) CALCPHOSYSTONLY=1;;
+--calcPhoSystOnly) CALCPHOSYSTONLY=0;;
 --sigFitOnly) SIGFITONLY=1;;
 --sigPlotsOnly) SIGPLOTSONLY=1;;
 --intLumi) INTLUMI=$2; shift ;;
@@ -102,7 +107,7 @@ fi
 if [ $FTESTONLY == 0 -a $CALCPHOSYSTONLY == 0 -a $SIGFITONLY == 0 -a $SIGPLOTSONLY == 0 ]; then
 #IF not particular script specified, run all!
 FTESTONLY=1
-CALCPHOSYSTONLY=1
+CALCPHOSYSTONLY=0
 SIGFITONLY=1
 SIGPLOTSONLY=1
 fi
@@ -139,8 +144,8 @@ else
     echo "-->Determine Number of gaussians"
     echo "=============================="
     if [ -z $BATCH ]; then
-      echo "./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR"
-      ./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR
+      echo "./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY"
+      ./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY
     else
       echo "./python/submitSignaFTest.py --procs $PROCS --flashggCats $CATS --outDir $OUTDIR --i $FILE --batch $BATCH -q $DEFAULTQUEUE"
       ./python/submitSignaFTest.py --procs $PROCS --flashggCats $CATS --outDir $OUTDIR --i $FILE --batch $BATCH -q $DEFAULTQUEUE
@@ -212,7 +217,7 @@ if [ $SIGFITONLY == 1 ]; then
   
   
     echo "./bin/SignalFit -i $FILE -d dat/newConfig_$EXT.dat  --mhLow=120 --mhHigh=130 -s dat/photonCatSyst_$EXT.dat --procs $PROCS -o $OUTDIR/CMS-HGG_mva_13TeV_sigfit.root -p $OUTDIR/sigfit -f $CATS --changeIntLumi $INTLUMI  --useDCBplusGaus $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING --massList $MASSLIST"
-    ./bin/SignalFit -i $FILE -d dat/newConfig_$EXT.dat  --mhLow=120 --mhHigh=130 -s dat/photonCatSyst_$EXT.dat --procs $PROCS -o $OUTDIR/CMS-HGG_mva_13TeV_sigfit.root -p $OUTDIR/sigfit -f $CATS --changeIntLumi $INTLUMI  --useDCBplusGaus $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING --massList $MASSLIST  
+    ./bin/SignalFit -i $FILE -d dat/newConfig_$EXT.dat  --mhLow=120 --mhHigh=128 -s dat/photonCatSyst_test_madgraph.dat --procs $PROCS -o $OUTDIR/CMS-HGG_mva_13TeV_sigfit.root -p $OUTDIR/sigfit -f $CATS --changeIntLumi $INTLUMI  --useDCBplusGaus $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING --massList $MASSLIST  
   else
     echo "./python/submitSignalFit.py -i $FILE -d dat/newConfig_$EXT.dat  --mhLow=120 --mhHigh=130 -s dat/photonCatSyst_$EXT.dat --procs $PROCS -o $OUTDIR/CMS-HGG_sigfit_$EXT.root -p $OUTDIR/sigfit -f $CATS --changeIntLumi $INTLUMI --batch $BATCH --massList $MASSLIST -q $DEFAULTQUEUE $BSOPT --useSSF $SIMULATENOUSMASSPOINTFITTING --useDCB_1G $USEDCBP1G "
     ./python/submitSignalFit.py -i $FILE -d dat/newConfig_$EXT.dat  --mhLow=120 --mhHigh=130 -s dat/photonCatSyst_$EXT.dat --procs $PROCS -o $OUTDIR/CMS-HGG_sigfit_$EXT.root -p $OUTDIR/sigfit -f $CATS --changeIntLumi $INTLUMI --batch $BATCH --massList $MASSLIST -q $DEFAULTQUEUE $BSOPT --useSSF $SIMULATENOUSMASSPOINTFITTING --useDCB_1G $USEDCBP1G 
@@ -271,7 +276,7 @@ echo "=============================="
 
 echo " ./bin/makeParametricSignalModelPlots -i $OUTDIR/CMS-HGG_sigfit_$EXT.root  -o $OUTDIR -p $PROCS -f $CATS"
 #./bin/makeParametricSignalModelPlots -i $OUTDIR/CMS-HGG_sigfit_$EXT.root  -o $OUTDIR/sigplots -p $PROCS -f $CATS 
-./bin/makeParametricSignalModelPlots -i $OUTDIR/CMS-HGG_sigfit_$EXT.root  -o $OUTDIR/sigplots -p $PROCS -f $CATS > signumbers_${EXT}.txt
+./bin/makeParametricSignalModelPlots -i $OUTDIR/CMS-HGG_mva_13TeV_sigfit.root  -o $OUTDIR/sigplots -p $PROCS -f $CATS > signumbers_${EXT}.txt
 #mv $OUTDIR/sigfit/initialFits $OUTDIR/initialFits
 
 ./makeSlides.sh $OUTDIR

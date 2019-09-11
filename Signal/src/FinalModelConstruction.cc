@@ -90,10 +90,16 @@ FinalModelConstruction::FinalModelConstruction( std::vector<int> massList, RooRe
   TGraph *brGraph = norm->GetBrGraph();
 	brSpline = graphToSpline(Form("fbr_%dTeV",sqrts_),brGraph);
   
+	cout<<"Initial procname "<< proc_<<endl; 
   // make the XS graphs foe each process
   for (unsigned int i=0; i<procs_.size(); i++){
-    TGraph *xsGraph = norm->GetSigmaGraph(procs_[i].c_str());
+	cout<<"Initial procname "<< procs_[i]<<endl; 
+    TString proc_tstring = procs_[i];
+    proc_tstring.ReplaceAll("_ALT","");
+    TGraph *xsGraph = norm->GetSigmaGraph(proc_tstring.Data());
     RooSpline1D *xsSpline = graphToSpline(Form("fxs_%s_%dTeV",procs_[i].c_str(),sqrts_),xsGraph);
+    cout<< procs_[i]<<endl;
+  proc_=procs_[i];
     xsSplines.insert(pair<string,RooSpline1D*>(procs_[i],xsSpline));
   }
   
@@ -788,7 +794,8 @@ void FinalModelConstruction::buildRvWvPdf(string name, int nGrv, int nGwv, bool 
   if (!rvFractionSet_) getRvFractionFunc(Form("%s_%s_%s_rvFracFunc",name.c_str(),proc_.c_str(),catname.c_str()));
   if(verbosity_>1) std::cout << " [INFO] Doing FinalModelConstruction: set up systematics" << std::endl;
   if (!systematicsSet_) setupSystematics();
-  RooFormulaVar *rvFraction = new RooFormulaVar(Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),"TMath::Min(@0+@1,1.0)",RooArgList(*vertexNuisance,*rvFracFunc));
+//  RooFormulaVar *rvFraction = new RooFormulaVar(Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),"TMath::Min(@0+@1,1.0)",RooArgList(*vertexNuisance,*rvFracFunc));
+  RooRealVar *rvFraction = new RooRealVar(Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),1);
   vector<RooAbsPdf*> rvPdfs;
   vector<RooAbsPdf*> wvPdfs;
 
@@ -805,6 +812,7 @@ void FinalModelConstruction::buildRvWvPdf(string name, int nGrv, int nGwv, bool 
 
   // sum the RV and WV pdfs
   finalPdf = new RooAddPdf(Form("%s_%s_%s",name.c_str(),proc_.c_str(),catname.c_str()),Form("%s_%s_%s",name.c_str(),proc_.c_str(),catname.c_str()),RooArgList(*rvPdfs[0],*wvPdfs[0]),RooArgList(*rvFraction));
+
   if (doSecondaryModels){
     assert(secondaryModelVarsSet);
 		RooFormulaVar *rvFraction_SM = new RooFormulaVar(Form("%s_%s_%s_rvFrac_SM",name.c_str(),proc_.c_str(),catname.c_str()),Form("%s_%s_%s_rvFrac",name.c_str(),proc_.c_str(),catname.c_str()),"TMath::Min(@0+@1,1.0)",RooArgList(*vertexNuisance,*rvFracFunc_SM));
@@ -1338,8 +1346,11 @@ void FinalModelConstruction::getNormalization(){
 	if (sqrts_ ==13) catname = Form("%s",cat_.c_str()); //should probably factorise this from other functions
 	
   // this might break proc names for STXS? Check when merging with Ed's  developments
-	std::string procLowerCase_ = proc_;
-  //std::transform(procLowerCase_.begin(), procLowerCase_.end(), procLowerCase_.begin(), ::tolower); 
+   TString proc_tstring = proc_;
+proc_tstring.ReplaceAll("_ALT","");
+	std::string procLowerCase_ = proc_tstring.Data(); 
+  std::transform(procLowerCase_.begin(), procLowerCase_.end(), procLowerCase_.begin(), ::tolower); 
+  cout<< procLowerCase_<<endl;
   TGraph *temp = new TGraph();
   bool fitToConstant=0; //if low-stats category, don;' try to fit to polynomial
   for (unsigned int i=0; i<allMH_.size(); i++){
@@ -1362,7 +1373,7 @@ void FinalModelConstruction::getNormalization(){
 		  std::cout << "[ERROR] IntLumi rooRealVar is not in this workspace. exit." << std::endl;
 		return ;
 		}
-    if( (proc_=="testBBH" || proc_=="testTHQ" || proc_=="testTHW") ) temp->SetPoint(0,mh,effAcc);
+    if( (proc_=="testBBH" || proc_=="testTHQ" || proc_=="testTHW")) temp->SetPoint(0,mh,effAcc);
     else temp->SetPoint(i,mh,effAcc);
   }
   //if( (proc_=="testBBH" || proc_=="testTHQ" || proc_=="testTHW") ) temp->RemovePoint(0);
@@ -1409,6 +1420,7 @@ void FinalModelConstruction::getNormalization(){
   //turn that graph into a spline!
   TGraph *eaGraph = new TGraph(pol);
   RooSpline1D *eaSpline = graphToSpline(Form("fea_%s_%s_%dTeV",proc_.c_str(),catname.c_str(),sqrts_),eaGraph);
+  cout<< "xiaomeng "<<proc_<<endl;
   RooSpline1D *xs = xsSplines[proc_];
   TGraph *  xsGraph = new TGraph();
   TGraph *  brGraph = new TGraph();

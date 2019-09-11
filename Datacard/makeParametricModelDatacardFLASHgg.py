@@ -165,6 +165,7 @@ looseLepCat=[]
 metCat=[]
 #fill
 for i in range(len(options.cats)):
+  print options.cats[i]
   if "Untagged" in options.cats[i]:
     incCats.append(options.cats[i])
   if "VBF" in options.cats[i]:
@@ -173,8 +174,8 @@ for i in range(len(options.cats)):
      tthLepCat.append(options.cats[i])
   if "TTHHadronic" in options.cats[i]:
      tthHadCat.append(options.cats[i])
-  if "TTH" in options.cats[i]:
-     tthCats.append(options.cats[i])
+#  if "TTH" in options.cats[i]:
+#     tthCats.append(options.cats[i])
   if "VHHadronic" in options.cats[i]:
      vhHadCat.append(options.cats[i])
   if "VHTight" in options.cats[i]:
@@ -216,8 +217,7 @@ else: options.globalScalesCorr = options.globalScalesCorr.split(',')
 ###############################################################################
 ## OPEN WORKSPACE AND EXTRACT INFO # ##########################################
 sqrts=13
-inWS = WSTFileWrapper(options.infilename,"tagsDumper/cms_hgg_%sTeV"%sqrts)
-#inWS = inFile.Get('wsig_13TeV')
+#inWS = WSTFileWrapper(options.infilename,"tagsDumper/cms_hgg_%sTeV"%sqrts)
 #if (inWS==None) : inWS = inFile.Get('tagsDumper/cms_hgg_%sTeV'%sqrts)
 #intL = inWS.var('IntLumi').getVal() #FIXME
 #intL = 2600
@@ -236,9 +236,11 @@ bkgFile = 'CMS-HGG_%s_%dTeV_multipdf.root'%(file_ext,sqrts)
 dataWS = 'multipdf'
 bkgWS = 'multipdf'
 #sigFile = 'CMS-HGG_%s_%dTeV_sigfit.root'%(file_ext,sqrts)
-sigFile = 'CMS-HGG_sigfit_%s_$PROC_$CAT.root'%(file_ext)
+#sigFile = 'CMS-HGG_sigfit_%s_$PROC_$CAT.root'%(file_ext)
+sigFile = 'CMS-HGG_mva_13TeV_sigfit.root'
 #print "making sigfile " ,sigFile
 sigWS = 'wsig_%dTeV'%(sqrts)
+#inWS = sigFile.Get('wsig_13TeV')
 # file detaisl: for FLashgg always use unbinned signal and multipdf
 fileDetails = {}
 fileDetails['data_obs'] = [dataFile,dataWS,'roohist_data_mass_$CHANNEL']
@@ -265,7 +267,8 @@ else:
   else:
     fileDetails['VH']          =  [sigFile.replace('$PROC',"wzh"),sigWS,'hggpdfsmrel_%dTeV_wzh_$CHANNEL'%sqrts]
 ###############################################################################
-
+filetth = sigFile.replace('$PROC',"tth")
+inWS = WSTFileWrapper(filetth,"wsig_13TeV")
 ###############################################################################
 ## THEORY SYSTEMATIC SETUP & TOOL #############################################
 ###############################################################################
@@ -274,9 +277,10 @@ else:
 # -- globe info  - see https://twiki.cern.ch/twiki/bin/viewauth/CMS/HiggsWG/HiggsCombinationConventions
 theorySyst = {}
 #theorySyst['scaleWeight'] = [1,2,3,4,6,8,"replicas"] #5,7 unphysical
-theorySyst['scaleWeight'] = [[1,2],[3,6],[4,8],"asym"] #5,7 unphysical
-theorySyst['alphaSWeight'] = [[0,1],"asym"]
-theorySyst['pdfWeight'] = [[0,60],"sym"]
+
+#theorySyst['scaleWeight'] = [[1,2],[3,6],[4,8],"asym"] #5,7 unphysical
+#theorySyst['alphaSWeight'] = [[0,1],"asym"]
+#theorySyst['pdfWeight'] = [[0,60],"sym"]
 
 theorySystAbsScale={}
 #theorySystAbsScale['names'] = ["QCDscale_qqbar_up","QCDscale_gg_up","QCDscale_qqbar_down","QCDscale_gg_down","pdf_alphaS_qqbar","pdf_alphaS_gg"] #QCD scale up, QCD scale down, PDF+alpha S, PDF, alpha S
@@ -786,23 +790,23 @@ flashggSysts={}
 vtxSyst = 0.02 #updated for Moriond17
 
 #photon ID
-flashggSysts['MvaShift'] =  'phoIdMva'
-flashggSysts['LooseMvaSF'] =  'LooseMvaSF'
-flashggSysts['PreselSF']    =  'PreselSF'
-flashggSysts['SigmaEOverEShift'] = 'SigmaEOverEShift'
-flashggSysts['ElectronWeight'] = 'eff_e'
-flashggSysts['electronVetoSF'] = 'electronVetoSF'
-flashggSysts['MuonWeight'] = 'eff_m'
-flashggSysts['MuonMiniIsoWeight'] = 'eff_m_MiniIso'
-flashggSysts['TriggerWeight'] = 'TriggerWeight'
-#flashggSysts['JetBTagWeight'] = 'eff_b'
-flashggSysts['JetBTagCutWeight'] = 'eff_b'
-#flashggSysts['MvaLinearSyst'] = 'MvaLinearSyst'
-#flashggSysts[''] =  ''
-flashggSysts['metPhoUncertainty'] = 'MET_PhotonScale'
-flashggSysts['metUncUncertainty'] = 'MET_Unclustered'
-flashggSysts['metJecUncertainty'] = 'MET_JEC'
-flashggSysts['metJerUncertainty'] = 'MET_JER'
+#flashggSysts['MvaShift'] =  'phoIdMva'
+#flashggSysts['LooseMvaSF'] =  'LooseMvaSF'
+#flashggSysts['PreselSF']    =  'PreselSF'
+#flashggSysts['SigmaEOverEShift'] = 'SigmaEOverEShift'
+#flashggSysts['ElectronWeight'] = 'eff_e'
+#flashggSysts['electronVetoSF'] = 'electronVetoSF'
+#flashggSysts['MuonWeight'] = 'eff_m'
+#flashggSysts['MuonMiniIsoWeight'] = 'eff_m_MiniIso'
+#flashggSysts['TriggerWeight'] = 'TriggerWeight'
+##flashggSysts['JetBTagWeight'] = 'eff_b'
+#flashggSysts['JetBTagCutWeight'] = 'eff_b'
+##flashggSysts['MvaLinearSyst'] = 'MvaLinearSyst'
+##flashggSysts[''] =  ''
+#flashggSysts['metPhoUncertainty'] = 'MET_PhotonScale'
+#flashggSysts['metUncUncertainty'] = 'MET_Unclustered'
+#flashggSysts['metJecUncertainty'] = 'MET_JEC'
+#flashggSysts['metJerUncertainty'] = 'MET_JER'
 
 #new ggH uncert prescription (replaces theory, JetVeto)
 if options.newGghScheme:

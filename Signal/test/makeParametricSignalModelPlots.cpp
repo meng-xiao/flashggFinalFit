@@ -442,7 +442,7 @@ void Plot(RooRealVar *mass, RooDataSet *data, RooAbsPdf *pdf, pair<double,double
   plot->SetMinimum(0.0);
   plotchi2->SetMinimum(0.0);
   if (markNegativeBins_){
-  TH1F *rdh = (TH1F*) data->createHistogram("CMS_hgg_mass",*mass,Binning(binning_,105,140));
+  TH1F *rdh = (TH1F*) data->createHistogram("mass",*mass,Binning(binning_,105,140));
     for(unsigned int iBin =0 ; iBin < rdh->GetNbinsX() ; iBin++){
       float content = rdh->GetBinContent(iBin);
       float center = rdh->GetBinCenter(iBin);
@@ -607,7 +607,7 @@ int main(int argc, char *argv[]){
     exit(1);
   }
 
-  RooRealVar *mass= (RooRealVar*)hggWS->var("CMS_hgg_mass");
+  RooRealVar *mass= (RooRealVar*)hggWS->var("mass");
 
   RooRealVar *mh = (RooRealVar*)hggWS->var("MH");
   mh->setVal(m_hyp_);

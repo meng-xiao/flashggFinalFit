@@ -6,7 +6,6 @@
 <use name="roostats"/>
 <use name="rootmath"/>
 <use name="root"/>
-<use name="rootcint"/>
 <lib name="TreePlayer"/>
 <lib name="PyROOT"/>
 <export>

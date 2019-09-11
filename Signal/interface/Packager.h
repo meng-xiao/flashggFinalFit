@@ -13,6 +13,7 @@
 #include "Normalization_8TeV.h"
 
 #include "WSTFileWrapper.h"
+#include "RooAddPdf.h"
 
 class Packager {
 

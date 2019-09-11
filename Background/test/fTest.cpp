@@ -8,6 +8,7 @@
 #include "boost/lexical_cast.hpp"
 
 #include "TFile.h"
+#include "TTree.h"
 #include "TMath.h"
 #include "TLegend.h"
 #include "TCanvas.h"
@@ -672,19 +673,27 @@ vector<string> flashggCats_;
 
   system(Form("mkdir -p %s",outDir.c_str()));
   TFile *inFile = TFile::Open(fileName.c_str());
+  TFile *inFile_workspace = TFile::Open(" $eosdir/lxplusBackUp/ttH/data.root");
+//  TTree * t = (TTree*)inFile->Get("tagsDumper/trees/Data_13TeV_TTHHadronicTag");
+  //TTree * t = (TTree*)inFile->Get("Data_13TeV_TTHHadronicTag");
+  TTree * t = (TTree*)inFile->Get("tth_13TeV_all");
+//  TTree *tsub = t->CopyTree("tthMVA_RunII>0.38 && pho1_idmva>-0.2 && pho2_idmva >-0.2");
+  TTree *tsub = t->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 &&tthMVA_RunII>0.8435");
+		RooRealVar *tthMVA_RunII = new RooRealVar("tthMVA_RunII","",-10,10);
+		RooRealVar *BDTG= new RooRealVar("BDTG","",-1,1);
   RooWorkspace *inWS;
 	if(isFlashgg_){
 		if (isData_){
-			inWS = (RooWorkspace*)inFile->Get("tagsDumper/cms_hgg_13TeV");
+			inWS = (RooWorkspace*)inFile_workspace->Get("tagsDumper/cms_hgg_13TeV");
 		} else {
-			inWS = (RooWorkspace*)inFile->Get("cms_hgg_workspace");
+			inWS = (RooWorkspace*)inFile_workspace->Get("cms_hgg_workspace");
 		}
 	} else {
 		inWS = (RooWorkspace*)inFile->Get("cms_hgg_workspace");//FIXME
 	}
 	if (verbose) std::cout << "[INFO]  inWS open " << inWS << std::endl;
 	if (saveMultiPdf){
-		transferMacros(inFile,outputfile);
+		transferMacros(inFile_workspace,outputfile);
 
 		RooRealVar *intL; 
 		RooRealVar *sqrts;
@@ -728,7 +737,8 @@ vector<string> flashggCats_;
 	vector<map<string,RooAbsPdf*> > pdfs_vec;
 
 	PdfModelBuilder pdfsModel;
-	RooRealVar *mass = (RooRealVar*)inWS->var("CMS_hgg_mass");
+//	RooRealVar *mass = (RooRealVar*)inWS->var("mass");
+	RooRealVar *mass = new RooRealVar("mass","",125,100,180);
 	std:: cout << "[INFO] Got mass from ws " << mass << std::endl;
 	pdfsModel.setObsVar(mass);
 	double upperEnvThreshold = 0.1; // upper threshold on delta(chi2) to include function in envelope (looser than truth function)
@@ -738,6 +748,7 @@ vector<string> flashggCats_;
 
 	std::string ext = is2011 ? "7TeV" : "8TeV";
 	if (isFlashgg_) ext = "13TeV";
+    RooDataSet *dataFull_all = new RooDataSet("Data_13TeV","",tsub,RooArgSet(*mass,*tthMVA_RunII,*BDTG)); 
 	for (int cat=startingCategory; cat<ncats; cat++){
 
 		map<string,int> choices;
@@ -753,10 +764,79 @@ vector<string> flashggCats_;
 		RooDataSet *dataFull;
 		RooDataSet *dataFull0;
 		if (isData_) {
-    dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()));
+
+    //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()))->reduce("tthMVA_RunII>0.38");
+    //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()));
+    if(catname=="TTHHadronicTag0")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9675 &&BDTG<0.");
+    //dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9675 && tthMVA_RunII<0.9937 &&BDTG<0.");
+    else if (catname=="TTHHadronicTag1")
+//    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9675 && tthMVA_RunII<0.9937 &&BDTG>0.");
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9675 &&BDTG>0.");
+    else if (catname=="TTHHadronicTag2")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9937 && tthMVA_RunII<0.9971 &&BDTG<0.");
+    else if (catname=="TTHHadronicTag3")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9937 && tthMVA_RunII<0.9971 &&BDTG>0.");
+    else if (catname=="TTHHadronicTag4")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9971 && tthMVA_RunII<0.9991 &&BDTG<0.");
+    else if (catname=="TTHHadronicTag5")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9971 && tthMVA_RunII<0.9991 &&BDTG>0.");
+    else if (catname=="TTHHadronicTag6")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9991 &&BDTG<0.");
+    else if (catname=="TTHHadronicTag7")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9991 &&BDTG>0.");
+    else if(catname=="TTHLeptonicTag0")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.8435 &&BDTG<0.");
+    //dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.8435 && tthMVA_RunII<0.9346 &&BDTG<0.");
+    else if (catname=="TTHLeptonicTag1")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.8435 &&BDTG>0.");
+    //dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.8435 && tthMVA_RunII<0.9346 &&BDTG>0.");
+    else if (catname=="TTHLeptonicTag2")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9346 && tthMVA_RunII<0.9625 &&BDTG<0.");
+    else if (catname=="TTHLeptonicTag3")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9346 && tthMVA_RunII<0.9625 &&BDTG>0.");
+    else if (catname=="TTHLeptonicTag4")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9625 && tthMVA_RunII<0.9890 &&BDTG<0.");
+    else if (catname=="TTHLeptonicTag5")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9625 && tthMVA_RunII<0.9890 &&BDTG>0.");
+    else if (catname=="TTHLeptonicTag6")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9890 &&BDTG<0.");
+    else if (catname=="TTHLeptonicTag7")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9890 &&BDTG>0.");
+    dataFull->SetName(Form("Data_13TeV_%s",catname.c_str()));
+/*
+    if(catname=="TTHHadronicTag0")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII<0.48&&BDTG<-0.5"); 
+    else if (catname=="TTHHadronicTag1")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.48&&tthMVA_RunII<0.56&&BDTG<-0.5"); 
+    else if (catname=="TTHHadronicTag2")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.56&&BDTG<-0.5"); 
+    else if (catname=="TTHHadronicTag3")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII<0.48&&BDTG<0&&BDTG>-0.5"); 
+    else if (catname=="TTHHadronicTag4")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.48&&tthMVA_RunII<0.56&&BDTG<0&&BDTG>-0.5"); 
+    else if (catname=="TTHHadronicTag5")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.56&&BDTG<0&&BDTG>-0.5"); 
+    else if(catname=="TTHHadronicTag6")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII<0.48&&BDTG<0.5&&BDTG>0"); 
+    else if (catname=="TTHHadronicTag7")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.48&&tthMVA_RunII<0.56&&BDTG<0.5&&BDTG>0"); 
+    else if (catname=="TTHHadronicTag8")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.56&&BDTG<0.5&&BDTG>0"); 
+    else if (catname=="TTHHadronicTag9")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII<0.48&&BDTG>0.5"); 
+    else if (catname=="TTHHadronicTag10")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.48&&tthMVA_RunII<0.56&&BDTG>0.5"); 
+    else if (catname=="TTHHadronicTag11")
+    dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.56&&BDTG>0.5"); 
+*/
+    cout<< dataFull->sumEntries()<<endl;
+//    dataFull = (RooDataSet*) dataFull->reduce("tthMVA_RunII>0.38");
+ //   cout<< dataFull->sumEntries()<<endl;
+//    dataFull->Cut("tthMVA_RunII>0.38"); 
     /*dataFull= (RooDataSet*) dataFull0->emptyClone();
     for (int i =0 ; i < dataFull0->numEntries() ; i++){
-    double m = dataFull0->get(i)->getRealValue("CMS_hgg_mass");
+    double m = dataFull0->get(i)->getRealValue("mass");
     //if (m <(mgg_low+0.01) or m > (mgg_high-0.01)) 
 
     if (m==mgg_low){

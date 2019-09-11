@@ -173,8 +173,10 @@ RooAbsReal* WSTFileWrapper::function(std::string functionName) {
       complained_yet = true;
     }
     if (this_result) {
+	    std::cout<<"geting value "<<this_result->getVal()<<std::endl;
       result = this_result;
       std::cout << "[WSTFileWrapper] Got non-zero RooAbsReal from " << fnList[i] << " with name " << functionName << std::endl;
+      std::cout<<result->getVal()<<std::endl;
     }
   }
   if (!result) {
@@ -206,6 +208,7 @@ TObject* WSTFileWrapper::Get(std::string namecycle) {
 
 void WSTFileWrapper::Close() {
   for (unsigned int i = 0 ; i < fileList.size() ; i++) {
+	  std::cout<< fileList[i]->GetName()<<std::endl;
     fileList[i]->Close();
   }
 }

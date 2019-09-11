@@ -4,6 +4,10 @@
 #include <vector>
 
 #include "TFile.h"
+#include "TROOT.h"
+#include "TKey.h"
+#include "TTree.h"
+#include "TSystem.h"
 #include "TMath.h"
 #include "TCanvas.h"
 #include "TH1F.h"
@@ -47,10 +51,12 @@ int ncats_;
 bool recursive_=false;
 string flashggCatsStr_;
 vector<string> flashggCats_;
+string boundaries_;
 string considerOnlyStr_;
 vector<string> considerOnly_;
 bool forceFracUnity_=false;
 bool isFlashgg_;
+float bdt_boundary;
 bool verbose_;
 
 void OptionParser(int argc, char *argv[]){
@@ -63,6 +69,8 @@ void OptionParser(int argc, char *argv[]){
 		("json_dict,j", po::value<string>(&json_dict_)->default_value(""),      "Output configuration file")
 		("mass,m", po::value<int>(&mass_)->default_value(125),                                    "Mass to run at")
 		("procs,p", po::value<string>(&procString_)->default_value("ggh,vbf,wh,zh,tth"),          "Processes")
+		("boundaries,b", po::value<string>(&boundaries_)->default_value("0.9675, 0.9937, 0.9971,1."),          "Boundaries")
+		("bdt_boundary", po::value<float>(&bdt_boundary)->default_value(0.),          "BDT Boundaries")
 		("recursive",																																							"Recursive fraction")
 		("forceFracUnity",																																				"Force fraction unity")
 		("isFlashgg",	po::value<bool>(&isFlashgg_)->default_value(true),													"Use flashgg format")
@@ -141,7 +149,7 @@ double getMyNLL(RooRealVar *var, RooAbsPdf *pdf, RooDataHist *data){
 	RooCurve *pdfCurve = (RooCurve*)plot->getObject(plot->numItems()-1);
 	double sum=0.;
 	for (int i=0; i<data->numEntries(); i++){
-		double binCenter = data->get(i)->getRealValue("CMS_hgg_mass");
+		double binCenter = data->get(i)->getRealValue("mass");
 		double weight = data->weight();
 		sum+=TMath::Log(TMath::Poisson(100.*weight,100.*pdfCurve->Eval(binCenter)));
 	}
@@ -192,9 +200,15 @@ int main(int argc, char *argv[]){
 
   // split procs, cats
 	vector<string> procs;
+	vector<float> boundaries;
+	vector<string> boundaries_s;
 	split(procs,procString_,boost::is_any_of(","));
+	split(boundaries_s,boundaries_,boost::is_any_of(","));
 	split(flashggCats_,flashggCatsStr_,boost::is_any_of(","));
 	split(considerOnly_,considerOnlyStr_,boost::is_any_of(","));
+	for (int tagloop=0;tagloop<boundaries_s.size();tagloop++){
+		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
+	}
   
   // automatically determine nCats from flashggCats input
 	if (isFlashgg_){
@@ -213,10 +227,35 @@ int main(int argc, char *argv[]){
 	}
   
   // open input files using WS wrapper.
-	WSTFileWrapper *inWS 
-    = new WSTFileWrapper(filename_,"tagsDumper/cms_hgg_13TeV");
+//	WSTFileWrapper *inWS 
+ //   = new WSTFileWrapper(filename_,"tagsDumper/cms_hgg_13TeV");
+  TFile *f1= new TFile (filename_.c_str(),"read");
+//  f1->cd("tagsDumper/trees");
+// TDirectory *d1 = (TDirectory*)f1->Get("tagsDumper/trees");
+  TTree *tall;
+ // TIter next(d1->GetListOfKeys());
+  TIter next(f1->GetListOfKeys());
+   TKey *key ;
+//  TTree *tall ;
+//
+   while ((key = (TKey*)next())) {
+      TClass *cl = gROOT->GetClass(key->GetClassName());
+      cout<< key->GetName()<<endl;
+      if (!cl->InheritsFrom("TTree")) continue;
+      TString keyname = key->GetName(); 
+        if(keyname.Contains("tth")){
+		//TString fullpath =Form( "tagsDumper/trees/%s",key->GetName());
+		TString fullpath =Form( "%s",key->GetName());
+        tall = (TTree*)f1->Get(fullpath);
+	}
+	//(TTree*)key->ReadObj();
+   }
+//   TFile *fnew = new TFile("newfile.root");
+//  TTree *tsub = tall->CopyTree("tthMVA_RunII>0.38 && pho1_idmva>-0.2 && pho2_idmva >-0.2");
+  TTree *tsub = tall->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 &&tthMVA_RunII>0.8435");
+  //return 0;
   if(verbose_) std::cout << "[INFO] Opened files OK!" << std::endl;
-	RooRealVar *mass = (RooRealVar*)inWS->var("CMS_hgg_mass");
+	RooRealVar *mass = new RooRealVar("mass","",125); 
   if(verbose_) std::cout << "[INFO] Got mass variable " << mass << std::endl;
 	//mass->setBins(80);
 	mass->setBins(nBins);
@@ -277,6 +316,12 @@ int main(int argc, char *argv[]){
   // continue flag is used to tell the script to ignore some
   // cases if we are using a considerOnly option.
 	bool continueFlag =0;
+	    //RooRealVar *mass = new RooRealVar("mass","",100,180);
+	    RooRealVar *weight0 = new RooRealVar("weight","weight",-100000,1000000);
+	    RooRealVar *vertex_idx = new RooRealVar("vertex_idx","vertex_idx",-100000,1000000);
+            RooRealVar *tthMVA_RunII = new RooRealVar("tthMVA_RunII","",-10,10);
+            RooRealVar *bdtg= new RooRealVar("BDTG","",-1,1);
+    RooDataSet *dataFull= new RooDataSet("blah_13TeV","",tsub,RooArgSet(*mass,*tthMVA_RunII,*bdtg,*vertex_idx,*weight0),"","weight"); 
   if(verbose_) std::cout << "[INFO] start looping through nCats " << ncats_ << " to get datasets " <<std::endl;
 	for (int cat=0; cat<ncats_; cat++){
 
@@ -304,16 +349,75 @@ int main(int argc, char *argv[]){
 			RooDataSet *dataWV; 
       
       // We want to reduce our datasets, so just get the most important vars.
-	    RooRealVar *mass = (RooRealVar*)inWS->var("CMS_hgg_mass");
-	    //RooRealVar *dZ = (RooRealVar*)inWS->var("dZ");
-	    RooRealVar *weight0 = new RooRealVar("weight","weight",-100000,1000000);
-	    RooRealVar *dZ = new RooRealVar("dZ","dZ",-100000,1000000);
-      if (verbose_) std::cout << "[INFO] got roorealvars from ws ? mass " << mass << " dz " << dZ << std::endl;
+//	    RooRealVar *mass = (RooRealVar*)inWS->var("mass");
+	    //RooRealVar *vertex_idx = (RooRealVar*)inWS->var("vertex_idx");
+      if (verbose_) std::cout << "[INFO] got roorealvars from ws ? mass " << mass << " dz " << vertex_idx << std::endl;
       
       // access dataset and immediately reduce it!
+    //   RooDataSet *dataFull_all = new RooDataSet("Data_13TeV","",tsub,RooArgSet(*mass,*tthMVA_RunII)); 
+    RooDataSet *data0;
+    TString catname = flashggCats_[cat]; 
+    for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
+    if(catname.Contains(Form("Tag%d",tagloop*2)))
+    data0 = (RooDataSet*)dataFull->reduce(Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary)); 
+    if(catname.Contains(Form("Tag%d",tagloop*2+1)))
+    data0 = (RooDataSet*)dataFull->reduce(Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary)); 
+	    }
+/*
+    if(flashggCats_[cat]=="TTHHadronicTag0")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9675 && tthMVA_RunII<0.9937 &&BDTG<0."); 
+    //data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9675 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag1")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9675 && tthMVA_RunII<0.9937 &&BDTG>0."); 
+    //data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9675 &&BDTG>0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag2")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9937 && tthMVA_RunII<0.9971 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag3")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9937 && tthMVA_RunII<0.9971 &&BDTG>0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag4")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9971 && tthMVA_RunII<0.9991 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag5")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9971 && tthMVA_RunII<0.9991 &&BDTG>0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag6")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9991 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHHadronicTag7")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9991 &&BDTG>0."); 
+    else if(flashggCats_[cat]=="TTHLeptonicTag0")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.8435 && tthMVA_RunII<0.9346 &&BDTG<0."); 
+//    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.8435 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag1")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.8435 && tthMVA_RunII<0.9346 &&BDTG>0."); 
+//    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.8435 &&BDTG>0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag2")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9346 && tthMVA_RunII<0.9625 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag3")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9346 && tthMVA_RunII<0.9625 &&BDTG>0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag4")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9625 && tthMVA_RunII<0.9890 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag5")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9625 && tthMVA_RunII<0.9890 &&BDTG>0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag6")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9890 &&BDTG<0."); 
+    else if (flashggCats_[cat]=="TTHLeptonicTag7")
+    data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9890 &&BDTG>0."); 
+*/
+
+    //if(flashggCats_[cat]=="TTHHadronicTag0")
+    //data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII<0.48&&BDTG<0"); 
+    //else if (flashggCats_[cat]=="TTHHadronicTag1")
+    //data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.48&&tthMVA_RunII<0.56&&BDTG<0"); 
+    //else if (flashggCats_[cat]=="TTHHadronicTag2")
+    //data0= (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.56&&BDTG<0"); 
+    //else if(flashggCats_[cat]=="TTHHadronicTag3")
+    //data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII<0.48&&BDTG>0"); 
+    //else if (flashggCats_[cat]=="TTHHadronicTag4")
+    //data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.48&&tthMVA_RunII<0.56&&BDTG>0"); 
+    //else if (flashggCats_[cat]=="TTHHadronicTag5")
+    //data0= (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.56&&BDTG>0"); 
+    data0->SetName(Form("%s_%d_13TeV_%s",proc.c_str(),mass_,flashggCats_[cat].c_str()));
 			if (isFlashgg_){
-				RooDataSet *data0   = (RooDataSet*)inWS->data(
-          Form("%s_%d_13TeV_%s",proc.c_str(),mass_,flashggCats_[cat].c_str()));
+//				RooDataSet *data0   = (RooDataSet*)inWS->data(
+//          Form("%s_%d_13TeV_%s",proc.c_str(),mass_,flashggCats_[cat].c_str()));
         if(verbose_) {
           std::cout << "[INFO] got dataset data0 ? " << data0 << "now make empty clones " << std::endl;
           if (data0) {
@@ -324,34 +428,34 @@ int main(int argc, char *argv[]){
           }
         }
         
-        data = (RooDataSet*) data0->emptyClone()->reduce(RooArgSet(*mass, *dZ));
-        dataRV = (RooDataSet*) data0->emptyClone()->reduce(RooArgSet(*mass, *dZ));
-        dataWV = (RooDataSet*) data0->emptyClone()->reduce(RooArgSet(*mass, *dZ));
+        data = (RooDataSet*) data0->emptyClone()->reduce(RooArgSet(*mass, *vertex_idx));
+        dataRV = (RooDataSet*) data0->emptyClone()->reduce(RooArgSet(*mass, *vertex_idx));
+        dataWV = (RooDataSet*) data0->emptyClone()->reduce(RooArgSet(*mass, *vertex_idx));
 
 
         for (unsigned int i=0 ; i < data0->numEntries() ; i++){
-            mass->setVal(data0->get(i)->getRealValue("CMS_hgg_mass"));
+            mass->setVal(data0->get(i)->getRealValue("mass"));
             weight0->setVal(data0->weight() ); // <--- is this correct?
-            dZ->setVal(data0->get(i)->getRealValue("dZ"));
-            data->add( RooArgList(*mass, *dZ, *weight0), weight0->getVal() );
-            if (dZ->getVal() <1.){
-            dataRV->add( RooArgList(*mass, *dZ, *weight0), weight0->getVal() );
+            vertex_idx->setVal(data0->get(i)->getRealValue("vertex_idx"));
+            data->add( RooArgList(*mass, *vertex_idx, *weight0), weight0->getVal() );
+            if (vertex_idx->getVal() <1.){
+            dataRV->add( RooArgList(*mass, *vertex_idx, *weight0), weight0->getVal() );
             } else{
-            dataWV->add( RooArgList(*mass, *dZ, *weight0), weight0->getVal() );
+            dataWV->add( RooArgList(*mass, *vertex_idx, *weight0), weight0->getVal() );
             }
         }
 
         //print out contents, if you want... 
-				if (verbose_) {
-					std::cout << "[INFO] Workspace contains : " << std::endl;
-					std::list<RooAbsData*> data =  (inWS->allData()) ;
-					for (std::list<RooAbsData*>::const_iterator 
-            iterator = data.begin(), end = data.end();
-            iterator != end;
-            ++iterator) {
-						  std::cout << **iterator << std::endl;
-					}
-				}
+//				if (verbose_) {
+//					std::cout << "[INFO] Workspace contains : " << std::endl;
+//					//std::list<RooAbsData*> data =  (inWS->allData()) ;
+//					for (std::list<RooAbsData*>::const_iterator 
+//            iterator = data.begin(), end = data.end();
+//            iterator != end;
+//            ++iterator) {
+//						  std::cout << **iterator << std::endl;
+//					}
+//				}
         
         //more verbosity
 				if (verbose_) {
@@ -365,8 +469,8 @@ int main(int argc, char *argv[]){
         // this method of reducing the dataset is not safe, I think it ignores
         // events with negative weights entirely!
         // See workaround above
-				//dataRV = new RooDataSet("dataRV","dataRV",&*data,*(data->get()),"dZ<1");
-				//dataWV = new RooDataSet("dataWV","dataWV",&*data,*(data->get()),"dZ>=1");
+				//dataRV = new RooDataSet("dataRV","dataRV",&*data,*(data->get()),"vertex_idx<1");
+				//dataWV = new RooDataSet("dataWV","dataWV",&*data,*(data->get()),"vertex_idx>=1");
 				if (verbose_) std::cout << "[INFO] Retrieved unreduced data"<< *data0  << std::endl;
 				if (verbose_) std::cout << "[INFO] Retrieved reduced   data"<< *data    << std::endl;
 				if (verbose_) std::cout << "[INFO] Retrieved reducedRV data"<< *dataRV  << std::endl;
@@ -709,10 +813,12 @@ int main(int argc, char *argv[]){
   
   //finally, rpint otu recommended options. This is kinda useless right now..
 	cout << "[INFO] Recommended options" << endl;
-	ofstream output_datfile;
+//	ofstream output_datfile;
+	std::ofstream output_datfile((datfilename_).c_str(), std::ofstream::out);
 
   //write them to a file, I guess..
-	output_datfile.open ((datfilename_).c_str());
+	//output_datfile.open ((datfilename_).c_str());
+	//
 	if (verbose_) std::cout << "[INFO] Writing to datfilename_ " 
     << datfilename_ << std::endl;
 	output_datfile << "#proc cat nGausRV nGausWV" << std::endl;
@@ -735,6 +841,6 @@ int main(int argc, char *argv[]){
 	}
 
 	output_datfile.close();
-	inWS->Close();
+	//inWS->Close();
 	return 0;
 }
