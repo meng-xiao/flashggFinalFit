@@ -7,6 +7,8 @@ PROCS="ggh"
 CATS="UntaggedTag_0,UntaggedTag_1,UntaggedTag_2,UntaggedTag_3,UntaggedTag_4,VBFTag_0,VBFTag_1,VBFTag_2,VHHadronicTag,VHTightTag,VHLooseTag"
 SCALES="HighR9EE,LowR9EE,HighR9EB,LowR9EB"
 SMEARS="HighR9EE,LowR9EE,HighR9EB,LowR9EB" #DRY RUN
+BOUNDARIES="0.99,1"
+BDT_BOUNDARY=0
 FTESTONLY=0
 PSEUDODATAONLY=0
 PSEUDODATADAT=""
@@ -43,7 +45,7 @@ echo "--unblind) specified in fb^-{1} (default $UNBLIND)) "
 
 
 # options may be followed by one colon to indicate they have a required argument
-if ! options=$(getopt -u -o hi:p:f: -l help,inputFile:,procs:,flashggCats:,ext:,fTestOnly,pseudoDataOnly,bkgPlotsOnly,pseudoDataDat:,sigFile:,seed:,intLumi:,unblind,isData,batch: -- "$@")
+if ! options=$(getopt -u -o hi:p:f: -l help,inputFile:,procs:,boundaries:,bdt_boundary:,flashggCats:,ext:,fTestOnly,pseudoDataOnly,bkgPlotsOnly,pseudoDataDat:,sigFile:,seed:,intLumi:,unblind,isData,batch: -- "$@")
 then
 # something went wrong, getopt will put out an error message for us
 exit 1
@@ -58,6 +60,8 @@ case $1 in
 -p|--procs) PROCS=$2; shift ;;
 -f|--flashggCats) CATS=$2; shift ;;
 --ext) EXT=$2; echo "test" ; shift ;;
+--boundaries) BOUNDARIES=$2; shift ;;
+--bdt_boundary) BDT_BOUNDARY=$2; shift ;;
 --fTestOnly) FTESTONLY=1; echo "ftest" ;;
 --pseudoDataOnly) PSEUDODATAONLY=1;;
 --pseudoDataDat) PSEUDODATADAT=$2; shift;;
@@ -145,7 +149,7 @@ OPT=" --isData 1"
 fi
 
 echo " ./bin/fTest -i $FILE --saveMultiPdf CMS-HGG_multipdf_$EXT.root  -D $OUTDIR/bkgfTest$DATAEXT -f $CATS $OPT"
-./bin/fTest -i $FILE --saveMultiPdf CMS-HGG_multipdf_$EXT.root  -D $OUTDIR/bkgfTest$DATAEXT -f $CATS $OPT
+./bin/fTest -i $FILE --saveMultiPdf CMS-HGG_multipdf_$EXT.root  -D $OUTDIR/bkgfTest$DATAEXT -f $CATS $OPT --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY
 
 OPT=""
 fi

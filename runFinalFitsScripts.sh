@@ -187,8 +187,8 @@ fi
 SIGFILES=$PWD/Signal/$OUTDIR/CMS-HGG_sigfit_${EXT}.root
 
 cd Background
-echo "./runBackgroundScripts.sh -p $PROCS -f $CATS --ext $EXT --sigFile $SIGFILES --seed $COUNTER --intLumi $INTLUMI $BLINDINGOPT $PSEUDODATAOPT $DATAOPT $DATAFILEOPT $BATCHOPTION "
-./runBackgroundScripts.sh -p $PROCS -f $CATS --ext $EXT --sigFile $SIGFILES --seed $COUNTER --intLumi $INTLUMI $BLINDINGOPT $PSEUDODATAOPT $DATAOPT $DATAFILEOPT $BATCHOPTION
+echo "./runBackgroundScripts.sh -p $PROCS -f $CATS --ext $EXT --sigFile $SIGFILES --seed $COUNTER --intLumi $INTLUMI $BLINDINGOPT $PSEUDODATAOPT $DATAOPT $DATAFILEOPT $BATCHOPTION --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY"
+./runBackgroundScripts.sh -p $PROCS -f $CATS --ext $EXT --sigFile $SIGFILES --seed $COUNTER --intLumi $INTLUMI $BLINDINGOPT $PSEUDODATAOPT $DATAOPT $DATAFILEOPT $BATCHOPTION --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY
 
 cd -
 if [ $USER == lcorpe ]; then
