@@ -155,7 +155,7 @@ echo "------------------------------------------------"
 echo "------------>> Running SIGNAL"
 echo "------------------------------------------------"
 cd Signal
-echo "./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST" --boundaries $BOUDARY --bdt_boundary $BDT_BOUNDARY
+echo "./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST" --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY
 ./runSignalScripts.sh -i $FILE -p $PROCS -f $CATS --ext $EXT --intLumi $INTLUMI $BATCHOPTION --smears $SMEARS --scales $SCALES --scalesCorr $SCALESCORR --scalesGlobal $SCALESGLOBAL --bs $BS --useDCB_1G $USEDCBP1G --useSSF $SIMULATENOUSMASSPOINTFITTING  --massList $MASSLIST --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY
 cd -
 if [ $USER == lcorpe ]; then
