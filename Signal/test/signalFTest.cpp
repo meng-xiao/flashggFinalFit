@@ -52,11 +52,11 @@ bool recursive_=false;
 string flashggCatsStr_;
 vector<string> flashggCats_;
 string boundaries_;
+float bdt_boundary;
 string considerOnlyStr_;
 vector<string> considerOnly_;
 bool forceFracUnity_=false;
 bool isFlashgg_;
-float bdt_boundary;
 bool verbose_;
 
 void OptionParser(int argc, char *argv[]){

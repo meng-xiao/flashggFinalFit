@@ -59,6 +59,9 @@ bool runFtestCheckWithToys=false;
 int mgg_low =100;
 int mgg_high =180;
 int nBinsForMass = 4*(mgg_high-mgg_low);
+string boundaries_;
+vector<float> boundaries;
+float bdt_boundary;
 
 RooRealVar *intLumi_ = new RooRealVar("IntLumi","hacked int lumi", 1000.);
 
@@ -631,6 +634,8 @@ vector<string> flashggCats_;
     ("isFlashgg",  po::value<int>(&isFlashgg_)->default_value(1),  								    	        "Use Flashgg output ")
     ("isData",  po::value<bool>(&isData_)->default_value(0),  								    	        "Use Data not MC ")
 		("flashggCats,f", po::value<string>(&flashggCatsStr_)->default_value("UntaggedTag_0,UntaggedTag_1,UntaggedTag_2,UntaggedTag_3,UntaggedTag_4,VBFTag_0,VBFTag_1,VBFTag_2,TTHHadronicTag,TTHLeptonicTag,VHHadronicTag,VHTightTag,VHLooseTag,VHEtTag"),       "Flashgg category names to consider")
+		("boundaries,b", po::value<string>(&boundaries_)->default_value("0.9675, 0.9937, 0.9971,1."),          "Boundaries")
+		("bdt_boundary", po::value<float>(&bdt_boundary)->default_value(0.),          "BDT Boundaries")
     ("verbose,v",                                                                               "Run with more output")
   ;
   po::variables_map vm;
@@ -650,6 +655,11 @@ vector<string> flashggCats_;
     gErrorIgnoreLevel=kWarning;
   }
 	split(flashggCats_,flashggCatsStr_,boost::is_any_of(","));
+	vector<string> boundaries_s;
+	split(boundaries_s,boundaries_,boost::is_any_of(","));
+	for (int tagloop=0;tagloop<boundaries_s.size();tagloop++){
+		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
+	}
   
 	int startingCategory=0;
   if (singleCategory >-1){
@@ -765,6 +775,14 @@ vector<string> flashggCats_;
 		RooDataSet *dataFull0;
 		if (isData_) {
 
+    TString catname_t = catname; 
+    for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
+	    TString cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    if(catname_t.Contains(Form("Tag%d",tagloop*2+1)))
+		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    cout<< catname_t <<"\t"<<cutstring<<endl;
+    dataFull = (RooDataSet*)dataFull_all->reduce(cutstring);
+    /*
     //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()))->reduce("tthMVA_RunII>0.38");
     //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()));
     if(catname=="TTHHadronicTag0")
@@ -803,6 +821,7 @@ vector<string> flashggCats_;
     dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9890 &&BDTG<0.");
     else if (catname=="TTHLeptonicTag7")
     dataFull = (RooDataSet*)dataFull_all->reduce("tthMVA_RunII>0.9890 &&BDTG>0.");
+    */
     dataFull->SetName(Form("Data_13TeV_%s",catname.c_str()));
 /*
     if(catname=="TTHHadronicTag0")
