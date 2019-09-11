@@ -144,8 +144,8 @@ else
     echo "-->Determine Number of gaussians"
     echo "=============================="
     if [ -z $BATCH ]; then
-      echo "./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY"
-      ./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR --boundaries $BOUDARIES --bdt_boundary $BDT_BOUNDARY
+      echo "./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY"
+      ./bin/signalFTest -i $FILE -d dat/newConfig_$EXT.dat -p $PROCS -f $CATS -o $OUTDIR --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY
     else
       echo "./python/submitSignaFTest.py --procs $PROCS --flashggCats $CATS --outDir $OUTDIR --i $FILE --batch $BATCH -q $DEFAULTQUEUE"
       ./python/submitSignaFTest.py --procs $PROCS --flashggCats $CATS --outDir $OUTDIR --i $FILE --batch $BATCH -q $DEFAULTQUEUE
