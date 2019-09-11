@@ -1,12 +1,12 @@
 executable = runOneConfig.sh
-arguments = $j_had $j_lep j 
+arguments = $(j_had) $(j_lep) $(j) 
 should_transfer_files = NO
 output = sub$(ProcId).out
 log = sub$(ProcId).log
 error = sub$(ProcId).err
 request_memory          = 4000M
 +JobFlavour             = "longlunch"
-queue j_had,j_lep,j in(
+queue j_had,j_lep,j from(
 -.2 -.10 1
 -.1 -.05 2
 0 0 3
