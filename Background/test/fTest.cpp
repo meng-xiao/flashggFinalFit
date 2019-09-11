@@ -782,6 +782,7 @@ vector<string> flashggCats_;
 		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
 	    cout<< catname_t <<"\t"<<cutstring<<endl;
     dataFull = (RooDataSet*)dataFull_all->reduce(cutstring);
+    }
     /*
     //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()))->reduce("tthMVA_RunII>0.38");
     //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()));
