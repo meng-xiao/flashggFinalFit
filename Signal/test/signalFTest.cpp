@@ -358,10 +358,11 @@ int main(int argc, char *argv[]){
     RooDataSet *data0;
     TString catname = flashggCats_[cat]; 
     for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
-    if(catname.Contains(Form("Tag%d",tagloop*2)))
-    data0 = (RooDataSet*)dataFull->reduce(Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary)); 
-    if(catname.Contains(Form("Tag%d",tagloop*2+1)))
-    data0 = (RooDataSet*)dataFull->reduce(Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary)); 
+	    TString cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    if(catname.Contains(Form("Tag%d",tagloop*2+1)))
+		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    cout<< catname <<"\t"<<cutstring<<endl;
+    data0 = (RooDataSet*)dataFull->reduce(cutstring); 
 	    }
 /*
     if(flashggCats_[cat]=="TTHHadronicTag0")
