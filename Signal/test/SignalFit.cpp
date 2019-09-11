@@ -64,6 +64,7 @@ bool spin_=false;
 vector<string> procs_;
 string procStr_;
 string boundaries_;
+vector<float> boundaries;
 float bdt_boundary;
 bool isCutBased_=false;
 bool is2011_=false;
