@@ -1,0 +1,1379 @@
+test ext jhu_0m_tuneV1 
+ test 41.5
+ BATCH none 
+[INFO] MASSLIST is 120,125,130
+[INFO] INTLUMI 41.5
+[INFO] outdir is outdir_jhu_0m_tuneV1
+------------------------------------------------
+------------>> Running SIGNAL
+------------------------------------------------
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1 --ext jhu_0m_tuneV1 --intLumi 41.5  --smears HighR9EE,LowR9EE,HighR9EB,LowR9EB --scales HighR9EE,LowR9EE,HighR9EB,LowR9EB --scalesCorr MaterialCentral,MaterialForward --scalesGlobal NonLinearity,Geant4,LightYield,Absolute --bs 0 --useDCB_1G 0 --useSSF 0  --massList 120,125,130
+[INFO] processing signal model for INTLUMI 41.5
+[INFO] outdir is outdir_jhu_0m_tuneV1
+[INFO] BeamSpot Size is to be reweighted to 0
+[INFO] sigFTest dat file outdir_jhu_0m_tuneV1/dat/copy_newConfig_jhu_0m_tuneV1.dat already exists, so SKIPPING SIGNAL FTEST
+==============================
+Running SignalFit
+-->Create actual signal model
+==============================
+./bin/SignalFit -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -d dat/newConfig_jhu_0m_tuneV1.dat  --mhLow=120 --mhHigh=130 -s dat/photonCatSyst_jhu_0m_tuneV1.dat --procs tth_ALT -o outdir_jhu_0m_tuneV1/CMS-HGG_mva_13TeV_sigfit.root -p outdir_jhu_0m_tuneV1/sigfit -f TTHHadronicTag0,TTHHadronicTag1 --changeIntLumi 41.5  --useDCBplusGaus 0 --useSSF 0 --massList 120,125,130
+[INFO] Masses to skip... 
+	
+[INFO] Masses to process... 
+	120 125 130 
+[INFO] Using functional form: Sum of N Gaussians 
+[INFO] Using fitting strategy: Fit each mass point and perform linear interpolation of parameters 
+1
+tth_13TeV_all
+tth_13TeV_all
+1
+tth_13TeV_all
+tth_13TeV_all
+[INFO] RooRealVars mass, intL and vertex_idx, found ? 0x3607bc0, 0x16abb270, 0x36082c0
+[#1] INFO:Eval -- RooAbsReal::attachToTree(mass) TTree Float_t branch mass will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(tthMVA_RunII) TTree Float_t branch tthMVA_RunII will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(BDTG) TTree Float_t branch BDTG will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(vertex_idx) TTree Float_t branch vertex_idx will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(weight) TTree Float_t branch weight will be converted to double precision
+[#1] INFO:Eval -- RooTreeDataStore::loadValues(Data_13TeV) Ignored 10113 out of range events
+[INFO] setting RoorealVars used for fitting.
+[INFO] preparing outfile outdir_jhu_0m_tuneV1/CMS-HGG_mva_13TeV_sigfit.root
+[INFO] dat file listing: tth_ALT TTHHadronicTag0 4 1 
+[INFO] dat file listing: ----> selected replacements (RV) if needed TTH TTHHadronicTag0
+[INFO] dat file listing: ----> selected replacements (WV) if needed tth TTHHadronicTag2
+[INFO] dat file listing: tth_ALT TTHHadronicTag1 4 1 
+[INFO] dat file listing: ----> selected replacements (RV) if needed TTH TTHHadronicTag1
+[INFO] dat file listing: ----> selected replacements (WV) if needed tth TTHHadronicTag2
+-----------------------------------------------------------------
+[INFO] Running fits for proc:tth_ALT - cat:TTHHadronicTag0 with nGausRV:4 nGausWV:1
+-----------------------------------------------------------------
+[INFO] Opening dataset called tth_ALT_120_13TeV_TTHHadronicTag0 in in WS 0x495a41
+[INFO] Was able to access IntLumi directlly from WS. IntLumi 41500pb^{-1}
+[INFO] Old int lumi 41500, new int lumi 41500
+[INFO] Changing weights of dataset by a factor 1 as per newIntLumi option
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] New dataset (intLumi change x1): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+TTHHadronicTag0
+[INFO] Datasets ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Datasets cat ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] Datasets (right vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] Datasets (wrong vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV dataset RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] inserting regular WV datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting FIT RVdatasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] inserting FIT WVdatasetsRooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV+WV RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Original Dataset: RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Opening dataset called tth_ALT_125_13TeV_TTHHadronicTag0 in in WS 0x495a41
+[INFO] Was able to access IntLumi directlly from WS. IntLumi 41500pb^{-1}
+[INFO] Old int lumi 41500, new int lumi 41500
+[INFO] Changing weights of dataset by a factor 1 as per newIntLumi option
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] New dataset (intLumi change x1): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+TTHHadronicTag0
+[INFO] Datasets ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Datasets cat ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] Datasets (right vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] Datasets (wrong vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV dataset RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] inserting regular WV datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting FIT RVdatasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] inserting FIT WVdatasetsRooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV+WV RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Original Dataset: RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Opening dataset called tth_ALT_130_13TeV_TTHHadronicTag0 in in WS 0x495a41
+[INFO] Was able to access IntLumi directlly from WS. IntLumi 41500pb^{-1}
+[INFO] Old int lumi 41500, new int lumi 41500
+[INFO] Changing weights of dataset by a factor 1 as per newIntLumi option
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] New dataset (intLumi change x1): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+TTHHadronicTag0
+[INFO] Datasets ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Datasets cat ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] Datasets (right vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] Datasets (wrong vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV dataset RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] inserting regular WV datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting FIT RVdatasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] inserting FIT WVdatasetsRooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV+WV RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Original Dataset: RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] preapraing initialfit RV, massList size 3
+[INFO] RV building sum of gaussians with nGaussiansRV 4
+[INFO] RV setting datasets in initialFIT 
+[INFO] RV running fits
+RUNNING FITS for mh = 125
+RUNNING FITS for mh = 120
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of 2 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+Number of free parameters from FitConfig = 11
+Number of free parameters from Minimizer = 8
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(tth_ALT_TTHHadronicTag0_mh120) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+RUNNING FITS for mh = 130
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of 2 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+Number of free parameters from FitConfig = 11
+Number of free parameters from Minimizer = 8
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(tth_ALT_TTHHadronicTag0_mh130) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+LC DEBUG DEBUG DEBUG F
+[INFO] preparing initialfit WV, masList size 3
+[INFO] WV building sum of gaussians wth nGaussiansWV 1
+[INFO] WV setting datasets in initial FIT 
+[INFO] WV running fits
+RUNNING FITS for mh = 125
+RUNNING FITS for mh = 120
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of -1 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+RUNNING FITS for mh = 130
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of -1 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+LC DEBUG DEBUG DEBUG F
+[INFO] Linear Interp: preparing this spline dm_g0
+[INFO] Linear Interp: preparing this spline dm_g1
+[INFO] Linear Interp: preparing this spline dm_g2
+[INFO] Linear Interp: preparing this spline dm_g3
+[INFO] Linear Interp: preparing this spline frac_g0
+[INFO] Linear Interp: preparing this spline frac_g1
+[INFO] Linear Interp: preparing this spline frac_g2
+[INFO] Linear Interp: preparing this spline sigma_g0
+[INFO] Linear Interp: preparing this spline sigma_g1
+[INFO] Linear Interp: preparing this spline sigma_g2
+[INFO] Linear Interp: preparing this spline sigma_g3
+[INFO] Linear Interp: preparing this spline dm_g0
+[INFO] Linear Interp: preparing this spline sigma_g0
+The Higgs mass range: ['90', '250']
+Initial procname tth_ALT
+Initial procname tth_ALT
+tth_ALT
+[INFO] PhotonCatScales: [HighR9EE_13TeVscale,LowR9EE_13TeVscale,HighR9EB_13TeVscale,LowR9EB_13TeVscale]
+[INFO] PhotonCatScalesCorr: [MaterialCentral_scale,MaterialForward_scale]
+[INFO] PhotonCatSmears: [HighR9EE_13TeVsmear,LowR9EE_13TeVsmear,HighR9EB_13TeVsmear,LowR9EB_13TeVsmear]
+ [INFO] GlobalScales: [NonLinearity_13TeVscale:[Geant4_13TeVscale:[LightYield_13TeVscale:[Absolute_13TeVscale:]
+[INFO] Process:  tth  DiphoCat: 0
+[INFO] Signal systematics info...
+[INFO] The following systematic names are stored
+	 HighR9EE_13TeVscale                                -- photon cat
+	 LowR9EE_13TeVscale                                 -- photon cat
+	 HighR9EB_13TeVscale                                -- photon cat
+	 LowR9EB_13TeVscale                                 -- photon cat
+	 MaterialCentral_scale                              -- photon cat
+	 MaterialForward_scale                              -- photon cat
+	 HighR9EE_13TeVsmear                                -- photon cat
+	 LowR9EE_13TeVsmear                                 -- photon cat
+	 HighR9EB_13TeVsmear                                -- photon cat
+	 LowR9EB_13TeVsmear                                 -- photon cat
+	 NonLinearity_13TeVscale                            -- global
+	 Geant4_13TeVscale                                  -- global
+	 LightYield_13TeVscale                              -- global
+	 Absolute_13TeVscale                                -- global
+[INFO] Implementing the following floating nuisance parameters
+	 CMS_hgg_nuisance_Absolute_13TeVscale               -- RooRealVar::CMS_hgg_nuisance_Absolute_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_Geant4_13TeVscale                 -- RooRealVar::CMS_hgg_nuisance_Geant4_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EB_13TeVscale               -- RooRealVar::CMS_hgg_nuisance_HighR9EB_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EB_13TeVsmear               -- RooRealVar::CMS_hgg_nuisance_HighR9EB_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EE_13TeVscale               -- RooRealVar::CMS_hgg_nuisance_HighR9EE_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EE_13TeVsmear               -- RooRealVar::CMS_hgg_nuisance_HighR9EE_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LightYield_13TeVscale             -- RooRealVar::CMS_hgg_nuisance_LightYield_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EB_13TeVscale                -- RooRealVar::CMS_hgg_nuisance_LowR9EB_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EB_13TeVsmear                -- RooRealVar::CMS_hgg_nuisance_LowR9EB_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EE_13TeVscale                -- RooRealVar::CMS_hgg_nuisance_LowR9EE_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EE_13TeVsmear                -- RooRealVar::CMS_hgg_nuisance_LowR9EE_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_MaterialCentral_scale             -- RooRealVar::CMS_hgg_nuisance_MaterialCentral_scale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_MaterialForward_scale             -- RooRealVar::CMS_hgg_nuisance_MaterialForward_scale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_NonLinearity_13TeVscale           -- RooRealVar::CMS_hgg_nuisance_NonLinearity_13TeVscale = 0 C  L(-5 - 5) 
+[INFO] Implementing the following constant parameters
+[INFO] RV/WV fraction for datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted) and RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted) --- 1
+[INFO] RV/WV fraction for datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted) and RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted) --- 1
+[INFO] RV/WV fraction for datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted) and RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted) --- 1
+ [INFO] Interpolation of  rvFraction  m = 120 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 121 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 122 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 123 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 124 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 125 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 126 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 127 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 128 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 129 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 130 , rvFrac 1
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[INFO] interpolation of gaussian  0 at mH = 120 , dm -0.128924
+[INFO] interpolation of gaussian  0 at mH = 121 , dm -0.130281
+[INFO] interpolation of gaussian  0 at mH = 122 , dm -0.131638
+[INFO] interpolation of gaussian  0 at mH = 123 , dm -0.132995
+[INFO] interpolation of gaussian  0 at mH = 124 , dm -0.134352
+[INFO] interpolation of gaussian  0 at mH = 125 , dm -0.135709
+[INFO] interpolation of gaussian  0 at mH = 126 , dm -0.134352
+[INFO] interpolation of gaussian  0 at mH = 127 , dm -0.132995
+[INFO] interpolation of gaussian  0 at mH = 128 , dm -0.131638
+[INFO] interpolation of gaussian  0 at mH = 129 , dm -0.131638
+[INFO] interpolation of gaussian  0 at mH = 130 , dm -0.131638
+[INFO] interpolation of gaussian  0 at mH = 120 , sigma 1.30383
+[INFO] interpolation of gaussian  0 at mH = 121 , sigma 1.29847
+[INFO] interpolation of gaussian  0 at mH = 122 , sigma 1.2931
+[INFO] interpolation of gaussian  0 at mH = 123 , sigma 1.28774
+[INFO] interpolation of gaussian  0 at mH = 124 , sigma 1.28238
+[INFO] interpolation of gaussian  0 at mH = 125 , sigma 1.27701
+[INFO] interpolation of gaussian  0 at mH = 126 , sigma 1.28238
+[INFO] interpolation of gaussian  0 at mH = 127 , sigma 1.28774
+[INFO] interpolation of gaussian  0 at mH = 128 , sigma 1.2931
+[INFO] interpolation of gaussian  0 at mH = 129 , sigma 1.2931
+[INFO] interpolation of gaussian  0 at mH = 130 , sigma 1.2931
+[INFO] interpolation of gaussian  1 at mH = 120 , dm -0.681202
+[INFO] interpolation of gaussian  1 at mH = 121 , dm -0.688373
+[INFO] interpolation of gaussian  1 at mH = 122 , dm -0.695544
+[INFO] interpolation of gaussian  1 at mH = 123 , dm -0.702714
+[INFO] interpolation of gaussian  1 at mH = 124 , dm -0.709885
+[INFO] interpolation of gaussian  1 at mH = 125 , dm -0.717055
+[INFO] interpolation of gaussian  1 at mH = 126 , dm -0.709885
+[INFO] interpolation of gaussian  1 at mH = 127 , dm -0.702714
+[INFO] interpolation of gaussian  1 at mH = 128 , dm -0.695544
+[INFO] interpolation of gaussian  1 at mH = 129 , dm -0.695544
+[INFO] interpolation of gaussian  1 at mH = 130 , dm -0.695544
+[INFO] interpolation of gaussian  1 at mH = 120 , sigma 2.43216
+[INFO] interpolation of gaussian  1 at mH = 121 , sigma 2.41594
+[INFO] interpolation of gaussian  1 at mH = 122 , sigma 2.39973
+[INFO] interpolation of gaussian  1 at mH = 123 , sigma 2.38352
+[INFO] interpolation of gaussian  1 at mH = 124 , sigma 2.3673
+[INFO] interpolation of gaussian  1 at mH = 125 , sigma 2.35109
+[INFO] interpolation of gaussian  1 at mH = 126 , sigma 2.3673
+[INFO] interpolation of gaussian  1 at mH = 127 , sigma 2.38352
+[INFO] interpolation of gaussian  1 at mH = 128 , sigma 2.39973
+[INFO] interpolation of gaussian  1 at mH = 129 , sigma 2.39973
+[INFO] interpolation of gaussian  1 at mH = 130 , sigma 2.39973
+[INFO] interpolation of gaussian  1 at mH = 120 , coeff 1.30383
+[INFO] interpolation of gaussian  1 at mH = 121 , coeff 1.29847
+[INFO] interpolation of gaussian  1 at mH = 122 , coeff 1.2931
+[INFO] interpolation of gaussian  1 at mH = 123 , coeff 1.28774
+[INFO] interpolation of gaussian  1 at mH = 124 , coeff 1.28238
+[INFO] interpolation of gaussian  1 at mH = 125 , coeff 1.27701
+[INFO] interpolation of gaussian  1 at mH = 126 , coeff 1.28238
+[INFO] interpolation of gaussian  1 at mH = 127 , coeff 1.28774
+[INFO] interpolation of gaussian  1 at mH = 128 , coeff 1.2931
+[INFO] interpolation of gaussian  1 at mH = 129 , coeff 1.2931
+[INFO] interpolation of gaussian  1 at mH = 130 , coeff 1.2931
+[INFO] interpolation of gaussian  2 at mH = 120 , dm -2.85
+[INFO] interpolation of gaussian  2 at mH = 121 , dm -2.88
+[INFO] interpolation of gaussian  2 at mH = 122 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 123 , dm -2.94
+[INFO] interpolation of gaussian  2 at mH = 124 , dm -2.97
+[INFO] interpolation of gaussian  2 at mH = 125 , dm -3
+[INFO] interpolation of gaussian  2 at mH = 126 , dm -2.97
+[INFO] interpolation of gaussian  2 at mH = 127 , dm -2.94
+[INFO] interpolation of gaussian  2 at mH = 128 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 129 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 130 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 120 , sigma 5.47213
+[INFO] interpolation of gaussian  2 at mH = 121 , sigma 5.42002
+[INFO] interpolation of gaussian  2 at mH = 122 , sigma 5.3679
+[INFO] interpolation of gaussian  2 at mH = 123 , sigma 5.31578
+[INFO] interpolation of gaussian  2 at mH = 124 , sigma 5.26367
+[INFO] interpolation of gaussian  2 at mH = 125 , sigma 5.21155
+[INFO] interpolation of gaussian  2 at mH = 126 , sigma 5.15944
+[INFO] interpolation of gaussian  2 at mH = 127 , sigma 5.10732
+[INFO] interpolation of gaussian  2 at mH = 128 , sigma 5.05521
+[INFO] interpolation of gaussian  2 at mH = 129 , sigma 5.05521
+[INFO] interpolation of gaussian  2 at mH = 130 , sigma 5.05521
+[INFO] interpolation of gaussian  2 at mH = 120 , coeff 2.43216
+[INFO] interpolation of gaussian  2 at mH = 121 , coeff 2.41594
+[INFO] interpolation of gaussian  2 at mH = 122 , coeff 2.39973
+[INFO] interpolation of gaussian  2 at mH = 123 , coeff 2.38352
+[INFO] interpolation of gaussian  2 at mH = 124 , coeff 2.3673
+[INFO] interpolation of gaussian  2 at mH = 125 , coeff 2.35109
+[INFO] interpolation of gaussian  2 at mH = 126 , coeff 2.3673
+[INFO] interpolation of gaussian  2 at mH = 127 , coeff 2.38352
+[INFO] interpolation of gaussian  2 at mH = 128 , coeff 2.39973
+[INFO] interpolation of gaussian  2 at mH = 129 , coeff 2.39973
+[INFO] interpolation of gaussian  2 at mH = 130 , coeff 2.39973
+[INFO] interpolation of gaussian  3 at mH = 120 , dm 3
+[INFO] interpolation of gaussian  3 at mH = 121 , dm 3
+[INFO] interpolation of gaussian  3 at mH = 122 , dm 3
+[INFO] interpolation of gaussian  3 at mH = 123 , dm 3
+[INFO] interpolation of gaussian  3 at mH = 124 , dm 3
+[INFO] interpolation of gaussian  3 at mH = 125 , dm 3
+[INFO] interpolation of gaussian  3 at mH = 126 , dm 2.99859
+[INFO] interpolation of gaussian  3 at mH = 127 , dm 2.99718
+[INFO] interpolation of gaussian  3 at mH = 128 , dm 2.99578
+[INFO] interpolation of gaussian  3 at mH = 129 , dm 2.99578
+[INFO] interpolation of gaussian  3 at mH = 130 , dm 2.99578
+[INFO] interpolation of gaussian  3 at mH = 120 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 121 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 122 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 123 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 124 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 125 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 126 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 127 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 128 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 129 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 130 , sigma 20
+[INFO] interpolation of gaussian  3 at mH = 120 , coeff 5.47213
+[INFO] interpolation of gaussian  3 at mH = 121 , coeff 5.42002
+[INFO] interpolation of gaussian  3 at mH = 122 , coeff 5.3679
+[INFO] interpolation of gaussian  3 at mH = 123 , coeff 5.31578
+[INFO] interpolation of gaussian  3 at mH = 124 , coeff 5.26367
+[INFO] interpolation of gaussian  3 at mH = 125 , coeff 5.21155
+[INFO] interpolation of gaussian  3 at mH = 126 , coeff 5.15944
+[INFO] interpolation of gaussian  3 at mH = 127 , coeff 5.10732
+[INFO] interpolation of gaussian  3 at mH = 128 , coeff 5.05521
+[INFO] interpolation of gaussian  3 at mH = 129 , coeff 5.05521
+[INFO] interpolation of gaussian  3 at mH = 130 , coeff 5.05521
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[INFO] interpolation of gaussian  0 at mH = 120 , dm 0.209095
+[INFO] interpolation of gaussian  0 at mH = 121 , dm 0.207245
+[INFO] interpolation of gaussian  0 at mH = 122 , dm 0.205395
+[INFO] interpolation of gaussian  0 at mH = 123 , dm 0.203545
+[INFO] interpolation of gaussian  0 at mH = 124 , dm 0.201696
+[INFO] interpolation of gaussian  0 at mH = 125 , dm 0.199846
+[INFO] interpolation of gaussian  0 at mH = 126 , dm 0.201639
+[INFO] interpolation of gaussian  0 at mH = 127 , dm 0.203431
+[INFO] interpolation of gaussian  0 at mH = 128 , dm 0.205224
+[INFO] interpolation of gaussian  0 at mH = 129 , dm 0.205224
+[INFO] interpolation of gaussian  0 at mH = 130 , dm 0.205224
+[INFO] interpolation of gaussian  0 at mH = 120 , sigma 0.4
+[INFO] interpolation of gaussian  0 at mH = 121 , sigma 0.400024
+[INFO] interpolation of gaussian  0 at mH = 122 , sigma 0.400047
+[INFO] interpolation of gaussian  0 at mH = 123 , sigma 0.400071
+[INFO] interpolation of gaussian  0 at mH = 124 , sigma 0.400095
+[INFO] interpolation of gaussian  0 at mH = 125 , sigma 0.400119
+[INFO] interpolation of gaussian  0 at mH = 126 , sigma 0.402742
+[INFO] interpolation of gaussian  0 at mH = 127 , sigma 0.405365
+[INFO] interpolation of gaussian  0 at mH = 128 , sigma 0.407988
+[INFO] interpolation of gaussian  0 at mH = 129 , sigma 0.407988
+[INFO] interpolation of gaussian  0 at mH = 130 , sigma 0.407988
+tth
+[INFO] (FinalModelConstruction) intLumi 41500, effAcc 2502.99
+[INFO] (FinalModelConstruction) data RooDataSet::sig_tth_ALT_mass_m120_TTHHadronicTag0[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] (FinalModelConstruction) sumEntries 131255, norm->GetXsection(mh,procLowerCase_) 0.5697 norm->GetBR(mh) 0.002218
+[INFO] (FinalModelConstruction) intLumi 41500, effAcc 2747.56
+[INFO] (FinalModelConstruction) data RooDataSet::sig_tth_ALT_mass_m125_TTHHadronicTag0[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[INFO] (FinalModelConstruction) sumEntries 131255, norm->GetXsection(mh,procLowerCase_) 0.5071 norm->GetBR(mh) 0.00227
+[WARNING] Warning cross section outside range of 80-300GeV!!!!
+[WARNING] Warning branching ratio outside range of 90-250GeV!!!!
+[INFO] (FinalModelConstruction) intLumi 41500, effAcc 3.16276
+[INFO] (FinalModelConstruction) data RooDataSet::sig_tth_ALT_mass_m130_TTHHadronicTag0[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+[WARNING] Warning branching ratio outside range of 90-250GeV!!!!
+[WARNING] Warning cross section outside range of 80-300GeV!!!!
+[INFO] (FinalModelConstruction) sumEntries 131255, norm->GetXsection(mh,procLowerCase_) -1 norm->GetBR(mh) -1
+x[0]=120, y[0]=2502.99
+x[1]=125, y[1]=2747.56
+x[2]=130, y[2]=3.16276
+xiaomeng tth_ALT
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag0 and process tth_ALT so it is being skipped.
+FMC LC DEBUG this dataset for mh=120
+RooDataSet::sig_tth_ALT_mass_m120_TTHHadronicTag0[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+RooArgSet::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi_components = (extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,mean_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,dm_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,sig_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_normThisLumi,fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag0_13TeV,rate_tth_ALT_TTHHadronicTag0_13TeV)
+FMC LC DEBUG this dataset for mh=125
+RooDataSet::sig_tth_ALT_mass_m125_TTHHadronicTag0[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+RooArgSet::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi_components = (extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,mean_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,dm_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,sig_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_normThisLumi,fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag0_13TeV,rate_tth_ALT_TTHHadronicTag0_13TeV)
+FMC LC DEBUG this dataset for mh=130
+RooDataSet::sig_tth_ALT_mass_m130_TTHHadronicTag0[mass,vertex_idx,weight:weight] = 129962 entries (131255 weighted)
+RooArgSet::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi_components = (extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,mean_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,dm_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,sig_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,sigma_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,mean_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,dm_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,sig_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_normThisLumi,fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag0_13TeV,rate_tth_ALT_TTHHadronicTag0_13TeV)
+13 TeV
+-----------------------------------------------------------------
+[INFO] Running fits for proc:tth_ALT - cat:TTHHadronicTag1 with nGausRV:4 nGausWV:1
+-----------------------------------------------------------------
+[INFO] Opening dataset called tth_ALT_120_13TeV_TTHHadronicTag1 in in WS 0x495a41
+[INFO] Was able to access IntLumi directlly from WS. IntLumi 41500pb^{-1}
+[INFO] Old int lumi 41500, new int lumi 41500
+[INFO] Changing weights of dataset by a factor 1 as per newIntLumi option
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] New dataset (intLumi change x1): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+TTHHadronicTag1
+[INFO] Datasets ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Datasets cat ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] Datasets (right vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] Datasets (wrong vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV dataset RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] inserting regular WV datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting FIT RVdatasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] inserting FIT WVdatasetsRooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV+WV RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Original Dataset: RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Opening dataset called tth_ALT_125_13TeV_TTHHadronicTag1 in in WS 0x495a41
+[INFO] Was able to access IntLumi directlly from WS. IntLumi 41500pb^{-1}
+[INFO] Old int lumi 41500, new int lumi 41500
+[INFO] Changing weights of dataset by a factor 1 as per newIntLumi option
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] New dataset (intLumi change x1): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+TTHHadronicTag1
+[INFO] Datasets ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Datasets cat ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] Datasets (right vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] Datasets (wrong vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV dataset RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] inserting regular WV datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting FIT RVdatasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] inserting FIT WVdatasetsRooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV+WV RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Original Dataset: RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Opening dataset called tth_ALT_130_13TeV_TTHHadronicTag1 in in WS 0x495a41
+[INFO] Was able to access IntLumi directlly from WS. IntLumi 41500pb^{-1}
+[INFO] Old int lumi 41500, new int lumi 41500
+[INFO] Changing weights of dataset by a factor 1 as per newIntLumi option
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] New dataset (intLumi change x1): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Old dataset (before intLumi change): RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+TTHHadronicTag1
+[INFO] Datasets ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Datasets cat ? RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] Datasets (right vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] Datasets (wrong vertex) ? RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV dataset RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] inserting regular WV datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting FIT RVdatasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] inserting FIT WVdatasetsRooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted)
+[INFO] inserting regular RV+WV RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] Original Dataset: RooDataSet::Data_13TeV[mass,tthMVA_RunII,BDTG,vertex_idx,weight:weight] = 249291 entries (251397 weighted)
+[INFO] preapraing initialfit RV, massList size 3
+[INFO] RV building sum of gaussians with nGaussiansRV 4
+[INFO] RV setting datasets in initialFIT 
+[INFO] RV running fits
+RUNNING FITS for mh = 125
+RUNNING FITS for mh = 120
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of 2 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+Number of free parameters from FitConfig = 11
+Number of free parameters from Minimizer = 7
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(tth_ALT_TTHHadronicTag1_mh120) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+RUNNING FITS for mh = 130
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+LC DEBUG DEBUG DEBUG C
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of 2 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+Number of free parameters from FitConfig = 11
+Number of free parameters from Minimizer = 7
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(tth_ALT_TTHHadronicTag1_mh130) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+LC DEBUG DEBUG DEBUG F
+[INFO] preparing initialfit WV, masList size 3
+[INFO] WV building sum of gaussians wth nGaussiansWV 1
+[INFO] WV setting datasets in initial FIT 
+[INFO] WV running fits
+RUNNING FITS for mh = 125
+RUNNING FITS for mh = 120
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of -1 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+RUNNING FITS for mh = 130
+LC DEBUG DEBUG DEBUG A
+LC DEBUG DEBUG DEBUG B
+Constraints set on fracs of -1 gaussians of this model
+LC DEBUG DEBUG DEBUG D
+LC DEBUG DEBUG DEBUG E
+LC DEBUG DEBUG DEBUG F
+[INFO] Linear Interp: preparing this spline dm_g0
+[INFO] Linear Interp: preparing this spline dm_g1
+[INFO] Linear Interp: preparing this spline dm_g2
+[INFO] Linear Interp: preparing this spline dm_g3
+[INFO] Linear Interp: preparing this spline frac_g0
+[INFO] Linear Interp: preparing this spline frac_g1
+[INFO] Linear Interp: preparing this spline frac_g2
+[INFO] Linear Interp: preparing this spline sigma_g0
+[INFO] Linear Interp: preparing this spline sigma_g1
+[INFO] Linear Interp: preparing this spline sigma_g2
+[INFO] Linear Interp: preparing this spline sigma_g3
+[INFO] Linear Interp: preparing this spline dm_g0
+[INFO] Linear Interp: preparing this spline sigma_g0
+[#0] ERROR:ObjectHandling -- RooWorkSpace::import(wsig_13TeV) ERROR importing object named IntLumi: another instance with same name already in the workspace and no conflict resolution protocol specified
+The Higgs mass range: ['90', '250']
+Initial procname tth_ALT
+Initial procname tth_ALT
+tth_ALT
+[INFO] PhotonCatScales: [HighR9EE_13TeVscale,LowR9EE_13TeVscale,HighR9EB_13TeVscale,LowR9EB_13TeVscale]
+[INFO] PhotonCatScalesCorr: [MaterialCentral_scale,MaterialForward_scale]
+[INFO] PhotonCatSmears: [HighR9EE_13TeVsmear,LowR9EE_13TeVsmear,HighR9EB_13TeVsmear,LowR9EB_13TeVsmear]
+ [INFO] GlobalScales: [NonLinearity_13TeVscale:[Geant4_13TeVscale:[LightYield_13TeVscale:[Absolute_13TeVscale:]
+[INFO] Process:  tth  DiphoCat: 0
+[INFO] Signal systematics info...
+[INFO] The following systematic names are stored
+	 HighR9EE_13TeVscale                                -- photon cat
+	 LowR9EE_13TeVscale                                 -- photon cat
+	 HighR9EB_13TeVscale                                -- photon cat
+	 LowR9EB_13TeVscale                                 -- photon cat
+	 MaterialCentral_scale                              -- photon cat
+	 MaterialForward_scale                              -- photon cat
+	 HighR9EE_13TeVsmear                                -- photon cat
+	 LowR9EE_13TeVsmear                                 -- photon cat
+	 HighR9EB_13TeVsmear                                -- photon cat
+	 LowR9EB_13TeVsmear                                 -- photon cat
+	 NonLinearity_13TeVscale                            -- global
+	 Geant4_13TeVscale                                  -- global
+	 LightYield_13TeVscale                              -- global
+	 Absolute_13TeVscale                                -- global
+[INFO] Implementing the following floating nuisance parameters
+	 CMS_hgg_nuisance_Absolute_13TeVscale               -- RooRealVar::CMS_hgg_nuisance_Absolute_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_Geant4_13TeVscale                 -- RooRealVar::CMS_hgg_nuisance_Geant4_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EB_13TeVscale               -- RooRealVar::CMS_hgg_nuisance_HighR9EB_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EB_13TeVsmear               -- RooRealVar::CMS_hgg_nuisance_HighR9EB_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EE_13TeVscale               -- RooRealVar::CMS_hgg_nuisance_HighR9EE_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_HighR9EE_13TeVsmear               -- RooRealVar::CMS_hgg_nuisance_HighR9EE_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LightYield_13TeVscale             -- RooRealVar::CMS_hgg_nuisance_LightYield_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EB_13TeVscale                -- RooRealVar::CMS_hgg_nuisance_LowR9EB_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EB_13TeVsmear                -- RooRealVar::CMS_hgg_nuisance_LowR9EB_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EE_13TeVscale                -- RooRealVar::CMS_hgg_nuisance_LowR9EE_13TeVscale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_LowR9EE_13TeVsmear                -- RooRealVar::CMS_hgg_nuisance_LowR9EE_13TeVsmear = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_MaterialCentral_scale             -- RooRealVar::CMS_hgg_nuisance_MaterialCentral_scale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_MaterialForward_scale             -- RooRealVar::CMS_hgg_nuisance_MaterialForward_scale = 0 C  L(-5 - 5) 
+	 CMS_hgg_nuisance_NonLinearity_13TeVscale           -- RooRealVar::CMS_hgg_nuisance_NonLinearity_13TeVscale = 0 C  L(-5 - 5) 
+[INFO] Implementing the following constant parameters
+[INFO] RV/WV fraction for datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted) and RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted) --- 1
+[INFO] RV/WV fraction for datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted) and RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted) --- 1
+[INFO] RV/WV fraction for datasets RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted) and RooDataSet::Data_13TeV[mass,vertex_idx,weight:weight] = 0 entries (0 weighted) --- 1
+ [INFO] Interpolation of  rvFraction  m = 120 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 121 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 122 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 123 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 124 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 125 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 126 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 127 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 128 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 129 , rvFrac 1
+ [INFO] Interpolation of  rvFraction  m = 130 , rvFrac 1
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[INFO] interpolation of gaussian  0 at mH = 120 , dm -0.276872
+[INFO] interpolation of gaussian  0 at mH = 121 , dm -0.279787
+[INFO] interpolation of gaussian  0 at mH = 122 , dm -0.282701
+[INFO] interpolation of gaussian  0 at mH = 123 , dm -0.285616
+[INFO] interpolation of gaussian  0 at mH = 124 , dm -0.28853
+[INFO] interpolation of gaussian  0 at mH = 125 , dm -0.291445
+[INFO] interpolation of gaussian  0 at mH = 126 , dm -0.28853
+[INFO] interpolation of gaussian  0 at mH = 127 , dm -0.285616
+[INFO] interpolation of gaussian  0 at mH = 128 , dm -0.282701
+[INFO] interpolation of gaussian  0 at mH = 129 , dm -0.282701
+[INFO] interpolation of gaussian  0 at mH = 130 , dm -0.282701
+[INFO] interpolation of gaussian  0 at mH = 120 , sigma 1.32554
+[INFO] interpolation of gaussian  0 at mH = 121 , sigma 1.31429
+[INFO] interpolation of gaussian  0 at mH = 122 , sigma 1.30303
+[INFO] interpolation of gaussian  0 at mH = 123 , sigma 1.29177
+[INFO] interpolation of gaussian  0 at mH = 124 , sigma 1.28051
+[INFO] interpolation of gaussian  0 at mH = 125 , sigma 1.26925
+[INFO] interpolation of gaussian  0 at mH = 126 , sigma 1.28051
+[INFO] interpolation of gaussian  0 at mH = 127 , sigma 1.29177
+[INFO] interpolation of gaussian  0 at mH = 128 , sigma 1.30303
+[INFO] interpolation of gaussian  0 at mH = 129 , sigma 1.30303
+[INFO] interpolation of gaussian  0 at mH = 130 , sigma 1.30303
+[INFO] interpolation of gaussian  1 at mH = 120 , dm -0.644742
+[INFO] interpolation of gaussian  1 at mH = 121 , dm -0.651528
+[INFO] interpolation of gaussian  1 at mH = 122 , dm -0.658315
+[INFO] interpolation of gaussian  1 at mH = 123 , dm -0.665102
+[INFO] interpolation of gaussian  1 at mH = 124 , dm -0.671889
+[INFO] interpolation of gaussian  1 at mH = 125 , dm -0.678675
+[INFO] interpolation of gaussian  1 at mH = 126 , dm -0.671889
+[INFO] interpolation of gaussian  1 at mH = 127 , dm -0.665102
+[INFO] interpolation of gaussian  1 at mH = 128 , dm -0.658315
+[INFO] interpolation of gaussian  1 at mH = 129 , dm -0.658315
+[INFO] interpolation of gaussian  1 at mH = 130 , dm -0.658315
+[INFO] interpolation of gaussian  1 at mH = 120 , sigma 2.39456
+[INFO] interpolation of gaussian  1 at mH = 121 , sigma 2.37878
+[INFO] interpolation of gaussian  1 at mH = 122 , sigma 2.36301
+[INFO] interpolation of gaussian  1 at mH = 123 , sigma 2.34724
+[INFO] interpolation of gaussian  1 at mH = 124 , sigma 2.33147
+[INFO] interpolation of gaussian  1 at mH = 125 , sigma 2.3157
+[INFO] interpolation of gaussian  1 at mH = 126 , sigma 2.33147
+[INFO] interpolation of gaussian  1 at mH = 127 , sigma 2.34724
+[INFO] interpolation of gaussian  1 at mH = 128 , sigma 2.36301
+[INFO] interpolation of gaussian  1 at mH = 129 , sigma 2.36301
+[INFO] interpolation of gaussian  1 at mH = 130 , sigma 2.36301
+[INFO] interpolation of gaussian  1 at mH = 120 , coeff 1.32554
+[INFO] interpolation of gaussian  1 at mH = 121 , coeff 1.31429
+[INFO] interpolation of gaussian  1 at mH = 122 , coeff 1.30303
+[INFO] interpolation of gaussian  1 at mH = 123 , coeff 1.29177
+[INFO] interpolation of gaussian  1 at mH = 124 , coeff 1.28051
+[INFO] interpolation of gaussian  1 at mH = 125 , coeff 1.26925
+[INFO] interpolation of gaussian  1 at mH = 126 , coeff 1.28051
+[INFO] interpolation of gaussian  1 at mH = 127 , coeff 1.29177
+[INFO] interpolation of gaussian  1 at mH = 128 , coeff 1.30303
+[INFO] interpolation of gaussian  1 at mH = 129 , coeff 1.30303
+[INFO] interpolation of gaussian  1 at mH = 130 , coeff 1.30303
+[INFO] interpolation of gaussian  2 at mH = 120 , dm -2.85
+[INFO] interpolation of gaussian  2 at mH = 121 , dm -2.88
+[INFO] interpolation of gaussian  2 at mH = 122 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 123 , dm -2.94
+[INFO] interpolation of gaussian  2 at mH = 124 , dm -2.97
+[INFO] interpolation of gaussian  2 at mH = 125 , dm -3
+[INFO] interpolation of gaussian  2 at mH = 126 , dm -2.97
+[INFO] interpolation of gaussian  2 at mH = 127 , dm -2.94
+[INFO] interpolation of gaussian  2 at mH = 128 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 129 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 130 , dm -2.91
+[INFO] interpolation of gaussian  2 at mH = 120 , sigma 19.9997
+[INFO] interpolation of gaussian  2 at mH = 121 , sigma 19.9998
+[INFO] interpolation of gaussian  2 at mH = 122 , sigma 19.9998
+[INFO] interpolation of gaussian  2 at mH = 123 , sigma 19.9999
+[INFO] interpolation of gaussian  2 at mH = 124 , sigma 19.9999
+[INFO] interpolation of gaussian  2 at mH = 125 , sigma 20
+[INFO] interpolation of gaussian  2 at mH = 126 , sigma 19.9999
+[INFO] interpolation of gaussian  2 at mH = 127 , sigma 19.9999
+[INFO] interpolation of gaussian  2 at mH = 128 , sigma 19.9998
+[INFO] interpolation of gaussian  2 at mH = 129 , sigma 19.9998
+[INFO] interpolation of gaussian  2 at mH = 130 , sigma 19.9998
+[INFO] interpolation of gaussian  2 at mH = 120 , coeff 2.39456
+[INFO] interpolation of gaussian  2 at mH = 121 , coeff 2.37878
+[INFO] interpolation of gaussian  2 at mH = 122 , coeff 2.36301
+[INFO] interpolation of gaussian  2 at mH = 123 , coeff 2.34724
+[INFO] interpolation of gaussian  2 at mH = 124 , coeff 2.33147
+[INFO] interpolation of gaussian  2 at mH = 125 , coeff 2.3157
+[INFO] interpolation of gaussian  2 at mH = 126 , coeff 2.33147
+[INFO] interpolation of gaussian  2 at mH = 127 , coeff 2.34724
+[INFO] interpolation of gaussian  2 at mH = 128 , coeff 2.36301
+[INFO] interpolation of gaussian  2 at mH = 129 , coeff 2.36301
+[INFO] interpolation of gaussian  2 at mH = 130 , coeff 2.36301
+[INFO] interpolation of gaussian  3 at mH = 120 , dm -2.85
+[INFO] interpolation of gaussian  3 at mH = 121 , dm -2.88
+[INFO] interpolation of gaussian  3 at mH = 122 , dm -2.91
+[INFO] interpolation of gaussian  3 at mH = 123 , dm -2.94
+[INFO] interpolation of gaussian  3 at mH = 124 , dm -2.97
+[INFO] interpolation of gaussian  3 at mH = 125 , dm -3
+[INFO] interpolation of gaussian  3 at mH = 126 , dm -2.97
+[INFO] interpolation of gaussian  3 at mH = 127 , dm -2.94
+[INFO] interpolation of gaussian  3 at mH = 128 , dm -2.91
+[INFO] interpolation of gaussian  3 at mH = 129 , dm -2.91
+[INFO] interpolation of gaussian  3 at mH = 130 , dm -2.91
+[INFO] interpolation of gaussian  3 at mH = 120 , sigma 4.89838
+[INFO] interpolation of gaussian  3 at mH = 121 , sigma 4.85173
+[INFO] interpolation of gaussian  3 at mH = 122 , sigma 4.80508
+[INFO] interpolation of gaussian  3 at mH = 123 , sigma 4.75843
+[INFO] interpolation of gaussian  3 at mH = 124 , sigma 4.71177
+[INFO] interpolation of gaussian  3 at mH = 125 , sigma 4.66512
+[INFO] interpolation of gaussian  3 at mH = 126 , sigma 4.61847
+[INFO] interpolation of gaussian  3 at mH = 127 , sigma 4.57182
+[INFO] interpolation of gaussian  3 at mH = 128 , sigma 4.52517
+[INFO] interpolation of gaussian  3 at mH = 129 , sigma 4.52517
+[INFO] interpolation of gaussian  3 at mH = 130 , sigma 4.52517
+[INFO] interpolation of gaussian  3 at mH = 120 , coeff 19.9997
+[INFO] interpolation of gaussian  3 at mH = 121 , coeff 19.9998
+[INFO] interpolation of gaussian  3 at mH = 122 , coeff 19.9998
+[INFO] interpolation of gaussian  3 at mH = 123 , coeff 19.9999
+[INFO] interpolation of gaussian  3 at mH = 124 , coeff 19.9999
+[INFO] interpolation of gaussian  3 at mH = 125 , coeff 20
+[INFO] interpolation of gaussian  3 at mH = 126 , coeff 19.9999
+[INFO] interpolation of gaussian  3 at mH = 127 , coeff 19.9999
+[INFO] interpolation of gaussian  3 at mH = 128 , coeff 19.9998
+[INFO] interpolation of gaussian  3 at mH = 129 , coeff 19.9998
+[INFO] interpolation of gaussian  3 at mH = 130 , coeff 19.9998
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the scale for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the resolution for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[INFO] interpolation of gaussian  0 at mH = 120 , dm 0.25
+[INFO] interpolation of gaussian  0 at mH = 121 , dm 0.24992
+[INFO] interpolation of gaussian  0 at mH = 122 , dm 0.249839
+[INFO] interpolation of gaussian  0 at mH = 123 , dm 0.249759
+[INFO] interpolation of gaussian  0 at mH = 124 , dm 0.249678
+[INFO] interpolation of gaussian  0 at mH = 125 , dm 0.249598
+[INFO] interpolation of gaussian  0 at mH = 126 , dm 0.252068
+[INFO] interpolation of gaussian  0 at mH = 127 , dm 0.254537
+[INFO] interpolation of gaussian  0 at mH = 128 , dm 0.257007
+[INFO] interpolation of gaussian  0 at mH = 129 , dm 0.257007
+[INFO] interpolation of gaussian  0 at mH = 130 , dm 0.257007
+[INFO] interpolation of gaussian  0 at mH = 120 , sigma 0.4
+[INFO] interpolation of gaussian  0 at mH = 121 , sigma 0.400015
+[INFO] interpolation of gaussian  0 at mH = 122 , sigma 0.40003
+[INFO] interpolation of gaussian  0 at mH = 123 , sigma 0.400045
+[INFO] interpolation of gaussian  0 at mH = 124 , sigma 0.40006
+[INFO] interpolation of gaussian  0 at mH = 125 , sigma 0.400075
+[INFO] interpolation of gaussian  0 at mH = 126 , sigma 0.402154
+[INFO] interpolation of gaussian  0 at mH = 127 , sigma 0.404233
+[INFO] interpolation of gaussian  0 at mH = 128 , sigma 0.406312
+[INFO] interpolation of gaussian  0 at mH = 129 , sigma 0.406312
+[INFO] interpolation of gaussian  0 at mH = 130 , sigma 0.406312
+tth
+[INFO] (FinalModelConstruction) intLumi 41500, effAcc 1381.98
+[INFO] (FinalModelConstruction) data RooDataSet::sig_tth_ALT_mass_m120_TTHHadronicTag1[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] (FinalModelConstruction) sumEntries 72470, norm->GetXsection(mh,procLowerCase_) 0.5697 norm->GetBR(mh) 0.002218
+[INFO] (FinalModelConstruction) intLumi 41500, effAcc 1517.02
+[INFO] (FinalModelConstruction) data RooDataSet::sig_tth_ALT_mass_m125_TTHHadronicTag1[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[INFO] (FinalModelConstruction) sumEntries 72470, norm->GetXsection(mh,procLowerCase_) 0.5071 norm->GetBR(mh) 0.00227
+[WARNING] Warning cross section outside range of 80-300GeV!!!!
+[WARNING] Warning branching ratio outside range of 90-250GeV!!!!
+[INFO] (FinalModelConstruction) intLumi 41500, effAcc 1.74626
+[INFO] (FinalModelConstruction) data RooDataSet::sig_tth_ALT_mass_m130_TTHHadronicTag1[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+[WARNING] Warning branching ratio outside range of 90-250GeV!!!!
+[WARNING] Warning cross section outside range of 80-300GeV!!!!
+[INFO] (FinalModelConstruction) sumEntries 72470, norm->GetXsection(mh,procLowerCase_) -1 norm->GetBR(mh) -1
+x[0]=120, y[0]=1381.98
+x[1]=125, y[1]=1517.02
+x[2]=130, y[2]=1.74626
+xiaomeng tth_ALT
+[WARNING] -- systematic HighR9EE_13TeVscale is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVscale is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVscale is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVscale is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialCentral_scale is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic MaterialForward_scale is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EE_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EE_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic HighR9EB_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+[WARNING] -- systematic LowR9EB_13TeVsmear is found to have no effect on the rate for category TTHHadronicTag1 and process tth_ALT so it is being skipped.
+FMC LC DEBUG this dataset for mh=120
+RooDataSet::sig_tth_ALT_mass_m120_TTHHadronicTag1[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+RooArgSet::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi_components = (extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,mean_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,dm_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,sig_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_normThisLumi,fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag1_13TeV,rate_tth_ALT_TTHHadronicTag1_13TeV)
+FMC LC DEBUG this dataset for mh=125
+RooDataSet::sig_tth_ALT_mass_m125_TTHHadronicTag1[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+RooArgSet::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi_components = (extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,mean_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,dm_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,sig_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_normThisLumi,fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag1_13TeV,rate_tth_ALT_TTHHadronicTag1_13TeV)
+FMC LC DEBUG this dataset for mh=130
+RooDataSet::sig_tth_ALT_mass_m130_TTHHadronicTag1[mass,vertex_idx,weight:weight] = 73095 entries (72470 weighted)
+RooArgSet::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi_components = (extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,mean_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,dm_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,sig_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,sigma_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV,gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,mean_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,dm_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,sig_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,sigma_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_normThisLumi,fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag1_13TeV,rate_tth_ALT_TTHHadronicTag1_13TeV)
+13 TeV
+[INFO] Whole fitting process took...
+	Real time 0:01:20, CP time 46.850
+[INFO] Starting to combine fits...
+
+RooWorkspace(wsig_13TeV) wsig_13TeV contents
+
+variables
+---------
+(CMS_hgg_nuisance_Absolute_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_NonLinearity_13TeVscale,IntLumi,MH,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rvFrac,hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rvFrac,mass,vertex_idx)
+
+p.d.f.s
+-------
+RooExtendPdf::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0[ pdf=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0 n=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_norm ] = 0.378597
+RooExtendPdf::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0ThisLumi[ pdf=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0 n=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_normThisLumi ] = 0.378597
+RooExtendPdf::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1[ pdf=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1 n=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_norm ] = 0.429458
+RooExtendPdf::extendhggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1ThisLumi[ pdf=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1 n=hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_normThisLumi ] = 0.429458
+RooGaussian::gaus_g0_tth_ALT_TTHHadronicTag0_rv_13TeV[ x=mass mean=mean_g0_tth_ALT_TTHHadronicTag0_rv_13TeV sigma=sig_g0_tth_ALT_TTHHadronicTag0_rv_13TeV ] = 0.256989
+RooGaussian::gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV[ x=mass mean=mean_g0_tth_ALT_TTHHadronicTag0_wv_13TeV sigma=sig_g0_tth_ALT_TTHHadronicTag0_wv_13TeV ] = 6.27732e-05
+RooGaussian::gaus_g0_tth_ALT_TTHHadronicTag1_rv_13TeV[ x=mass mean=mean_g0_tth_ALT_TTHHadronicTag1_rv_13TeV sigma=sig_g0_tth_ALT_TTHHadronicTag1_rv_13TeV ] = 0.215568
+RooGaussian::gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV[ x=mass mean=mean_g0_tth_ALT_TTHHadronicTag1_wv_13TeV sigma=sig_g0_tth_ALT_TTHHadronicTag1_wv_13TeV ] = 0.000100924
+RooGaussian::gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ x=mass mean=mean_g1_tth_ALT_TTHHadronicTag0_rv_13TeV sigma=sig_g1_tth_ALT_TTHHadronicTag0_rv_13TeV ] = 0.53213
+RooGaussian::gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ x=mass mean=mean_g1_tth_ALT_TTHHadronicTag1_rv_13TeV sigma=sig_g1_tth_ALT_TTHHadronicTag1_rv_13TeV ] = 0.531114
+RooGaussian::gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ x=mass mean=mean_g2_tth_ALT_TTHHadronicTag0_rv_13TeV sigma=sig_g2_tth_ALT_TTHHadronicTag0_rv_13TeV ] = 0.623948
+RooGaussian::gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ x=mass mean=mean_g2_tth_ALT_TTHHadronicTag1_rv_13TeV sigma=sig_g2_tth_ALT_TTHHadronicTag1_rv_13TeV ] = 0.970314
+RooGaussian::gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV[ x=mass mean=mean_g3_tth_ALT_TTHHadronicTag0_rv_13TeV sigma=sig_g3_tth_ALT_TTHHadronicTag0_rv_13TeV ] = 0.998761
+RooGaussian::gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV[ x=mass mean=mean_g3_tth_ALT_TTHHadronicTag1_rv_13TeV sigma=sig_g3_tth_ALT_TTHHadronicTag1_rv_13TeV ] = 0.555072
+RooAddPdf::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0[ hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rvFrac * hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV + [%] * hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV ] = 0.378597
+RooAddPdf::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV[ frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV * gaus_g0_tth_ALT_TTHHadronicTag0_rv_13TeV + hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV * gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV + hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV * gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV + hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV * gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV ] = 0.378597
+RooAddPdf::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV[ hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV * gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV ] = 6.27732e-05
+RooAddPdf::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1[ hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rvFrac * hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV + [%] * hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV ] = 0.429458
+RooAddPdf::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV[ frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV * gaus_g0_tth_ALT_TTHHadronicTag1_rv_13TeV + hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV * gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV + hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV * gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV + hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV * gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV ] = 0.429458
+RooAddPdf::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV[ hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV * gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV ] = 0.000100924
+
+functions
+--------
+RooSpline1D::dm_g0_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = -0.131638
+RooSpline1D::dm_g0_tth_ALT_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 0.205224
+RooSpline1D::dm_g0_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = -0.282701
+RooSpline1D::dm_g0_tth_ALT_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = 0.257007
+RooSpline1D::dm_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = -0.695544
+RooSpline1D::dm_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = -0.658315
+RooSpline1D::dm_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = -2.91
+RooSpline1D::dm_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = -2.91
+RooSpline1D::dm_g3_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 2.99578
+RooSpline1D::dm_g3_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = -2.91
+RooSpline1D::fbr_13TeV[ xvar=MH ] = 0.002261
+RooSpline1D::fea_tth_ALT_TTHHadronicTag0_13TeV[ xvar=MH ] = 1001.29
+RooSpline1D::fea_tth_ALT_TTHHadronicTag1_13TeV[ xvar=MH ] = 552.844
+RooSpline1D::frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 0.601241
+RooSpline1D::frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 0.385933
+RooSpline1D::frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 0.824543
+RooSpline1D::frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 0.76144
+RooSpline1D::frac_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 0.791448
+RooSpline1D::frac_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 0.273118
+RooSpline1D::fxs_tth_ALT_13TeV[ xvar=MH ] = 0.4742
+RooFormulaVar::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_norm[ actualVars=(fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag0_13TeV,rate_tth_ALT_TTHHadronicTag0_13TeV) formula="@0*@1*@2*@3" ] = 1.07355
+RooFormulaVar::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_normThisLumi[ actualVars=(fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag0_13TeV,rate_tth_ALT_TTHHadronicTag0_13TeV,IntLumi) formula="@0*@1*@2*@3*@4" ] = 44552.2
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ list=(frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV) ] = 0.328794
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ list=(frac_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV) ] = 0.0553738
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag0_rv_13TeV[ list=(1,frac_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag0_rv_13TeV) ] = 0.0145914
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag0_wv_13TeV[ list=(1) ] = 1
+RooFormulaVar::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_norm[ actualVars=(fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag1_13TeV,rate_tth_ALT_TTHHadronicTag1_13TeV) formula="@0*@1*@2*@3" ] = 0.592741
+RooFormulaVar::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_normThisLumi[ actualVars=(fxs_tth_ALT_13TeV,fbr_13TeV,fea_tth_ALT_TTHHadronicTag1_13TeV,rate_tth_ALT_TTHHadronicTag1_13TeV,IntLumi) formula="@0*@1*@2*@3*@4" ] = 24598.8
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ list=(frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV) ] = 0.467575
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ list=(frac_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV) ] = 0.0400095
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g3_tth_ALT_TTHHadronicTag1_rv_13TeV[ list=(1,frac_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,frac_g0_tth_ALT_TTHHadronicTag1_rv_13TeV) ] = 0.106482
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_ALT_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g0_tth_ALT_TTHHadronicTag1_wv_13TeV[ list=(1) ] = 1
+RooFormulaVar::mean_g0_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g0_tth_ALT_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.868
+RooFormulaVar::mean_g0_tth_ALT_TTHHadronicTag0_wv_13TeV[ actualVars=(MH,dm_g0_tth_ALT_TTHHadronicTag0_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 128.205
+RooFormulaVar::mean_g0_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(MH,dm_g0_tth_ALT_TTHHadronicTag1_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.717
+RooFormulaVar::mean_g0_tth_ALT_TTHHadronicTag1_wv_13TeV[ actualVars=(MH,dm_g0_tth_ALT_TTHHadronicTag1_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 128.257
+RooFormulaVar::mean_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g1_tth_ALT_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.304
+RooFormulaVar::mean_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(MH,dm_g1_tth_ALT_TTHHadronicTag1_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.342
+RooFormulaVar::mean_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g2_tth_ALT_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 125.09
+RooFormulaVar::mean_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(MH,dm_g2_tth_ALT_TTHHadronicTag1_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 125.09
+RooFormulaVar::mean_g3_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g3_tth_ALT_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 130.996
+RooFormulaVar::mean_g3_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(MH,dm_g3_tth_ALT_TTHHadronicTag1_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 125.09
+RooFormulaVar::rate_tth_ALT_TTHHadronicTag0_13TeV[ actualVars=() formula="(1.)" ] = 1
+RooFormulaVar::rate_tth_ALT_TTHHadronicTag1_13TeV[ actualVars=() formula="(1.)" ] = 1
+RooFormulaVar::sig_g0_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g0_tth_ALT_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 1.2931
+RooFormulaVar::sig_g0_tth_ALT_TTHHadronicTag0_wv_13TeV[ actualVars=(sigma_g0_tth_ALT_TTHHadronicTag0_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 0.407988
+RooFormulaVar::sig_g0_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(sigma_g0_tth_ALT_TTHHadronicTag1_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 1.30303
+RooFormulaVar::sig_g0_tth_ALT_TTHHadronicTag1_wv_13TeV[ actualVars=(sigma_g0_tth_ALT_TTHHadronicTag1_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 0.406312
+RooFormulaVar::sig_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g1_tth_ALT_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 2.39973
+RooFormulaVar::sig_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(sigma_g1_tth_ALT_TTHHadronicTag1_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 2.36301
+RooFormulaVar::sig_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g2_tth_ALT_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 5.05521
+RooFormulaVar::sig_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(sigma_g2_tth_ALT_TTHHadronicTag1_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 19.9998
+RooFormulaVar::sig_g3_tth_ALT_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g3_tth_ALT_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 20
+RooFormulaVar::sig_g3_tth_ALT_TTHHadronicTag1_rv_13TeV[ actualVars=(sigma_g3_tth_ALT_TTHHadronicTag1_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 4.52517
+RooSpline1D::sigma_g0_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 1.2931
+RooSpline1D::sigma_g0_tth_ALT_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 0.407988
+RooSpline1D::sigma_g0_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 1.30303
+RooSpline1D::sigma_g0_tth_ALT_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = 0.406312
+RooSpline1D::sigma_g1_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 2.39973
+RooSpline1D::sigma_g1_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 2.36301
+RooSpline1D::sigma_g2_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 5.05521
+RooSpline1D::sigma_g2_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 19.9998
+RooSpline1D::sigma_g3_tth_ALT_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 20
+RooSpline1D::sigma_g3_tth_ALT_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 4.52517
+
+datasets
+--------
+RooDataSet::sig_tth_ALT_mass_m120_TTHHadronicTag0(mass,vertex_idx)
+RooDataSet::sig_tth_ALT_mass_m125_TTHHadronicTag0(mass,vertex_idx)
+RooDataSet::sig_tth_ALT_mass_m130_TTHHadronicTag0(mass,vertex_idx)
+RooDataSet::sig_tth_ALT_mass_m120_TTHHadronicTag1(mass,vertex_idx)
+RooDataSet::sig_tth_ALT_mass_m125_TTHHadronicTag1(mass,vertex_idx)
+RooDataSet::sig_tth_ALT_mass_m130_TTHHadronicTag1(mass,vertex_idx)
+
+[INFO] Writing to file...
+[INFO] Done.
+==============================
+Make Signal Plots
+-->Create Validation plots
+==============================
+ ./bin/makeParametricSignalModelPlots -i outdir_jhu_0m_tuneV1/CMS-HGG_sigfit_jhu_0m_tuneV1.root  -o outdir_jhu_0m_tuneV1 -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1
+Making slide for tth_ALT_TTHHadronicTag0_fmc
+Making slide for tth_ALT_TTHHadronicTag1_fmc
+cat  /afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit/Signal/outdir_jhu_0m_tuneV1/sigfit/slides/Intro.tex /afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit/Signal/outdir_jhu_0m_tuneV1/sigfit/slides/slide*{ggh,vbf,tth,wh,zh}*tex  /afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit/Signal/outdir_jhu_0m_tuneV1/sigfit/slides/Outro.tex > /afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit/Signal/outdir_jhu_0m_tuneV1/sigfit/slides/fullslides.tex
+/afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit/Signal
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
+ restricted \write18 enabled.
+entering extended mode
+
+(/afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFi
+t/Signal/outdir_jhu_0m_tuneV1/sigfit/slides/fullslides.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasercs.sty)
+Document Class: beamer 2013/01/04 3.26 A class for typesetting presentations (r
+cs-revision e81e0c94bcc6)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasedecode.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex))
+(/cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/rivet/2.5.2/share/Rivet/texmf/te
+x/latex/xcolor/xcolor.sty
+(/cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/rivet/2.5.2/share/Rivet/texmf/te
+x/latex/config/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex))) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+
+Package hyperref Message: Stopped early.
+
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasefont.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/translator.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/translator-language-
+mappings.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetitle.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasesection.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframe.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenotes.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault
+.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/font/beamerfontthemedefa
+ult.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemede
+fault.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemede
+fault.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemede
+fault.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeMadrid.
+sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemewh
+ale.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemeor
+chid.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemero
+unded.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemein
+folines.sty)) (./fullslides.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+ABD: EveryShipout initializing macros
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./fullslides.out) (./fullslides.out)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
+ic-dictionary/translator-basic-dictionary-English.dict)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bib
+liography-dictionary/translator-bibliography-dictionary-English.dict)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-env
+ironment-dictionary/translator-environment-dictionary-English.dict)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-mon
+ths-dictionary/translator-months-dictionary-English.dict)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-num
+bers-dictionary/translator-numbers-dictionary-English.dict)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-the
+orem-dictionary/translator-theorem-dictionary-English.dict) (./fullslides.nav)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
+(Font)              size <5> substituted on input line 93.
+
+[1{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag0_fmc_fits.pdf, id=78, 569.1
+2625pt x 546.04pt>
+<use outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag0_fmc_fits.pdf>
+<outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag0_fmc_interp.pdf, id=79, 569
+.12625pt x 546.04pt>
+<use outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag0_fmc_interp.pdf>
+! Missing $ inserted.
+<inserted text> 
+                $
+l.136 \end{frame}
+                 
+! Extra }, or forgotten $.
+\insertframetitle ...frametitle continuation}\fi }
+                                                  
+l.136 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.136 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.136 \end{frame}
+                 
+[3 <./outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag0_fmc_fits.pdf, page is
+ rotated 90 degrees> <./outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag0_fmc
+_interp.pdf, page is rotated 90 degrees>]
+<outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag1_fmc_fits.pdf, id=193, 569.
+12625pt x 546.04pt>
+<use outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag1_fmc_fits.pdf>
+<outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag1_fmc_interp.pdf, id=194, 56
+9.12625pt x 546.04pt>
+<use outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag1_fmc_interp.pdf>
+! Missing $ inserted.
+<inserted text> 
+                $
+l.170 \end{frame}
+                 
+! Extra }, or forgotten $.
+\insertframetitle ...frametitle continuation}\fi }
+                                                  
+l.170 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.170 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.170 \end{frame}
+                 
+[4 <./outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag1_fmc_fits.pdf, page is
+ rotated 90 degrees> <./outdir_jhu_0m_tuneV1/sigfit/tth_ALT_TTHHadronicTag1_fmc
+_interp.pdf, page is rotated 90 degrees>] (./fullslides.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+ )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmss8.pfb>
+Output written on fullslides.pdf (4 pages, 128194 bytes).
+Transcript written on fullslides.log.
+/afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit
+signal output at Signal/outdir_jhu_0m_tuneV1
+background output at Background/outdir_jhu_0m_tuneV1
+combine output at Plots/FinalResuls/outdir_jhu_0m_tuneV1

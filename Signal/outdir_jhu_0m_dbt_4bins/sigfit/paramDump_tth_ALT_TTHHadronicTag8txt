@@ -1,0 +1,21 @@
+tth_ALT_TTHHadronicTag8__rv_13TeV --> & mh 120 & mh 125 & mh 130 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV dm0 & -0.307257 & -0.323429 & -0.307257 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV sigma0 & 1.6869 & 1.60657 & 1.68688 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV dm1 & -2.39225 & -2.51815 & -2.39225 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV sigma1 & 5.06348 & 4.83213 & 4.59053 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeVcoeff0 & 0.862455 & 0.907773 & 0.862387 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV dm2 & 0.772425 & 0.812879 & 0.772235 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV sigma2 & 18.7234 & 19.7087 & 20 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeVcoeff1 & 0.884287 & 0.895937 & 0.940721 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV dm3 & -2.16752 & -2.2816 & -2.16752 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeV sigma3 & 16.7001 & 17.3132 & 16.5093 \ 
+tth_ALT_TTHHadronicTag8__rv_13TeVcoeff2 & 0.0312816 & 0.031914 & 0.0309615 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV --> & mh 120 & mh 125 & mh 130 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV dm0 & -0.245224 & -0.25813 & -0.245224 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV sigma0 & 0.400234 & 0.4 & 0.400234 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV dm1 & 0.0915025 & 0.0871453 & 0.082788 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV sigma1 & 0.420206 & 0.400196 & 0.420205 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeVcoeff0 & 0.98997 & 0.99 & 0.98997 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV dm2 & -0.988827 & -1.04087 & -0.988827 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeV sigma2 & 0.400895 & 0.400003 & 0.416448 \ 
+tth_ALT_TTHHadronicTag8__wv_13TeVcoeff1 & 0.0101248 & 0.01 & 0.01 \ 

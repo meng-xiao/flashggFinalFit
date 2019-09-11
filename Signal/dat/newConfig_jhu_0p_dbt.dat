@@ -1,0 +1,7 @@
+#proc cat nGausRV nGausWV
+tth TTHHadronicTag0 4 1
+tth TTHHadronicTag1 2 3
+tth TTHHadronicTag2 4 1
+tth TTHHadronicTag3 4 3
+tth TTHHadronicTag4 4 3
+tth TTHHadronicTag5 4 1

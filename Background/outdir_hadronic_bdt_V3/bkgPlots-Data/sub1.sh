@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /afs/cern.ch/work/x/xiaomeng/test/myWorkingArea/CMSSW_8_1_0/src/flashggFinalFit/Background
+eval `scramv1 runtime -sh`
+$CMSSW_BASE/src/flashggFinalFit/Background/bin/makeBkgPlots -f TTHHadronicTag0,TTHHadronicTag1 -b CMS-HGG_multipdf_hadronic_bdt_V3.root -o outdir_hadronic_bdt_V3/bkgPlots-Data/BkgPlots_cat1.root -d outdir_hadronic_bdt_V3/bkgPlots-Data -c 1 -l "TTHHadronicTag1" --sqrts 13  --intLumi 41.500000  --doBands --massStep 1.000 --nllTolerance 0.050 -L 100 -H 180 --higgsResolution 1.0 --isMultiPdf --useBinnedData

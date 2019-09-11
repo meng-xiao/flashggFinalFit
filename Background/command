@@ -1,0 +1,16 @@
+./runBackgroundScripts.sh -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext include_bdt --seed 0 --intLumi 41.5 --isData -i $eosdir/lxplusBackUp/ttH/data_bdt.root #--batch LSF 
+
+$CMSSW_BASE/src/flashggFinalFit/Background/bin/makeBkgPlots -f TTHHadronicTag -b CMS-HGG_multipdf_HggAnalysis_ICHEP2016_example_2.root -o outdir_HggAnalysis_ICHEP2016_example_2/bkgPlots-Data/BkgPlots_cat0.root -d outdir_HggAnalysis_ICHEP2016_example_2/bkgPlots-Data -c 0 -l "TTHHadronicTag" --sqrts 13  --intLumi 40.500000  --doBands --massStep 1.000 --nllTolerance 0.050 -L 100 -H 180 --higgsResolution 1.0 --isMultiPdf --useBinnedData
+
+./runBackgroundScripts.sh -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5,TTHHadronicTag6,TTHHadronicTag7,TTHHadronicTag8,TTHHadronicTag9,TTHHadronicTag10,TTHHadronicTag11 --ext include_bdt_4bins --seed 0 --intLumi 41.5 --isData -i $eosdir/lxplusBackUp/ttH/data_bdt.root 
+
+
+### New version
+./runBackgroundScripts.sh -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5,TTHHadronicTag6,TTHHadronicTag7 --ext hadronic_bdt --seed 0 --intLumi 41.5 --isData -i /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root
+
+./runBackgroundScripts.sh -f TTHLeptonicTag0,TTHLeptonicTag1,TTHLeptonicTag2,TTHLeptonicTag3,TTHLeptonicTag4,TTHLeptonicTag5,TTHLeptonicTag6,TTHLeptonicTag7 --ext leptonic_bdt --seed 0 --intLumi 41.5 --isData -i /eos/home-x/xiaomeng/ttH/data_all_lep_bdt.root
+
+####New version cat 1
+./runBackgroundScripts.sh -f TTHHadronicTag0,TTHHadronicTag1 --ext hadronic_bdt_V3 --seed 0 --intLumi 41.5 --isData -i /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root
+
+./runBackgroundScripts.sh -f TTHLeptonicTag0,TTHLeptonicTag1 --ext leptonic_bdt_V3 --seed 0 --intLumi 41.5 --isData -i /eos/home-x/xiaomeng/ttH/data_all_lep_bdt.root

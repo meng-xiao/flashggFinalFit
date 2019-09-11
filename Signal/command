@@ -1,0 +1,30 @@
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/ttHiggs0PMToGG_M125_13TeV_JHUGenV7011_pythia8.root,$eosdir/lxplusBackUp/ttH/output_GluGluHToGG_M125_13TeV_powheg_pythia8.root,$eosdir/lxplusBackUp/ttH/output_VBFHToGG_M125_13TeV_powheg_pythia8.root,$eosdir/lxplusBackUp/ttH/output_WZHToGG_M125_13TeV_amcatnloFXFX_madspin_pythia8.root,$eosdir/lxplusBackUp/ttH/output_THQ_ctcvcp_HToGG_M125_13TeV-madgraph-pythia8_TuneCP5.root,$eosdir/lxplusBackUp/ttH/output_THW_ctcvcp_HToGG_M125_13TeV-madgraph-pythia8_TuneCP5.root -p tth,ggh,vbf,wzh -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2 --ext test_example  
+
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/ttHiggs0PMToGG_M125_13TeV_JHUGenV7011_pythia8.root -p tth -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2 --ext test_example --intLumi 41.5 --calcPhoSystOnly 0 
+
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/output_TTHToGG_M125_13TeV_amcatnloFXFX_madspin_pythia8.root -p tth -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2 --ext test_madgraph --intLumi 41.5 --calcPhoSystOnly 0 
+
+### now I;m running 0p
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/output_TTHToGG_M125_13TeV_amcatnloFXFX_madspin_pythia8_bdt.root -p tth -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext madgraph_dbt --intLumi 41.5 --calcPhoSystOnly 0 
+
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/ttHiggs0PMToGG_M125_13TeV_JHUGenV7011_pythia8_bdt.root -p tth -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext jhu_0p_dbt --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/ttHiggs0MToGG_M125_13TeV_JHUGenV7011_pythia8_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext jhu_0m_dbt --intLumi 41.5 --calcPhoSystOnly 0 
+
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/ttHiggs0PMToGG_M125_13TeV_JHUGenV7011_pythia8_bdt.root -p tth -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5,TTHHadronicTag6,TTHHadronicTag7,TTHHadronicTag8,TTHHadronicTag9,TTHHadronicTag10,TTHHadronicTag11 --ext jhu_0p_dbt_4bins --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i $eosdir/lxplusBackUp/ttH/ttHiggs0MToGG_M125_13TeV_JHUGenV7011_pythia8_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5,TTHHadronicTag6,TTHHadronicTag7,TTHHadronicTag8,TTHHadronicTag9,TTHHadronicTag10,TTHHadronicTag11 --ext jhu_0m_dbt_4bins --intLumi 41.5 --calcPhoSystOnly 0 
+
+
+
+
+
+
+############New Version
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5,TTHHadronicTag6,TTHHadronicTag7 --ext jhu_0m_dbt_V2 --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0PM_had_2018_bdt.root -p tth -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5,TTHHadronicTag6,TTHHadronicTag7 --ext jhu_0p_dbt_V2 --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_lep_2018_bdt.root -p tth_ALT -f TTHLeptonicTag0,TTHLeptonicTag1,TTHLeptonicTag2,TTHLeptonicTag3,TTHLeptonicTag4,TTHLeptonicTag5,TTHLeptonicTag6,TTHLeptonicTag7 --ext jhu_0m_lep_dbt_V2 --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0PM_lep_2018_bdt.root -p tth -f TTHLeptonicTag0,TTHLeptonicTag1,TTHLeptonicTag2,TTHLeptonicTag3,TTHLeptonicTag4,TTHLeptonicTag5,TTHLeptonicTag6,TTHLeptonicTag7 --ext jhu_0p_dbt_lep_V2 --intLumi 41.5 --calcPhoSystOnly 0 
+###Single cat
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1 --ext jhu_0m_dbt_V3 --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0PM_had_2018_bdt.root -p tth -f TTHHadronicTag0,TTHHadronicTag1 --ext jhu_0p_dbt_V3 --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_lep_2018_bdt.root -p tth_ALT -f TTHLeptonicTag0,TTHLeptonicTag1 --ext jhu_0m_lep_dbt_V3 --intLumi 41.5 --calcPhoSystOnly 0 
+./runSignalScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0PM_lep_2018_bdt.root -p tth -f TTHLeptonicTag0,TTHLeptonicTag1 --ext jhu_0p_dbt_lep_V3 --intLumi 41.5 --calcPhoSystOnly 0 

@@ -1,0 +1,275 @@
+   ------------------------------------------------------------
+  | Welcome to ROOT 6.06/09                http://root.cern.ch |
+  |                               (c) 1995-2016, The ROOT Team |
+  | Built for linuxx8664gcc                                    |
+  | From tag , 1 September 2016                                |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q' |
+   ------------------------------------------------------------
+
+
+Processing print.c...
+(int) 1
+(int) 1
+
+RooWorkspace(w) w contents
+
+variables
+---------
+(BR_hgg,BR_hgg_In,CMS_channel,CMS_hgg_PS,CMS_hgg_PS_In,CMS_hgg_UE,CMS_hgg_UE_In,CMS_hgg_mass,CMS_hgg_nuisance_Absolute_13TeVscale,CMS_hgg_nuisance_FNUFEB_scale,CMS_hgg_nuisance_FNUFEB_scale_In,CMS_hgg_nuisance_FNUFEE_scale,CMS_hgg_nuisance_FNUFEE_scale_In,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale_In,CMS_hgg_nuisance_HighR9EB_13TeVscale,CMS_hgg_nuisance_HighR9EB_13TeVscale_In,CMS_hgg_nuisance_HighR9EB_13TeVsmear,CMS_hgg_nuisance_HighR9EB_13TeVsmear_In,CMS_hgg_nuisance_HighR9EE_13TeVscale,CMS_hgg_nuisance_HighR9EE_13TeVscale_In,CMS_hgg_nuisance_HighR9EE_13TeVsmear,CMS_hgg_nuisance_HighR9EE_13TeVsmear_In,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_LowR9EB_13TeVscale,CMS_hgg_nuisance_LowR9EB_13TeVscale_In,CMS_hgg_nuisance_LowR9EB_13TeVsmear,CMS_hgg_nuisance_LowR9EB_13TeVsmear_In,CMS_hgg_nuisance_LowR9EE_13TeVscale,CMS_hgg_nuisance_LowR9EE_13TeVscale_In,CMS_hgg_nuisance_LowR9EE_13TeVsmear,CMS_hgg_nuisance_LowR9EE_13TeVsmear_In,CMS_hgg_nuisance_MaterialCentral_scale,CMS_hgg_nuisance_MaterialCentral_scale_In,CMS_hgg_nuisance_MaterialForward_scale,CMS_hgg_nuisance_MaterialForward_scale_In,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_NonLinearity_13TeVscale_In,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_In,CMS_hgg_nuisance_deltafracright,CMS_hgg_nuisance_deltafracright_In,MH,QCDscale_ttH,QCDscale_ttH_In,env_pdf_0_13TeV_bern1_p0,env_pdf_0_13TeV_bern2_p0,env_pdf_0_13TeV_bern2_p1,env_pdf_0_13TeV_exp1_p1,env_pdf_0_13TeV_lau1_l1,env_pdf_0_13TeV_pow1_p1,env_pdf_1_13TeV_bern1_p0,env_pdf_1_13TeV_bern2_p0,env_pdf_1_13TeV_bern2_p1,env_pdf_1_13TeV_exp1_p1,env_pdf_1_13TeV_lau1_l1,env_pdf_1_13TeV_pow1_p1,env_pdf_2_13TeV_bern1_p0,env_pdf_2_13TeV_exp1_p1,env_pdf_2_13TeV_lau1_l1,env_pdf_2_13TeV_pow1_p1,lumi_13TeV,lumi_13TeV_In,mask_TTHHadronicTag0_13TeV,mask_TTHHadronicTag1_13TeV,mask_TTHHadronicTag2_13TeV,n_exp_binTTHHadronicTag1_13TeV_proc_bkg_mass,n_exp_binTTHHadronicTag2_13TeV_proc_bkg_mass,pdf_Higgs_ttH,pdf_Higgs_ttH_In,pdfindex_TTHHadronicTag0_13TeV,pdfindex_TTHHadronicTag1_13TeV,pdfindex_TTHHadronicTag2_13TeV,r,shapeBkg_bkg_mass_TTHHadronicTag0_13TeV__norm,shapeBkg_bkg_mass_TTHHadronicTag1_13TeV__norm,shapeBkg_bkg_mass_TTHHadronicTag2_13TeV__norm)
+
+p.d.f.s
+-------
+SimpleGaussianConstraint::BR_hgg_Pdf[ x=BR_hgg mean=BR_hgg_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_PS_Pdf[ x=CMS_hgg_PS mean=CMS_hgg_PS_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_UE_Pdf[ x=CMS_hgg_UE mean=CMS_hgg_UE_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_FNUFEB_scale_Pdf[ x=CMS_hgg_nuisance_FNUFEB_scale mean=CMS_hgg_nuisance_FNUFEB_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_FNUFEE_scale_Pdf[ x=CMS_hgg_nuisance_FNUFEE_scale mean=CMS_hgg_nuisance_FNUFEE_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_Geant4_13TeVscale_Pdf[ x=CMS_hgg_nuisance_Geant4_13TeVscale mean=CMS_hgg_nuisance_Geant4_13TeVscale_In sigma=0.0005 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf[ x=CMS_hgg_nuisance_HighR9EB_13TeVscale mean=CMS_hgg_nuisance_HighR9EB_13TeVscale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf[ x=CMS_hgg_nuisance_HighR9EB_13TeVsmear mean=CMS_hgg_nuisance_HighR9EB_13TeVsmear_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf[ x=CMS_hgg_nuisance_HighR9EE_13TeVscale mean=CMS_hgg_nuisance_HighR9EE_13TeVscale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf[ x=CMS_hgg_nuisance_HighR9EE_13TeVsmear mean=CMS_hgg_nuisance_HighR9EE_13TeVsmear_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf[ x=CMS_hgg_nuisance_LowR9EB_13TeVscale mean=CMS_hgg_nuisance_LowR9EB_13TeVscale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf[ x=CMS_hgg_nuisance_LowR9EB_13TeVsmear mean=CMS_hgg_nuisance_LowR9EB_13TeVsmear_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf[ x=CMS_hgg_nuisance_LowR9EE_13TeVscale mean=CMS_hgg_nuisance_LowR9EE_13TeVscale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf[ x=CMS_hgg_nuisance_LowR9EE_13TeVsmear mean=CMS_hgg_nuisance_LowR9EE_13TeVsmear_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_MaterialCentral_scale_Pdf[ x=CMS_hgg_nuisance_MaterialCentral_scale mean=CMS_hgg_nuisance_MaterialCentral_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_MaterialForward_scale_Pdf[ x=CMS_hgg_nuisance_MaterialForward_scale mean=CMS_hgg_nuisance_MaterialForward_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf[ x=CMS_hgg_nuisance_NonLinearity_13TeVscale mean=CMS_hgg_nuisance_NonLinearity_13TeVscale_In sigma=0.001 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf[ x=CMS_hgg_nuisance_ShowerShapeHighR9EB_scale mean=CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf[ x=CMS_hgg_nuisance_ShowerShapeHighR9EE_scale mean=CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf[ x=CMS_hgg_nuisance_ShowerShapeLowR9EB_scale mean=CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf[ x=CMS_hgg_nuisance_ShowerShapeLowR9EE_scale mean=CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_In sigma=1 ] = 1
+SimpleGaussianConstraint::CMS_hgg_nuisance_deltafracright_Pdf[ x=CMS_hgg_nuisance_deltafracright mean=CMS_hgg_nuisance_deltafracright_In sigma=0.02 ] = 1
+SimpleGaussianConstraint::QCDscale_ttH_Pdf[ x=QCDscale_ttH mean=QCDscale_ttH_In sigma=1 ] = 1
+RooBernsteinFast<1>::env_pdf_0_13TeV_bern1[ x=CMS_hgg_mass coefList=(env_pdf_0_13TeV_bern1_p0_sq) ] = 0.425039
+RooBernsteinFast<2>::env_pdf_0_13TeV_bern2[ x=CMS_hgg_mass coefList=(env_pdf_0_13TeV_bern2_p0_sq,env_pdf_0_13TeV_bern2_p1_sq) ] = 0.214842
+RooAddPdf::env_pdf_0_13TeV_exp1[ env_pdf_0_13TeV_exp1_recursive_fraction_env_pdf_0_13TeV_exp1_e1 * env_pdf_0_13TeV_exp1_e1 ] = 0.0125171
+RooExponential::env_pdf_0_13TeV_exp1_e1[ x=CMS_hgg_mass c=env_pdf_0_13TeV_exp1_p1 ] = 0.0125171
+RooAddPdf::env_pdf_0_13TeV_lau1[ env_pdf_0_13TeV_lau1_l1 * env_pdf_0_13TeV_lau1_pow0 + env_pdf_0_13TeV_lau1_recursive_fraction_env_pdf_0_13TeV_lau1_powl1 * env_pdf_0_13TeV_lau1_powl1 ] = 1.97228e-09
+RooPower::env_pdf_0_13TeV_lau1_pow0[ x=CMS_hgg_mass c=-4 ] = 1.97229e-09
+RooPower::env_pdf_0_13TeV_lau1_powl1[ x=CMS_hgg_mass c=-5 ] = 1.31436e-11
+RooAddPdf::env_pdf_0_13TeV_pow1[ env_pdf_0_13TeV_pow1_recursive_fraction_env_pdf_0_13TeV_pow1_e1 * env_pdf_0_13TeV_pow1_e1 ] = 4.18623e-09
+RooPower::env_pdf_0_13TeV_pow1_e1[ x=CMS_hgg_mass c=env_pdf_0_13TeV_pow1_p1 ] = 4.18623e-09
+RooBernsteinFast<1>::env_pdf_1_13TeV_bern1[ x=CMS_hgg_mass coefList=(env_pdf_1_13TeV_bern1_p0_sq) ] = 0.384929
+RooBernsteinFast<2>::env_pdf_1_13TeV_bern2[ x=CMS_hgg_mass coefList=(env_pdf_1_13TeV_bern2_p0_sq,env_pdf_1_13TeV_bern2_p1_sq) ] = 0.194297
+RooAddPdf::env_pdf_1_13TeV_exp1[ env_pdf_1_13TeV_exp1_recursive_fraction_env_pdf_1_13TeV_exp1_e1 * env_pdf_1_13TeV_exp1_e1 ] = 0.00669119
+RooExponential::env_pdf_1_13TeV_exp1_e1[ x=CMS_hgg_mass c=env_pdf_1_13TeV_exp1_p1 ] = 0.00669119
+RooAddPdf::env_pdf_1_13TeV_lau1[ env_pdf_1_13TeV_lau1_l1 * env_pdf_1_13TeV_lau1_pow0 + env_pdf_1_13TeV_lau1_recursive_fraction_env_pdf_1_13TeV_lau1_powl1 * env_pdf_1_13TeV_lau1_powl1 ] = 1.21511e-09
+RooPower::env_pdf_1_13TeV_lau1_pow0[ x=CMS_hgg_mass c=-4 ] = 1.97229e-09
+RooPower::env_pdf_1_13TeV_lau1_powl1[ x=CMS_hgg_mass c=-5 ] = 1.31436e-11
+RooAddPdf::env_pdf_1_13TeV_pow1[ env_pdf_1_13TeV_pow1_recursive_fraction_env_pdf_1_13TeV_pow1_e1 * env_pdf_1_13TeV_pow1_e1 ] = 3.06119e-10
+RooPower::env_pdf_1_13TeV_pow1_e1[ x=CMS_hgg_mass c=env_pdf_1_13TeV_pow1_p1 ] = 3.06119e-10
+RooBernsteinFast<1>::env_pdf_2_13TeV_bern1[ x=CMS_hgg_mass coefList=(env_pdf_2_13TeV_bern1_p0_sq) ] = 0.53054
+RooAddPdf::env_pdf_2_13TeV_exp1[ env_pdf_2_13TeV_exp1_recursive_fraction_env_pdf_2_13TeV_exp1_e1 * env_pdf_2_13TeV_exp1_e1 ] = 0.149339
+RooExponential::env_pdf_2_13TeV_exp1_e1[ x=CMS_hgg_mass c=env_pdf_2_13TeV_exp1_p1 ] = 0.149339
+RooAddPdf::env_pdf_2_13TeV_lau1[ env_pdf_2_13TeV_lau1_l1 * env_pdf_2_13TeV_lau1_pow0 + env_pdf_2_13TeV_lau1_recursive_fraction_env_pdf_2_13TeV_lau1_powl1 * env_pdf_2_13TeV_lau1_powl1 ] = 1.97229e-09
+RooPower::env_pdf_2_13TeV_lau1_pow0[ x=CMS_hgg_mass c=-4 ] = 1.97229e-09
+RooPower::env_pdf_2_13TeV_lau1_powl1[ x=CMS_hgg_mass c=-5 ] = 1.31436e-11
+RooAddPdf::env_pdf_2_13TeV_pow1[ env_pdf_2_13TeV_pow1_recursive_fraction_env_pdf_2_13TeV_pow1_e1 * env_pdf_2_13TeV_pow1_e1 ] = 0.000510516
+RooPower::env_pdf_2_13TeV_pow1_e1[ x=CMS_hgg_mass c=env_pdf_2_13TeV_pow1_p1 ] = 0.000510516
+RooGaussian::gaus_g0_tth_TTHHadronicTag0_rv_13TeV[ x=CMS_hgg_mass mean=mean_g0_tth_TTHHadronicTag0_rv_13TeV sigma=sig_g0_tth_TTHHadronicTag0_rv_13TeV ] = 4.7759e-28
+RooGaussian::gaus_g0_tth_TTHHadronicTag0_wv_13TeV[ x=CMS_hgg_mass mean=mean_g0_tth_TTHHadronicTag0_wv_13TeV sigma=sig_g0_tth_TTHHadronicTag0_wv_13TeV ] = 0
+RooGaussian::gaus_g0_tth_TTHHadronicTag1_rv_13TeV[ x=CMS_hgg_mass mean=mean_g0_tth_TTHHadronicTag1_rv_13TeV sigma=sig_g0_tth_TTHHadronicTag1_rv_13TeV ] = 1.8847e-26
+RooGaussian::gaus_g0_tth_TTHHadronicTag1_wv_13TeV[ x=CMS_hgg_mass mean=mean_g0_tth_TTHHadronicTag1_wv_13TeV sigma=sig_g0_tth_TTHHadronicTag1_wv_13TeV ] = 1.28982e-103
+RooGaussian::gaus_g0_tth_TTHHadronicTag2_rv_13TeV[ x=CMS_hgg_mass mean=mean_g0_tth_TTHHadronicTag2_rv_13TeV sigma=sig_g0_tth_TTHHadronicTag2_rv_13TeV ] = 1.85188e-34
+RooGaussian::gaus_g0_tth_TTHHadronicTag2_wv_13TeV[ x=CMS_hgg_mass mean=mean_g0_tth_TTHHadronicTag2_wv_13TeV sigma=sig_g0_tth_TTHHadronicTag2_wv_13TeV ] = 0
+RooGaussian::gaus_g1_tth_TTHHadronicTag0_rv_13TeV[ x=CMS_hgg_mass mean=mean_g1_tth_TTHHadronicTag0_rv_13TeV sigma=sig_g1_tth_TTHHadronicTag0_rv_13TeV ] = 8.13692e-08
+RooGaussian::gaus_g1_tth_TTHHadronicTag0_wv_13TeV[ x=CMS_hgg_mass mean=mean_g1_tth_TTHHadronicTag0_wv_13TeV sigma=sig_g1_tth_TTHHadronicTag0_wv_13TeV ] = 1.13014e-78
+RooGaussian::gaus_g1_tth_TTHHadronicTag1_rv_13TeV[ x=CMS_hgg_mass mean=mean_g1_tth_TTHHadronicTag1_rv_13TeV sigma=sig_g1_tth_TTHHadronicTag1_rv_13TeV ] = 0.125374
+RooGaussian::gaus_g1_tth_TTHHadronicTag1_wv_13TeV[ x=CMS_hgg_mass mean=mean_g1_tth_TTHHadronicTag1_wv_13TeV sigma=sig_g1_tth_TTHHadronicTag1_wv_13TeV ] = 0.519474
+RooGaussian::gaus_g1_tth_TTHHadronicTag2_rv_13TeV[ x=CMS_hgg_mass mean=mean_g1_tth_TTHHadronicTag2_rv_13TeV sigma=sig_g1_tth_TTHHadronicTag2_rv_13TeV ] = 6.30776e-08
+RooGaussian::gaus_g2_tth_TTHHadronicTag0_rv_13TeV[ x=CMS_hgg_mass mean=mean_g2_tth_TTHHadronicTag0_rv_13TeV sigma=sig_g2_tth_TTHHadronicTag0_rv_13TeV ] = 4.41434e-17
+RooGaussian::gaus_g2_tth_TTHHadronicTag0_wv_13TeV[ x=CMS_hgg_mass mean=mean_g2_tth_TTHHadronicTag0_wv_13TeV sigma=sig_g2_tth_TTHHadronicTag0_wv_13TeV ] = 9.28529e-07
+RooGaussian::gaus_g2_tth_TTHHadronicTag2_rv_13TeV[ x=CMS_hgg_mass mean=mean_g2_tth_TTHHadronicTag2_rv_13TeV sigma=sig_g2_tth_TTHHadronicTag2_rv_13TeV ] = 5.14316e-15
+RooGaussian::gaus_g3_tth_TTHHadronicTag0_rv_13TeV[ x=CMS_hgg_mass mean=mean_g3_tth_TTHHadronicTag0_rv_13TeV sigma=sig_g3_tth_TTHHadronicTag0_rv_13TeV ] = 0.518704
+RooGaussian::gaus_g3_tth_TTHHadronicTag2_rv_13TeV[ x=CMS_hgg_mass mean=mean_g3_tth_TTHHadronicTag2_rv_13TeV sigma=sig_g3_tth_TTHHadronicTag2_rv_13TeV ] = 0.447484
+RooAddPdf::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV[ frac_g0_tth_TTHHadronicTag0_rv_13TeV * gaus_g0_tth_TTHHadronicTag0_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag0_rv_13TeV * gaus_g1_tth_TTHHadronicTag0_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_TTHHadronicTag0_rv_13TeV * gaus_g2_tth_TTHHadronicTag0_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_TTHHadronicTag0_rv_13TeV * gaus_g3_tth_TTHHadronicTag0_rv_13TeV ] = 0.0143281
+RooAddPdf::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_wv_13TeV[ frac_g0_tth_TTHHadronicTag0_wv_13TeV * gaus_g0_tth_TTHHadronicTag0_wv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag0_wv_13TeV * gaus_g1_tth_TTHHadronicTag0_wv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g2_tth_TTHHadronicTag0_wv_13TeV * gaus_g2_tth_TTHHadronicTag0_wv_13TeV ] = 4.89576e-07
+RooAddPdf::hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rv_13TeV[ frac_g0_tth_TTHHadronicTag1_rv_13TeV * gaus_g0_tth_TTHHadronicTag1_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag1_rv_13TeV * gaus_g1_tth_TTHHadronicTag1_rv_13TeV ] = 0.00744175
+RooAddPdf::hggpdfsmrel_13TeV_tth_TTHHadronicTag1_wv_13TeV[ frac_g0_tth_TTHHadronicTag1_wv_13TeV * gaus_g0_tth_TTHHadronicTag1_wv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag1_wv_13TeV * gaus_g1_tth_TTHHadronicTag1_wv_13TeV ] = 0.0313661
+RooAddPdf::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV[ frac_g0_tth_TTHHadronicTag2_rv_13TeV * gaus_g0_tth_TTHHadronicTag2_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag2_rv_13TeV * gaus_g1_tth_TTHHadronicTag2_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV_recursive_fraction_gaus_g2_tth_TTHHadronicTag2_rv_13TeV * gaus_g2_tth_TTHHadronicTag2_rv_13TeV + hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV_recursive_fraction_gaus_g3_tth_TTHHadronicTag2_rv_13TeV * gaus_g3_tth_TTHHadronicTag2_rv_13TeV ] = 0.00246823
+RooAddPdf::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_wv_13TeV[ hggpdfsmrel_13TeV_tth_TTHHadronicTag2_wv_13TeV_recursive_fraction_gaus_g0_tth_TTHHadronicTag2_wv_13TeV * gaus_g0_tth_TTHHadronicTag2_wv_13TeV ] = 0
+SimpleGaussianConstraint::lumi_13TeV_Pdf[ x=lumi_13TeV mean=lumi_13TeV_In sigma=1 ] = 1
+RooSimultaneousOpt::model_b[ indexCat=CMS_channel TTHHadronicTag0_13TeV=pdf_binTTHHadronicTag0_13TeV_bonly TTHHadronicTag1_13TeV=pdf_binTTHHadronicTag1_13TeV_bonly TTHHadronicTag2_13TeV=pdf_binTTHHadronicTag2_13TeV_bonly extraConstraints=() channelMasks=(mask_TTHHadronicTag0_13TeV,mask_TTHHadronicTag1_13TeV,mask_TTHHadronicTag2_13TeV) ] = 0.0159653
+RooSimultaneousOpt::model_s[ indexCat=CMS_channel TTHHadronicTag0_13TeV=pdf_binTTHHadronicTag0_13TeV TTHHadronicTag1_13TeV=pdf_binTTHHadronicTag1_13TeV TTHHadronicTag2_13TeV=pdf_binTTHHadronicTag2_13TeV extraConstraints=() channelMasks=(mask_TTHHadronicTag0_13TeV,mask_TTHHadronicTag1_13TeV,mask_TTHHadronicTag2_13TeV) ] = 0.015916
+RooProdPdf::nuisancePdf[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf ] = 1
+SimpleGaussianConstraint::pdf_Higgs_ttH_Pdf[ x=pdf_Higgs_ttH mean=pdf_Higgs_ttH_In sigma=1 ] = 1
+RooProdPdf::pdf_binTTHHadronicTag0_13TeV[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf * pdf_binTTHHadronicTag0_13TeV_nuis * pdfbins_binTTHHadronicTag0_13TeV ] = 2.42016e-05
+RooProdPdf::pdf_binTTHHadronicTag0_13TeV_bonly[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf * pdf_binTTHHadronicTag0_13TeV_bonly_nuis * pdfbins_binTTHHadronicTag0_13TeV ] = 4.18623e-09
+RooAddPdf::pdf_binTTHHadronicTag0_13TeV_bonly_nuis[ n_exp_final_binTTHHadronicTag0_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag0_13TeV ] = 4.18623e-09
+RooAddPdf::pdf_binTTHHadronicTag0_13TeV_nuis[ n_exp_final_binTTHHadronicTag0_13TeV_proc_ttH_hgg * shapeSig_ttH_hgg_TTHHadronicTag0_13TeV + n_exp_final_binTTHHadronicTag0_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag0_13TeV ] = 2.42016e-05
+RooProdPdf::pdf_binTTHHadronicTag1_13TeV[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf * pdf_binTTHHadronicTag1_13TeV_nuis * pdfbins_binTTHHadronicTag1_13TeV ] = 3.7661e-05
+RooProdPdf::pdf_binTTHHadronicTag1_13TeV_bonly[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf * pdf_binTTHHadronicTag1_13TeV_bonly_nuis * pdfbins_binTTHHadronicTag1_13TeV ] = 1.21511e-09
+RooAddPdf::pdf_binTTHHadronicTag1_13TeV_bonly_nuis[ n_exp_final_binTTHHadronicTag1_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag1_13TeV ] = 1.21511e-09
+RooAddPdf::pdf_binTTHHadronicTag1_13TeV_nuis[ n_exp_final_binTTHHadronicTag1_13TeV_proc_ttH_hgg * shapeSig_ttH_hgg_TTHHadronicTag1_13TeV + n_exp_final_binTTHHadronicTag1_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag1_13TeV ] = 3.7661e-05
+RooProdPdf::pdf_binTTHHadronicTag2_13TeV[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf * pdf_binTTHHadronicTag2_13TeV_nuis * pdfbins_binTTHHadronicTag2_13TeV ] = 0.515077
+RooProdPdf::pdf_binTTHHadronicTag2_13TeV_bonly[ CMS_hgg_nuisance_deltafracright_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVscale_Pdf * CMS_hgg_nuisance_MaterialCentral_scale_Pdf * CMS_hgg_nuisance_MaterialForward_scale_Pdf * CMS_hgg_nuisance_FNUFEE_scale_Pdf * CMS_hgg_nuisance_FNUFEB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_Pdf * CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_Pdf * CMS_hgg_nuisance_NonLinearity_13TeVscale_Pdf * CMS_hgg_nuisance_Geant4_13TeVscale_Pdf * CMS_hgg_nuisance_HighR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EE_13TeVsmear_Pdf * CMS_hgg_nuisance_HighR9EB_13TeVsmear_Pdf * CMS_hgg_nuisance_LowR9EB_13TeVsmear_Pdf * BR_hgg_Pdf * lumi_13TeV_Pdf * QCDscale_ttH_Pdf * pdf_Higgs_ttH_Pdf * CMS_hgg_UE_Pdf * CMS_hgg_PS_Pdf * pdf_binTTHHadronicTag2_13TeV_bonly_nuis * pdfbins_binTTHHadronicTag2_13TeV ] = 0.53054
+RooAddPdf::pdf_binTTHHadronicTag2_13TeV_bonly_nuis[ n_exp_final_binTTHHadronicTag2_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag2_13TeV ] = 0.53054
+RooAddPdf::pdf_binTTHHadronicTag2_13TeV_nuis[ n_exp_final_binTTHHadronicTag2_13TeV_proc_ttH_hgg * shapeSig_ttH_hgg_TTHHadronicTag2_13TeV + n_exp_final_binTTHHadronicTag2_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag2_13TeV ] = 0.515077
+RooProdPdf::pdfbins_binTTHHadronicTag0_13TeV[  ] = 1
+RooProdPdf::pdfbins_binTTHHadronicTag1_13TeV[  ] = 1
+RooProdPdf::pdfbins_binTTHHadronicTag2_13TeV[  ] = 1
+RooMultiPdf::shapeBkg_bkg_mass_TTHHadronicTag0_13TeV[ _pdfs=(env_pdf_0_13TeV_bern1,env_pdf_0_13TeV_bern2,env_pdf_0_13TeV_exp1,env_pdf_0_13TeV_pow1,env_pdf_0_13TeV_lau1) _index=pdfindex_TTHHadronicTag0_13TeV ] = 4.18623e-09
+RooMultiPdf::shapeBkg_bkg_mass_TTHHadronicTag1_13TeV[ _pdfs=(env_pdf_1_13TeV_bern1,env_pdf_1_13TeV_bern2,env_pdf_1_13TeV_exp1,env_pdf_1_13TeV_pow1,env_pdf_1_13TeV_lau1) _index=pdfindex_TTHHadronicTag1_13TeV ] = 1.21511e-09
+RooMultiPdf::shapeBkg_bkg_mass_TTHHadronicTag2_13TeV[ _pdfs=(env_pdf_2_13TeV_bern1,env_pdf_2_13TeV_exp1,env_pdf_2_13TeV_pow1,env_pdf_2_13TeV_lau1) _index=pdfindex_TTHHadronicTag2_13TeV ] = 0.53054
+RooAddPdf::shapeSig_ttH_hgg_TTHHadronicTag0_13TeV[ hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rvFrac * hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV + [%] * hggpdfsmrel_13TeV_tth_TTHHadronicTag0_wv_13TeV ] = 0.0143255
+RooAddPdf::shapeSig_ttH_hgg_TTHHadronicTag1_13TeV[ hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rvFrac * hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rv_13TeV + [%] * hggpdfsmrel_13TeV_tth_TTHHadronicTag1_wv_13TeV ] = 0.00744253
+RooAddPdf::shapeSig_ttH_hgg_TTHHadronicTag2_13TeV[ hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rvFrac * hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV + [%] * hggpdfsmrel_13TeV_tth_TTHHadronicTag2_wv_13TeV ] = 0.00246823
+
+functions
+--------
+RooSpline1D::dm_g0_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = -0.287748
+RooSpline1D::dm_g0_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = -1.51379
+RooSpline1D::dm_g0_tth_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = -0.359921
+RooSpline1D::dm_g0_tth_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = -1.22491
+RooSpline1D::dm_g0_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = -0.25266
+RooSpline1D::dm_g0_tth_TTHHadronicTag2_wv_13TeV[ xvar=MH ] = 0.25
+RooSpline1D::dm_g1_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = -2.24038
+RooSpline1D::dm_g1_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 3
+RooSpline1D::dm_g1_tth_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = -2.84116
+RooSpline1D::dm_g1_tth_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = -2.22249
+RooSpline1D::dm_g1_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = -2.56716
+RooSpline1D::dm_g2_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 2.85744
+RooSpline1D::dm_g2_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = -2.7643
+RooSpline1D::dm_g2_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = -0.832988
+RooSpline1D::dm_g3_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = -2.84414
+RooSpline1D::dm_g3_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = -2.83317
+RooFormulaVar::env_pdf_0_13TeV_bern1_p0_sq[ actualVars=(env_pdf_0_13TeV_bern1_p0) formula="@0*@0" ] = 0.0811162
+RooFormulaVar::env_pdf_0_13TeV_bern2_p0_sq[ actualVars=(env_pdf_0_13TeV_bern2_p0) formula="@0*@0" ] = 0.0208458
+RooFormulaVar::env_pdf_0_13TeV_bern2_p1_sq[ actualVars=(env_pdf_0_13TeV_bern2_p1) formula="@0*@0" ] = 0.165993
+RooRecursiveFraction::env_pdf_0_13TeV_exp1_recursive_fraction_env_pdf_0_13TeV_exp1_e1[ list=(1) ] = 1
+RooRecursiveFraction::env_pdf_0_13TeV_lau1_recursive_fraction_env_pdf_0_13TeV_lau1_powl1[ list=(1,env_pdf_0_13TeV_lau1_l1) ] = 8.68976e-06
+RooRecursiveFraction::env_pdf_0_13TeV_pow1_recursive_fraction_env_pdf_0_13TeV_pow1_e1[ list=(1) ] = 1
+RooFormulaVar::env_pdf_1_13TeV_bern1_p0_sq[ actualVars=(env_pdf_1_13TeV_bern1_p0) formula="@0*@0" ] = 0.0170129
+RooFormulaVar::env_pdf_1_13TeV_bern2_p0_sq[ actualVars=(env_pdf_1_13TeV_bern2_p0) formula="@0*@0" ] = 0.0039261
+RooFormulaVar::env_pdf_1_13TeV_bern2_p1_sq[ actualVars=(env_pdf_1_13TeV_bern2_p1) formula="@0*@0" ] = 0.13376
+RooRecursiveFraction::env_pdf_1_13TeV_exp1_recursive_fraction_env_pdf_1_13TeV_exp1_e1[ list=(1) ] = 1
+RooRecursiveFraction::env_pdf_1_13TeV_lau1_recursive_fraction_env_pdf_1_13TeV_lau1_powl1[ list=(1,env_pdf_1_13TeV_lau1_l1) ] = 0.386487
+RooRecursiveFraction::env_pdf_1_13TeV_pow1_recursive_fraction_env_pdf_1_13TeV_pow1_e1[ list=(1) ] = 1
+RooFormulaVar::env_pdf_2_13TeV_bern1_p0_sq[ actualVars=(env_pdf_2_13TeV_bern1_p0) formula="@0*@0" ] = 0.249724
+RooRecursiveFraction::env_pdf_2_13TeV_exp1_recursive_fraction_env_pdf_2_13TeV_exp1_e1[ list=(1) ] = 1
+RooRecursiveFraction::env_pdf_2_13TeV_lau1_recursive_fraction_env_pdf_2_13TeV_lau1_powl1[ list=(1,env_pdf_2_13TeV_lau1_l1) ] = 1e-06
+RooRecursiveFraction::env_pdf_2_13TeV_pow1_recursive_fraction_env_pdf_2_13TeV_pow1_e1[ list=(1) ] = 1
+RooSpline1D::fbr_13TeV[ xvar=MH ] = 0.002238
+RooSpline1D::fea_tth_TTHHadronicTag0_13TeV[ xvar=MH ] = 0.0132848
+RooSpline1D::fea_tth_TTHHadronicTag1_13TeV[ xvar=MH ] = 0.0106163
+RooSpline1D::fea_tth_TTHHadronicTag2_13TeV[ xvar=MH ] = 0.00930228
+RooSpline1D::frac_g0_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 0.735714
+RooSpline1D::frac_g0_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 0.210674
+RooSpline1D::frac_g0_tth_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 0.940644
+RooSpline1D::frac_g0_tth_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = 0.93962
+RooSpline1D::frac_g0_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 0.85992
+RooSpline1D::frac_g1_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 0.756842
+RooSpline1D::frac_g1_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 0.332013
+RooSpline1D::frac_g1_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 0.960006
+RooSpline1D::frac_g2_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 0.570163
+RooSpline1D::frac_g2_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 0.0154647
+RooSpline1D::fxs_tth_13TeV[ xvar=MH ] = 0.4539
+RooFormulaVar::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rvFrac[ actualVars=(CMS_hgg_nuisance_deltafracright,hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rvFracFunc) formula="TMath::Min(@0+@1,1.0)" ] = 0.99982
+RooSpline1D::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rvFracFunc[ xvar=MH ] = 0.99982
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag0_rv_13TeV[ list=(frac_g1_tth_TTHHadronicTag0_rv_13TeV,frac_g0_tth_TTHHadronicTag0_rv_13TeV) ] = 0.200023
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g2_tth_TTHHadronicTag0_rv_13TeV[ list=(frac_g2_tth_TTHHadronicTag0_rv_13TeV,frac_g1_tth_TTHHadronicTag0_rv_13TeV,frac_g0_tth_TTHHadronicTag0_rv_13TeV) ] = 0.0366406
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_rv_13TeV_recursive_fraction_gaus_g3_tth_TTHHadronicTag0_rv_13TeV[ list=(1,frac_g2_tth_TTHHadronicTag0_rv_13TeV,frac_g1_tth_TTHHadronicTag0_rv_13TeV,frac_g0_tth_TTHHadronicTag0_rv_13TeV) ] = 0.0276228
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag0_wv_13TeV[ list=(frac_g1_tth_TTHHadronicTag0_wv_13TeV,frac_g0_tth_TTHHadronicTag0_wv_13TeV) ] = 0.262066
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag0_wv_13TeV_recursive_fraction_gaus_g2_tth_TTHHadronicTag0_wv_13TeV[ list=(1,frac_g1_tth_TTHHadronicTag0_wv_13TeV,frac_g0_tth_TTHHadronicTag0_wv_13TeV) ] = 0.52726
+RooFormulaVar::hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rvFrac[ actualVars=(CMS_hgg_nuisance_deltafracright,hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rvFracFunc) formula="TMath::Min(@0+@1,1.0)" ] = 0.999967
+RooSpline1D::hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rvFracFunc[ xvar=MH ] = 0.999967
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag1_rv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag1_rv_13TeV[ list=(1,frac_g0_tth_TTHHadronicTag1_rv_13TeV) ] = 0.0593562
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag1_wv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag1_wv_13TeV[ list=(1,frac_g0_tth_TTHHadronicTag1_wv_13TeV) ] = 0.0603805
+RooFormulaVar::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rvFrac[ actualVars=(CMS_hgg_nuisance_deltafracright,hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rvFracFunc) formula="TMath::Min(@0+@1,1.0)" ] = 1
+RooSpline1D::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rvFracFunc[ xvar=MH ] = 1
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV_recursive_fraction_gaus_g1_tth_TTHHadronicTag2_rv_13TeV[ list=(frac_g1_tth_TTHHadronicTag2_rv_13TeV,frac_g0_tth_TTHHadronicTag2_rv_13TeV) ] = 0.134478
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV_recursive_fraction_gaus_g2_tth_TTHHadronicTag2_rv_13TeV[ list=(frac_g2_tth_TTHHadronicTag2_rv_13TeV,frac_g1_tth_TTHHadronicTag2_rv_13TeV,frac_g0_tth_TTHHadronicTag2_rv_13TeV) ] = 8.66398e-05
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_rv_13TeV_recursive_fraction_gaus_g3_tth_TTHHadronicTag2_rv_13TeV[ list=(1,frac_g2_tth_TTHHadronicTag2_rv_13TeV,frac_g1_tth_TTHHadronicTag2_rv_13TeV,frac_g0_tth_TTHHadronicTag2_rv_13TeV) ] = 0.00551578
+RooRecursiveFraction::hggpdfsmrel_13TeV_tth_TTHHadronicTag2_wv_13TeV_recursive_fraction_gaus_g0_tth_TTHHadronicTag2_wv_13TeV[ list=(1) ] = 1
+RooFormulaVar::mean_g0_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g0_tth_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 129.712
+RooFormulaVar::mean_g0_tth_TTHHadronicTag0_wv_13TeV[ actualVars=(MH,dm_g0_tth_TTHHadronicTag0_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 128.486
+RooFormulaVar::mean_g0_tth_TTHHadronicTag1_rv_13TeV[ actualVars=(MH,dm_g0_tth_TTHHadronicTag1_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 129.64
+RooFormulaVar::mean_g0_tth_TTHHadronicTag1_wv_13TeV[ actualVars=(MH,dm_g0_tth_TTHHadronicTag1_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 128.775
+RooFormulaVar::mean_g0_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(MH,dm_g0_tth_TTHHadronicTag2_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 129.747
+RooFormulaVar::mean_g0_tth_TTHHadronicTag2_wv_13TeV[ actualVars=(MH,dm_g0_tth_TTHHadronicTag2_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 130.25
+RooFormulaVar::mean_g1_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g1_tth_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.76
+RooFormulaVar::mean_g1_tth_TTHHadronicTag0_wv_13TeV[ actualVars=(MH,dm_g1_tth_TTHHadronicTag0_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 133
+RooFormulaVar::mean_g1_tth_TTHHadronicTag1_rv_13TeV[ actualVars=(MH,dm_g1_tth_TTHHadronicTag1_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.159
+RooFormulaVar::mean_g1_tth_TTHHadronicTag1_wv_13TeV[ actualVars=(MH,dm_g1_tth_TTHHadronicTag1_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.778
+RooFormulaVar::mean_g1_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(MH,dm_g1_tth_TTHHadronicTag2_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.433
+RooFormulaVar::mean_g2_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g2_tth_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 132.857
+RooFormulaVar::mean_g2_tth_TTHHadronicTag0_wv_13TeV[ actualVars=(MH,dm_g2_tth_TTHHadronicTag0_wv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.236
+RooFormulaVar::mean_g2_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(MH,dm_g2_tth_TTHHadronicTag2_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 129.167
+RooFormulaVar::mean_g3_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(MH,dm_g3_tth_TTHHadronicTag0_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.156
+RooFormulaVar::mean_g3_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(MH,dm_g3_tth_TTHHadronicTag2_rv_13TeV,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_LightYield_13TeVscale,CMS_hgg_nuisance_Absolute_13TeVscale) formula="(@0+@1)*(1.+@2+@3+@4+@5)" ] = 127.167
+ProcessNormalization::n_exp_binTTHHadronicTag0_13TeV_proc_bkg_mass[ thetaList=(CMS_hgg_UE,CMS_hgg_PS) asymmThetaList=() otherFactorList=() ] = 1
+ProcessNormalization::n_exp_binTTHHadronicTag0_13TeV_proc_ttH_hgg[ thetaList=(lumi_13TeV,pdf_Higgs_ttH,CMS_hgg_UE,CMS_hgg_PS) asymmThetaList=(BR_hgg,QCDscale_ttH) otherFactorList=(r) ] = 41500
+ProcessNormalization::n_exp_binTTHHadronicTag1_13TeV_proc_ttH_hgg[ thetaList=(lumi_13TeV,pdf_Higgs_ttH) asymmThetaList=(BR_hgg,QCDscale_ttH) otherFactorList=(r) ] = 41500
+ProcessNormalization::n_exp_binTTHHadronicTag2_13TeV_proc_ttH_hgg[ thetaList=(lumi_13TeV,pdf_Higgs_ttH) asymmThetaList=(BR_hgg,QCDscale_ttH) otherFactorList=(r) ] = 41500
+RooProduct::n_exp_final_binTTHHadronicTag0_13TeV_proc_bkg_mass[ n_exp_binTTHHadronicTag0_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag0_13TeV__norm ] = 331
+RooProduct::n_exp_final_binTTHHadronicTag0_13TeV_proc_ttH_hgg[ n_exp_binTTHHadronicTag0_13TeV_proc_ttH_hgg * shapeSig_ttH_hgg_TTHHadronicTag0_13TeV__norm ] = 0.560045
+RooProduct::n_exp_final_binTTHHadronicTag1_13TeV_proc_bkg_mass[ n_exp_binTTHHadronicTag1_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag1_13TeV__norm ] = 88
+RooProduct::n_exp_final_binTTHHadronicTag1_13TeV_proc_ttH_hgg[ n_exp_binTTHHadronicTag1_13TeV_proc_ttH_hgg * shapeSig_ttH_hgg_TTHHadronicTag1_13TeV__norm ] = 0.447551
+RooProduct::n_exp_final_binTTHHadronicTag2_13TeV_proc_bkg_mass[ n_exp_binTTHHadronicTag2_13TeV_proc_bkg_mass * shapeBkg_bkg_mass_TTHHadronicTag2_13TeV__norm ] = 13
+RooProduct::n_exp_final_binTTHHadronicTag2_13TeV_proc_ttH_hgg[ n_exp_binTTHHadronicTag2_13TeV_proc_ttH_hgg * shapeSig_ttH_hgg_TTHHadronicTag2_13TeV__norm ] = 0.392155
+RooFormulaVar::rate_tth_TTHHadronicTag0_13TeV[ actualVars=() formula="(1.)" ] = 1
+RooFormulaVar::rate_tth_TTHHadronicTag1_13TeV[ actualVars=() formula="(1.)" ] = 1
+RooFormulaVar::rate_tth_TTHHadronicTag2_13TeV[ actualVars=() formula="(1.)" ] = 1
+RooFormulaVar::shapeSig_ttH_hgg_TTHHadronicTag0_13TeV__norm[ actualVars=(fxs_tth_13TeV,fbr_13TeV,fea_tth_TTHHadronicTag0_13TeV,rate_tth_TTHHadronicTag0_13TeV) formula="@0*@1*@2*@3" ] = 1.34951e-05
+RooFormulaVar::shapeSig_ttH_hgg_TTHHadronicTag1_13TeV__norm[ actualVars=(fxs_tth_13TeV,fbr_13TeV,fea_tth_TTHHadronicTag1_13TeV,rate_tth_TTHHadronicTag1_13TeV) formula="@0*@1*@2*@3" ] = 1.07844e-05
+RooFormulaVar::shapeSig_ttH_hgg_TTHHadronicTag2_13TeV__norm[ actualVars=(fxs_tth_13TeV,fbr_13TeV,fea_tth_TTHHadronicTag2_13TeV,rate_tth_TTHHadronicTag2_13TeV) formula="@0*@1*@2*@3" ] = 9.44951e-06
+RooFormulaVar::sig_g0_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g0_tth_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 1.81379
+RooFormulaVar::sig_g0_tth_TTHHadronicTag0_wv_13TeV[ actualVars=(sigma_g0_tth_TTHHadronicTag0_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 0.400075
+RooFormulaVar::sig_g0_tth_TTHHadronicTag1_rv_13TeV[ actualVars=(sigma_g0_tth_TTHHadronicTag1_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 1.87585
+RooFormulaVar::sig_g0_tth_TTHHadronicTag1_wv_13TeV[ actualVars=(sigma_g0_tth_TTHHadronicTag1_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 0.977706
+RooFormulaVar::sig_g0_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(sigma_g0_tth_TTHHadronicTag2_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 1.62953
+RooFormulaVar::sig_g0_tth_TTHHadronicTag2_wv_13TeV[ actualVars=(sigma_g0_tth_TTHHadronicTag2_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 0.4
+RooFormulaVar::sig_g1_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g1_tth_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 3.90236
+RooFormulaVar::sig_g1_tth_TTHHadronicTag0_wv_13TeV[ actualVars=(sigma_g1_tth_TTHHadronicTag0_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 0.900302
+RooFormulaVar::sig_g1_tth_TTHHadronicTag1_rv_13TeV[ actualVars=(sigma_g1_tth_TTHHadronicTag1_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 11.2365
+RooFormulaVar::sig_g1_tth_TTHHadronicTag1_wv_13TeV[ actualVars=(sigma_g1_tth_TTHHadronicTag1_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 19.4669
+RooFormulaVar::sig_g1_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(sigma_g1_tth_TTHHadronicTag2_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 3.92903
+RooFormulaVar::sig_g2_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g2_tth_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 1.98187
+RooFormulaVar::sig_g2_tth_TTHHadronicTag0_wv_13TeV[ actualVars=(sigma_g2_tth_TTHHadronicTag0_wv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 4.32997
+RooFormulaVar::sig_g2_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(sigma_g2_tth_TTHHadronicTag2_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 2.57528
+RooFormulaVar::sig_g3_tth_TTHHadronicTag0_rv_13TeV[ actualVars=(sigma_g3_tth_TTHHadronicTag0_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 19.9874
+RooFormulaVar::sig_g3_tth_TTHHadronicTag2_rv_13TeV[ actualVars=(sigma_g3_tth_TTHHadronicTag2_rv_13TeV) formula="@0*TMath::Max(1.e-2,(1.))" ] = 18.0501
+RooSpline1D::sigma_g0_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 1.81379
+RooSpline1D::sigma_g0_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 0.400075
+RooSpline1D::sigma_g0_tth_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 1.87585
+RooSpline1D::sigma_g0_tth_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = 0.977706
+RooSpline1D::sigma_g0_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 1.62953
+RooSpline1D::sigma_g0_tth_TTHHadronicTag2_wv_13TeV[ xvar=MH ] = 0.4
+RooSpline1D::sigma_g1_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 3.90236
+RooSpline1D::sigma_g1_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 0.900302
+RooSpline1D::sigma_g1_tth_TTHHadronicTag1_rv_13TeV[ xvar=MH ] = 11.2365
+RooSpline1D::sigma_g1_tth_TTHHadronicTag1_wv_13TeV[ xvar=MH ] = 19.4669
+RooSpline1D::sigma_g1_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 3.92903
+RooSpline1D::sigma_g2_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 1.98187
+RooSpline1D::sigma_g2_tth_TTHHadronicTag0_wv_13TeV[ xvar=MH ] = 4.32997
+RooSpline1D::sigma_g2_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 2.57528
+RooSpline1D::sigma_g3_tth_TTHHadronicTag0_rv_13TeV[ xvar=MH ] = 19.9874
+RooSpline1D::sigma_g3_tth_TTHHadronicTag2_rv_13TeV[ xvar=MH ] = 18.0501
+
+datasets
+--------
+RooDataSet::data_obs(CMS_hgg_mass,CMS_channel)
+
+named sets
+----------
+ModelConfig_GlobalObservables:(CMS_hgg_nuisance_deltafracright_In,CMS_hgg_nuisance_HighR9EE_13TeVscale_In,CMS_hgg_nuisance_LowR9EE_13TeVscale_In,CMS_hgg_nuisance_HighR9EB_13TeVscale_In,CMS_hgg_nuisance_LowR9EB_13TeVscale_In,CMS_hgg_nuisance_MaterialCentral_scale_In,CMS_hgg_nuisance_MaterialForward_scale_In,CMS_hgg_nuisance_FNUFEE_scale_In,CMS_hgg_nuisance_FNUFEB_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_In,CMS_hgg_nuisance_NonLinearity_13TeVscale_In,CMS_hgg_nuisance_Geant4_13TeVscale_In,CMS_hgg_nuisance_HighR9EE_13TeVsmear_In,CMS_hgg_nuisance_LowR9EE_13TeVsmear_In,CMS_hgg_nuisance_HighR9EB_13TeVsmear_In,CMS_hgg_nuisance_LowR9EB_13TeVsmear_In,BR_hgg_In,lumi_13TeV_In,QCDscale_ttH_In,pdf_Higgs_ttH_In,CMS_hgg_UE_In,CMS_hgg_PS_In)
+ModelConfig_NuisParams:(CMS_hgg_nuisance_deltafracright,CMS_hgg_nuisance_HighR9EE_13TeVscale,CMS_hgg_nuisance_LowR9EE_13TeVscale,CMS_hgg_nuisance_HighR9EB_13TeVscale,CMS_hgg_nuisance_LowR9EB_13TeVscale,CMS_hgg_nuisance_MaterialCentral_scale,CMS_hgg_nuisance_MaterialForward_scale,CMS_hgg_nuisance_FNUFEE_scale,CMS_hgg_nuisance_FNUFEB_scale,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_HighR9EE_13TeVsmear,CMS_hgg_nuisance_LowR9EE_13TeVsmear,CMS_hgg_nuisance_HighR9EB_13TeVsmear,CMS_hgg_nuisance_LowR9EB_13TeVsmear,BR_hgg,lumi_13TeV,QCDscale_ttH,pdf_Higgs_ttH,CMS_hgg_UE,CMS_hgg_PS)
+ModelConfig_Observables:(CMS_hgg_mass,CMS_channel)
+ModelConfig_POI:(r)
+ModelConfig_bonly_GlobalObservables:(CMS_hgg_nuisance_deltafracright_In,CMS_hgg_nuisance_HighR9EE_13TeVscale_In,CMS_hgg_nuisance_LowR9EE_13TeVscale_In,CMS_hgg_nuisance_HighR9EB_13TeVscale_In,CMS_hgg_nuisance_LowR9EB_13TeVscale_In,CMS_hgg_nuisance_MaterialCentral_scale_In,CMS_hgg_nuisance_MaterialForward_scale_In,CMS_hgg_nuisance_FNUFEE_scale_In,CMS_hgg_nuisance_FNUFEB_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_In,CMS_hgg_nuisance_NonLinearity_13TeVscale_In,CMS_hgg_nuisance_Geant4_13TeVscale_In,CMS_hgg_nuisance_HighR9EE_13TeVsmear_In,CMS_hgg_nuisance_LowR9EE_13TeVsmear_In,CMS_hgg_nuisance_HighR9EB_13TeVsmear_In,CMS_hgg_nuisance_LowR9EB_13TeVsmear_In,BR_hgg_In,lumi_13TeV_In,QCDscale_ttH_In,pdf_Higgs_ttH_In,CMS_hgg_UE_In,CMS_hgg_PS_In)
+ModelConfig_bonly_NuisParams:(CMS_hgg_nuisance_deltafracright,CMS_hgg_nuisance_HighR9EE_13TeVscale,CMS_hgg_nuisance_LowR9EE_13TeVscale,CMS_hgg_nuisance_HighR9EB_13TeVscale,CMS_hgg_nuisance_LowR9EB_13TeVscale,CMS_hgg_nuisance_MaterialCentral_scale,CMS_hgg_nuisance_MaterialForward_scale,CMS_hgg_nuisance_FNUFEE_scale,CMS_hgg_nuisance_FNUFEB_scale,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_HighR9EE_13TeVsmear,CMS_hgg_nuisance_LowR9EE_13TeVsmear,CMS_hgg_nuisance_HighR9EB_13TeVsmear,CMS_hgg_nuisance_LowR9EB_13TeVsmear,BR_hgg,lumi_13TeV,QCDscale_ttH,pdf_Higgs_ttH,CMS_hgg_UE,CMS_hgg_PS)
+ModelConfig_bonly_Observables:(CMS_hgg_mass,CMS_channel)
+ModelConfig_bonly_POI:(r)
+POI:(r)
+globalObservables:(CMS_hgg_nuisance_deltafracright_In,CMS_hgg_nuisance_HighR9EE_13TeVscale_In,CMS_hgg_nuisance_LowR9EE_13TeVscale_In,CMS_hgg_nuisance_HighR9EB_13TeVscale_In,CMS_hgg_nuisance_LowR9EB_13TeVscale_In,CMS_hgg_nuisance_MaterialCentral_scale_In,CMS_hgg_nuisance_MaterialForward_scale_In,CMS_hgg_nuisance_FNUFEE_scale_In,CMS_hgg_nuisance_FNUFEB_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale_In,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale_In,CMS_hgg_nuisance_NonLinearity_13TeVscale_In,CMS_hgg_nuisance_Geant4_13TeVscale_In,CMS_hgg_nuisance_HighR9EE_13TeVsmear_In,CMS_hgg_nuisance_LowR9EE_13TeVsmear_In,CMS_hgg_nuisance_HighR9EB_13TeVsmear_In,CMS_hgg_nuisance_LowR9EB_13TeVsmear_In,BR_hgg_In,lumi_13TeV_In,QCDscale_ttH_In,pdf_Higgs_ttH_In,CMS_hgg_UE_In,CMS_hgg_PS_In)
+nuisances:(CMS_hgg_nuisance_deltafracright,CMS_hgg_nuisance_HighR9EE_13TeVscale,CMS_hgg_nuisance_LowR9EE_13TeVscale,CMS_hgg_nuisance_HighR9EB_13TeVscale,CMS_hgg_nuisance_LowR9EB_13TeVscale,CMS_hgg_nuisance_MaterialCentral_scale,CMS_hgg_nuisance_MaterialForward_scale,CMS_hgg_nuisance_FNUFEE_scale,CMS_hgg_nuisance_FNUFEB_scale,CMS_hgg_nuisance_ShowerShapeHighR9EE_scale,CMS_hgg_nuisance_ShowerShapeHighR9EB_scale,CMS_hgg_nuisance_ShowerShapeLowR9EE_scale,CMS_hgg_nuisance_ShowerShapeLowR9EB_scale,CMS_hgg_nuisance_NonLinearity_13TeVscale,CMS_hgg_nuisance_Geant4_13TeVscale,CMS_hgg_nuisance_HighR9EE_13TeVsmear,CMS_hgg_nuisance_LowR9EE_13TeVsmear,CMS_hgg_nuisance_HighR9EB_13TeVsmear,CMS_hgg_nuisance_LowR9EB_13TeVsmear,BR_hgg,lumi_13TeV,QCDscale_ttH,pdf_Higgs_ttH,CMS_hgg_UE,CMS_hgg_PS)
+observables:(CMS_hgg_mass,CMS_channel)
+
+generic objects
+---------------
+RooStats::ModelConfig::ModelConfig
+RooStats::ModelConfig::ModelConfig_bonly
+RooArgSet::discreteParams
+

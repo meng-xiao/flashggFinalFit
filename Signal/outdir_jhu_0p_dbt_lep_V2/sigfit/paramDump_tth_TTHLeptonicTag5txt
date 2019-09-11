@@ -1,0 +1,15 @@
+tth_TTHLeptonicTag5__rv_13TeV --> & mh 120 & mh 125 & mh 130 \ 
+tth_TTHLeptonicTag5__rv_13TeV dm0 & -0.271067 & -0.285333 & -0.271067 \ 
+tth_TTHLeptonicTag5__rv_13TeV sigma0 & 1.31671 & 1.25401 & 1.31671 \ 
+tth_TTHLeptonicTag5__rv_13TeV dm1 & -0.672459 & -0.707851 & -0.672459 \ 
+tth_TTHLeptonicTag5__rv_13TeV sigma1 & 2.44228 & 2.32598 & 2.44228 \ 
+tth_TTHLeptonicTag5__rv_13TeVcoeff0 & 0.40475 & 0.426052 & 0.40475 \ 
+tth_TTHLeptonicTag5__rv_13TeV dm2 & -2.85 & -3 & -2.85 \ 
+tth_TTHLeptonicTag5__rv_13TeV sigma2 & 19.9995 & 20 & 19.9995 \ 
+tth_TTHLeptonicTag5__rv_13TeVcoeff1 & 0.749413 & 0.782799 & 0.749413 \ 
+tth_TTHLeptonicTag5__rv_13TeV dm3 & -2.85 & -3 & -2.85 \ 
+tth_TTHLeptonicTag5__rv_13TeV sigma3 & 5.06158 & 4.82055 & 4.57952 \ 
+tth_TTHLeptonicTag5__rv_13TeVcoeff2 & 0.261014 & 0.248585 & 0.236155 \ 
+tth_TTHLeptonicTag5__wv_13TeV --> & mh 120 & mh 125 & mh 130 \ 
+tth_TTHLeptonicTag5__wv_13TeV dm0 & 0.25 & 0.249598 & 0.25 \ 
+tth_TTHLeptonicTag5__wv_13TeV sigma0 & 0.4 & 0.400075 & 0.4 \ 

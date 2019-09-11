@@ -1,0 +1,15 @@
+tth_ALT_TTHLeptonicTag2__rv_13TeV --> & mh 120 & mh 125 & mh 130 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV dm0 & -0.193648 & -0.20384 & -0.193648 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV sigma0 & 1.50477 & 1.43312 & 1.50477 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV dm1 & -1.90832 & -2.00876 & -1.90832 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV sigma1 & 2.97372 & 2.83211 & 2.97372 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeVcoeff0 & 0.675587 & 0.711144 & 0.675587 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV dm2 & 3 & 3 & 2.99631 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV sigma2 & 1.77803 & 1.69336 & 1.77803 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeVcoeff1 & 0.67672 & 0.712337 & 0.747954 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV dm3 & 3 & 3 & 2.99985 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeV sigma3 & 19.9998 & 20 & 20 \ 
+tth_ALT_TTHLeptonicTag2__rv_13TeVcoeff2 & 0.435011 & 0.414296 & 0.393582 \ 
+tth_ALT_TTHLeptonicTag2__wv_13TeV --> & mh 120 & mh 125 & mh 130 \ 
+tth_ALT_TTHLeptonicTag2__wv_13TeV dm0 & 0.25 & 0.249598 & 0.25 \ 
+tth_ALT_TTHLeptonicTag2__wv_13TeV sigma0 & 0.4 & 0.400075 & 0.4 \ 
