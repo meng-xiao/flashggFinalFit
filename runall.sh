@@ -1,6 +1,6 @@
 #signal model preparation
 #./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1 --ext jhu_0m_tuneV1 --intLumi 41.5 --signalOnly --batch none 
-./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1 --ext jhu_0m_tuneV1 --intLumi 41.5 --signalOnly --batch none --boundaries "0.9675,1" --bdt_boundary 0 
+./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1 --ext jhu_0m_tuneV1 --intLumi 41.5 --signalOnly --batch none --boundaries 0.9675,1 --bdt_boundary 0 
 #background model preparation
 #./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root -p bkg -f TTHHadronicTag0,TTHHadronicTag1 --ext hadronic_bdt_tuneV1 --intLumi 41.5 --backgroundOnly --isData --batch none --dataFile /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root 
 #datacard generation
