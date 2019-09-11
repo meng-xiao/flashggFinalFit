@@ -148,7 +148,7 @@ if [ $ISDATA == 1 ]; then
 OPT=" --isData 1"
 fi
 
-echo " ./bin/fTest -i $FILE --saveMultiPdf CMS-HGG_multipdf_$EXT.root  -D $OUTDIR/bkgfTest$DATAEXT -f $CATS $OPT"
+echo " ./bin/fTest -i $FILE --saveMultiPdf CMS-HGG_multipdf_$EXT.root  -D $OUTDIR/bkgfTest$DATAEXT -f $CATS $OPT --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY"
 ./bin/fTest -i $FILE --saveMultiPdf CMS-HGG_multipdf_$EXT.root  -D $OUTDIR/bkgfTest$DATAEXT -f $CATS $OPT --boundaries $BOUNDARIES --bdt_boundary $BDT_BOUNDARY
 
 OPT=""
