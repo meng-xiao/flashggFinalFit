@@ -252,7 +252,12 @@ int main(int argc, char *argv[]){
    }
 //   TFile *fnew = new TFile("newfile.root");
 //  TTree *tsub = tall->CopyTree("tthMVA_RunII>0.38 && pho1_idmva>-0.2 && pho2_idmva >-0.2");
-  TTree *tsub = tall->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 &&tthMVA_RunII>0.8435");
+     TString extracut = "&&n_jets>0";
+        std::size_t found = flashggCats_[0].find("Hadronic");
+        if (found!=std::string::npos)
+                extracut = "&&n_jets>2&&nb_loose>0";
+        cout<< "Extra cut "<< extracut<<endl;
+  TTree *tsub = tall->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 "+extracut);
   //return 0;
   if(verbose_) std::cout << "[INFO] Opened files OK!" << std::endl;
 	RooRealVar *mass = new RooRealVar("mass","",125); 

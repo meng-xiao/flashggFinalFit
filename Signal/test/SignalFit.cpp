@@ -63,6 +63,8 @@ int constraintValueMass_;
 bool spin_=false;
 vector<string> procs_;
 string procStr_;
+string boundaries_;
+float bdt_boundary;
 bool isCutBased_=false;
 bool is2011_=false;
 bool is2012_=false;
@@ -150,6 +152,8 @@ void OptionParser(int argc, char *argv[]){
 		("skipSecondaryModels",                                                                   			"Turn off creation of all additional models")
 		("doQuadraticSigmaSum",  										        "Add sigma systematic terms in quadrature")
 		("procs", po::value<string>(&procStr_)->default_value("ggh,vbf,wh,zh,tth"),					"Processes (comma sep)")
+		("boundaries,b", po::value<string>(&boundaries_)->default_value("0.9675, 0.9937, 0.9971,1."),          "Boundaries")
+		("bdt_boundary", po::value<float>(&bdt_boundary)->default_value(0.),          "BDT Boundaries")
 		//("massList", po::value<string>(&massListStr_)->default_value("120,125,130"),					"Masses to process.")
 		("massList", po::value<string>(&massListStr_)->default_value("120,125,130"),					"Masses to process.")
 		("skipMasses", po::value<string>(&massesToSkip_)->default_value(""),					"Skip these mass points - used eg for the 7TeV where there's no mc at 145")
@@ -219,10 +223,15 @@ void OptionParser(int argc, char *argv[]){
 	}
 
 	// split options which are fiven as lists
+	vector<string> boundaries_s;
 	split(procs_,procStr_,boost::is_any_of(","));
 	split(flashggCats_,flashggCatsStr_,boost::is_any_of(","));
+	split(boundaries_s,boundaries_,boost::is_any_of(","));
 	split(filename_,filenameStr_,boost::is_any_of(","));
 	split(split_,splitStr_,boost::is_any_of(",")); // proc,cat
+	for (int tagloop=0;tagloop<boundaries_s.size();tagloop++){
+		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
+	}
 
 }
 
@@ -509,7 +518,13 @@ int main(int argc, char *argv[]){
 	//   TTree *tsub;
 	TFile *outFile = new TFile(outfilename_.c_str(),"RECREATE");
 //	TTree *tsub = tall->CopyTree("tthMVA_RunII>0.38 && pho1_idmva>-0.2 && pho2_idmva >-0.2");
-	TTree *tsub = tall->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 &&tthMVA_RunII>0.8435");
+	TString extracut = "&&n_jets>0";
+	std::size_t found = flashggCats_[0].find("Hadronic");
+  	if (found!=std::string::npos)
+		extracut = "&&n_jets>2&&nb_loose>0";
+
+	cout<< "Extra cut "<< extracut<<endl;
+	TTree *tsub = tall->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 "+extracut);
 	//  return 0;
 
 	// extract nEvents per proc/tag etc...
@@ -781,6 +796,15 @@ int main(int argc, char *argv[]){
 
 			RooDataSet *dataFull;
 			cout<< cat<<endl;
+    TString catname = cat; 
+    for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
+	    TString cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    if(catname.Contains(Form("Tag%d",tagloop*2+1)))
+		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    cout<< catname <<"\t"<<cutstring<<endl;
+	        dataFull = (RooDataSet*)data->reduce(cutstring);
+	    }
+			/*
     if(cat=="TTHHadronicTag0")
 //    dataFull = (RooDataSet*)data->reduce("tthMVA_RunII>0.9675 && tthMVA_RunII<0.9937 &&BDTG<0."); 
     dataFull = (RooDataSet*)data->reduce("tthMVA_RunII>0.9675  &&BDTG<0."); 
@@ -817,6 +841,7 @@ int main(int argc, char *argv[]){
     dataFull = (RooDataSet*)data->reduce("tthMVA_RunII>0.9890 &&BDTG<0."); 
     else if (cat=="TTHLeptonicTag7")
     dataFull = (RooDataSet*)data->reduce("tthMVA_RunII>0.9890 &&BDTG>0."); 
+    */
 /*
     if(cat=="TTHHadronicTag0")
     dataFull = (RooDataSet*)data->reduce("tthMVA_RunII<0.48&&BDTG<-0.5"); 
