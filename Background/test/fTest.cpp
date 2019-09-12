@@ -690,7 +690,7 @@ vector<string> flashggCats_;
 //  TTree *tsub = t->CopyTree("tthMVA_RunII>0.38 && pho1_idmva>-0.2 && pho2_idmva >-0.2");
      TString extracut = "&&n_jets>0";
      
-        std::size_t found = flashggCats_[cat].find("Hadronic");
+        std::size_t found = flashggCats_[0].find("Hadronic");
         if (found!=std::string::npos)
                 extracut = "&&n_jets>2&&nb_loose>0";
         cout<< "Extra cut "<< extracut<<endl;

@@ -19,9 +19,12 @@
 #combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp.root -M MultiDimFit --algo=grid  --points=100  -n fcp_scan_fullRun2 -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00 
 #combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp.root  -M MultiDimFit --algo=grid  -P r --points=100  -n MuScanFull -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,1.0  -m 125.00 -t -1  --expectSignal 1.00 --setParameters x=0 --freezeParameters x 
 
-#combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp.root -M MultiDimFit --algo=grid  --points=100  -n fcp_scan_fullRun2_stat -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00 -S 0 
+combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp.root -M MultiDimFit --algo=grid  --points=100  -n fcp_scan_fullRun2_stat --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00  
 
 
 
-text2workspace.py CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.txt -o CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.root -P HiggsAnalysis.CombinedLimit.HiggsJPC:twoHypothesisHiggs  --PO=muFloating
-combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.root -M MultiDimFit --algo=grid  --points=100  -n fcp_scan_fullRun2_2cat_stat -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00 -S 0  --freezeParameters MH 
+#text2workspace.py CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.txt -o CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.root -P HiggsAnalysis.CombinedLimit.HiggsJPC:twoHypothesisHiggs  --PO=muFloating
+#combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.root -M MultiDimFit --algo=grid  --points=100  -n fcp_scan_fullRun2_2cat_stat -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00 -S 0  --freezeParameters MH 
+
+#combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp_2cat.root -M MultiDimFit --algo=singles --cl=0.68 -n fcp_scan_fullRun2_2cat_stat_68 -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00 -S 0  --freezeParameters MH 
+#combine CMS-HGG_mva_13TeV_datacard_fullRun2_cp.root -M MultiDimFit --algo=singles --cl=0.95 -n fcp_scan_fullRun2_stat_68 -L $CMSSW_BASE/lib/$SCRAM_ARCH/libHiggsAnalysisGBRLikelihood.so --setParameterRanges r=0.00,4.0  -m 125.00 -t -1  --expectSignal 1.00 --freezeParameters MH 
