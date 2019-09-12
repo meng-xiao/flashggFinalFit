@@ -683,12 +683,19 @@ vector<string> flashggCats_;
 
   system(Form("mkdir -p %s",outDir.c_str()));
   TFile *inFile = TFile::Open(fileName.c_str());
-  TFile *inFile_workspace = TFile::Open(" $eosdir/lxplusBackUp/ttH/data.root");
+  TFile *inFile_workspace = TFile::Open(" /eos/cms/store/user/xiaomeng/lxplusBackUp/ttH/data.root");
 //  TTree * t = (TTree*)inFile->Get("tagsDumper/trees/Data_13TeV_TTHHadronicTag");
   //TTree * t = (TTree*)inFile->Get("Data_13TeV_TTHHadronicTag");
   TTree * t = (TTree*)inFile->Get("tth_13TeV_all");
 //  TTree *tsub = t->CopyTree("tthMVA_RunII>0.38 && pho1_idmva>-0.2 && pho2_idmva >-0.2");
-  TTree *tsub = t->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 &&tthMVA_RunII>0.8435");
+     TString extracut = "&&n_jets>0";
+     
+        std::size_t found = flashggCats_[cat].find("Hadronic");
+        if (found!=std::string::npos)
+                extracut = "&&n_jets>2&&nb_loose>0";
+        cout<< "Extra cut "<< extracut<<endl;
+  TTree *tsub = t->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 "+extracut);
+//  TTree *tsub = t->CopyTree("subleadIDMVA>-0.7&&leadIDMVA>-0.7 &&tthMVA_RunII>0.8435");
 		RooRealVar *tthMVA_RunII = new RooRealVar("tthMVA_RunII","",-10,10);
 		RooRealVar *BDTG= new RooRealVar("BDTG","",-1,1);
   RooWorkspace *inWS;
