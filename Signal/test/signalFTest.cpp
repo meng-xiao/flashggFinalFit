@@ -362,13 +362,19 @@ int main(int argc, char *argv[]){
     //   RooDataSet *dataFull_all = new RooDataSet("Data_13TeV","",tsub,RooArgSet(*mass,*tthMVA_RunII)); 
     RooDataSet *data0;
     TString catname = flashggCats_[cat]; 
+    TString cutstring="";
     for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
-	    TString cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
-	    if(catname.Contains(Form("Tag%d",tagloop*2+1)))
-		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    if(catname.Contains(Form("Tag%d",tagloop*2))){
+	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    break;
+	    }
+	    if(catname.Contains(Form("Tag%d",tagloop*2+1))){
+	   cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+		break;
+	    }
+	    }
 	    cout<< catname <<"\t"<<cutstring<<endl;
     data0 = (RooDataSet*)dataFull->reduce(cutstring); 
-	    }
 /*
     if(flashggCats_[cat]=="TTHHadronicTag0")
     data0 = (RooDataSet*)dataFull->reduce("tthMVA_RunII>0.9675 && tthMVA_RunII<0.9937 &&BDTG<0."); 

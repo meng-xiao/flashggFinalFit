@@ -783,13 +783,20 @@ vector<string> flashggCats_;
 		if (isData_) {
 
     TString catname_t = catname; 
+    TString cutstring="";
     for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
-	    TString cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
-	    if(catname_t.Contains(Form("Tag%d",tagloop*2+1)))
+
+	    if(catname_t.Contains(Form("Tag%d",tagloop*2))){
+	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+	    break;
+	    }
+	    if(catname_t.Contains(Form("Tag%d",tagloop*2+1))){
 		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
-	    cout<< catname_t <<"\t"<<cutstring<<endl;
-    dataFull = (RooDataSet*)dataFull_all->reduce(cutstring);
+		    break;
+	    }
     }
+    cout<< catname_t <<"\t"<<cutstring<<endl;
+    dataFull = (RooDataSet*)dataFull_all->reduce(cutstring);
     /*
     //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()))->reduce("tthMVA_RunII>0.38");
     //dataFull = (RooDataSet*)inWS->data(Form("Data_13TeV_%s",catname.c_str()));
