@@ -4,7 +4,8 @@ void print(){
 	gROOT->ProcessLine("gSystem->Load(\"libRooFit\")");
 	gROOT->ProcessLine("gSystem->Load(\"libHiggsAnalysisCombinedLimit.so\")");
 //	TFile *f = new TFile ("CMS-HGG_mva_13TeV_datacardMuScan.root");
-	TFile *f = new TFile ("CMS-HGG_mva_13TeV_datacard_fullRun2_cp_1cat.root");
+	//TFile *f = new TFile ("optimization/CMS-HGG_mva_13TeV_datacard_v2.root");
+	TFile *f = new TFile ("CMS-HGG_mva_13TeV_datacard_fullRun2_cp.root");
 //	TFile *f = new TFile ("CMS-HGG_mva_13TeV_datacard_jhu_ht.root");
 	RooWorkspace *w=(RooWorkspace*)f->Get("w");
 	w->var("MH")->setVal(125);

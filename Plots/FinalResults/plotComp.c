@@ -1,10 +1,15 @@
 #include "CMS_lumi.C"
-const int nmax=2;
+const int nmax=5;
 int co[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 int sy[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 TString tex[nmax]={
-	"main category",
-	"no main category"
+	"BDT boundary=-0.2",
+	"BDT boundary=-0.1",
+	"BDT boundary=0",
+	"BDT boundary=0.1",
+	"BDT boundary=0.2"
+//	"main category",
+//	"no main category"
 //	"4 bins"
 //	"cp",
 //	"tag0",
@@ -15,8 +20,13 @@ TString rootfname[nmax]={
 //	"higgsCombineMuScanJob0.MultiDimFit.mH125.root",
 //	"higgsCombinefcp_scan.MultiDimFit.mH125.root",
 //	"higgsCombinefcp_scan_4bins.MultiDimFit.mH125.root",
-	"higgsCombinefcp_scan_fullRun2_stat.MultiDimFit.mH125.root",
-	"higgsCombinefcp_scan_fullRun2_2cat_stat.MultiDimFit.mH125.root"
+//	"higgsCombinefcp_scan_fullRun2_stat.MultiDimFit.mH125.root",
+//	"higgsCombinefcp_scan_fullRun2_2cat_stat.MultiDimFit.mH125.root"
+	"optimization/higgsCombineversion1.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion2.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion3.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion4.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion5.MultiDimFit.mH125.root"
 //	"higgsCombinefcp_scan_fullRun2.MultiDimFit.mH125.root"
 //	"higgsCombineMuScanFull.MultiDimFit.mH125.root"
 //	"higgsCombineMuScanJob0_tag0.MultiDimFit.mH125.root",
@@ -62,6 +72,6 @@ void plotComp(){
 	}
 	        CMS_lumi( c2, 4, 0, true);
 	leg->Draw();
-	c2->Print("scan_x_jhu.png");
-	c2->Print("scan_x_jhu.pdf");
+	c2->Print("scan_tune.png");
+	c2->Print("scan_tune.pdf");
 }
