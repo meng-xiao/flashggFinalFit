@@ -23,10 +23,12 @@ TString rootfname[nmax]={
 //	"higgsCombinefcp_scan_fullRun2_stat.MultiDimFit.mH125.root",
 //	"higgsCombinefcp_scan_fullRun2_2cat_stat.MultiDimFit.mH125.root"
 //	"optimization/higgsCombineversion1.MultiDimFit.mH125.root",
+
 	"optimization/higgsCombineversion2.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion3.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion4.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion5.MultiDimFit.mH125.root"
+
 //	"higgsCombinefcp_scan_fullRun2.MultiDimFit.mH125.root"
 //	"higgsCombineMuScanFull.MultiDimFit.mH125.root"
 //	"higgsCombineMuScanJob0_tag0.MultiDimFit.mH125.root",
@@ -34,7 +36,7 @@ TString rootfname[nmax]={
 //	"higgsCombineMuScanJob0_tag2.MultiDimFit.mH125.root"
 };
 
-void plotComp(){
+void dodo(TString fn="version"){
 	gStyle->SetOptStat(0);
 	TCanvas *c=new TCanvas("c","",800,600);
 	TCanvas *c2=new TCanvas("c2","",800,600);
@@ -47,7 +49,7 @@ void plotComp(){
 	leg->SetTextSize(0.03);
 	for (int i=0;i<nmax;i++){
 		TChain *t=new TChain ("limit");
-		t->Add(rootfname[i]);
+		t->Add(rootfname[i].ReplaceAll("version",fn));
 		c->cd();
 //		t->Draw("(2*deltaNLL):r_ttH","");
 		t->Draw("(2*deltaNLL):x","");
@@ -72,6 +74,13 @@ void plotComp(){
 	}
 	        CMS_lumi( c2, 4, 0, true);
 	leg->Draw();
-	c2->Print("scan_tune.png");
-	c2->Print("scan_tune.pdf");
+	c2->Print(fn+".png");
+	c2->Print(fn+".pdf");
+}
+void plotComp(){
+	for (int i =0;i<3;i++){
+	dodo(Form("leptonic_cat%d_v",i+1));
+	dodo(Form("hadronic_cat%d_v",i+1));
+	}
+	dodo("version");
 }
