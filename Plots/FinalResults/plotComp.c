@@ -1,9 +1,9 @@
 #include "CMS_lumi.C"
-const int nmax=5;
+const int nmax=4;
 int co[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 int sy[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 TString tex[nmax]={
-	"BDT boundary=-0.2",
+//	"BDT boundary=-0.2",
 	"BDT boundary=-0.1",
 	"BDT boundary=0",
 	"BDT boundary=0.1",
@@ -22,7 +22,7 @@ TString rootfname[nmax]={
 //	"higgsCombinefcp_scan_4bins.MultiDimFit.mH125.root",
 //	"higgsCombinefcp_scan_fullRun2_stat.MultiDimFit.mH125.root",
 //	"higgsCombinefcp_scan_fullRun2_2cat_stat.MultiDimFit.mH125.root"
-	"optimization/higgsCombineversion1.MultiDimFit.mH125.root",
+//	"optimization/higgsCombineversion1.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion2.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion3.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion4.MultiDimFit.mH125.root",

@@ -43,8 +43,6 @@ CMS_hgg_nuisance_LowR9EE_13TeVsmear      param 0.0 1.0
 CMS_hgg_nuisance_HighR9EB_13TeVsmear     param 0.0 1.0
 CMS_hgg_nuisance_LowR9EB_13TeVsmear      param 0.0 1.0
 
-pdfindex_TTHHadronicTag0_13TeV  discrete
-pdfindex_TTHHadronicTag1_13TeV  discrete
 BR_hgg                                lnN   0.980/1.021 0.980/1.021 - 0.980/1.021 0.980/1.021 - 
 lumi_13TeV                            lnN   1.025 1.025 - 1.025 1.025 - 
 
