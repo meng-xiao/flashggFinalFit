@@ -105,6 +105,7 @@ void dodo(TString fn="version"){
 		c->cd();
 //		t->Draw("(2*deltaNLL):r_ttH","");
 		t->Draw("(2*deltaNLL):x","");
+		t->Scan("(2*deltaNLL):x","x>0.98");
 		//t->Draw("(2*deltaNLL):r","");
 		TGraph *gr0 = (TGraph*) gROOT->FindObject("Graph")->Clone();
 		c2->cd();
