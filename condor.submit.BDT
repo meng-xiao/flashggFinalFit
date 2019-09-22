@@ -1,0 +1,82 @@
+executable = $(script) 
+arguments = $(i) $(j) $(k) 
+should_transfer_files = NO
+output = sub$(ProcId).out
+log = sub$(ProcId).log
+error = sub$(ProcId).err
+request_memory          = 4000M
++JobFlavour             = "longlunch"
+queue script,i,j,k from(
+runBDTConfig_had.sh -.20 -.15 1
+runBDTConfig_had.sh -.20 -.10 2
+runBDTConfig_had.sh -.20 -.05 3
+runBDTConfig_had.sh -.20 0 4
+runBDTConfig_had.sh -.20 .05 5
+runBDTConfig_had.sh -.20 .10 6
+runBDTConfig_had.sh -.20 .15 7
+runBDTConfig_had.sh -.20 .20 8
+runBDTConfig_had.sh -.15 -.10 9
+runBDTConfig_had.sh -.15 -.05 10
+runBDTConfig_had.sh -.15 0 11
+runBDTConfig_had.sh -.15 .05 12
+runBDTConfig_had.sh -.15 .10 13
+runBDTConfig_had.sh -.15 .15 14
+runBDTConfig_had.sh -.15 .20 15
+runBDTConfig_had.sh -.10 -.05 16
+runBDTConfig_had.sh -.10 0 17
+runBDTConfig_had.sh -.10 .05 18
+runBDTConfig_had.sh -.10 .10 19
+runBDTConfig_had.sh -.10 .15 20
+runBDTConfig_had.sh -.10 .20 21
+runBDTConfig_had.sh -.05 0 22
+runBDTConfig_had.sh -.05 .05 23
+runBDTConfig_had.sh -.05 .10 24
+runBDTConfig_had.sh -.05 .15 25
+runBDTConfig_had.sh -.05 .20 26
+runBDTConfig_had.sh 0 .05 27
+runBDTConfig_had.sh 0 .10 28
+runBDTConfig_had.sh 0 .15 29
+runBDTConfig_had.sh 0 .20 30
+runBDTConfig_had.sh .05 .10 31
+runBDTConfig_had.sh .05 .15 32
+runBDTConfig_had.sh .05 .20 33
+runBDTConfig_had.sh .10 .15 34
+runBDTConfig_had.sh .10 .20 35
+runBDTConfig_had.sh .15 .20 36
+runBDTConfig_lep.sh -.100 -.075 1
+runBDTConfig_lep.sh -.100 -.050 2
+runBDTConfig_lep.sh -.100 -.025 3
+runBDTConfig_lep.sh -.100 0 4
+runBDTConfig_lep.sh -.100 .025 5
+runBDTConfig_lep.sh -.100 .050 6
+runBDTConfig_lep.sh -.100 .075 7
+runBDTConfig_lep.sh -.100 .100 8
+runBDTConfig_lep.sh -.075 -.050 9
+runBDTConfig_lep.sh -.075 -.025 10
+runBDTConfig_lep.sh -.075 0 11
+runBDTConfig_lep.sh -.075 .025 12
+runBDTConfig_lep.sh -.075 .050 13
+runBDTConfig_lep.sh -.075 .075 14
+runBDTConfig_lep.sh -.075 .100 15
+runBDTConfig_lep.sh -.050 -.025 16
+runBDTConfig_lep.sh -.050 0 17
+runBDTConfig_lep.sh -.050 .025 18
+runBDTConfig_lep.sh -.050 .050 19
+runBDTConfig_lep.sh -.050 .075 20
+runBDTConfig_lep.sh -.050 .100 21
+runBDTConfig_lep.sh -.025 0 22
+runBDTConfig_lep.sh -.025 .025 23
+runBDTConfig_lep.sh -.025 .050 24
+runBDTConfig_lep.sh -.025 .075 25
+runBDTConfig_lep.sh -.025 .100 26
+runBDTConfig_lep.sh 0 .025 27
+runBDTConfig_lep.sh 0 .050 28
+runBDTConfig_lep.sh 0 .075 29
+runBDTConfig_lep.sh 0 .100 30
+runBDTConfig_lep.sh .025 .050 31
+runBDTConfig_lep.sh .025 .075 32
+runBDTConfig_lep.sh .025 .100 33
+runBDTConfig_lep.sh .050 .075 34
+runBDTConfig_lep.sh .050 .100 35
+runBDTConfig_lep.sh .075 .100 36
+) 
