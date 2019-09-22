@@ -63,7 +63,6 @@ string boundaries_;
 vector<float> boundaries;
 string bdt_boundary_;
 vector <float> bdt_boundary;
-float bdt_boundary;
 
 RooRealVar *intLumi_ = new RooRealVar("IntLumi","hacked int lumi", 1000.);
 
@@ -794,7 +793,7 @@ vector<string> flashggCats_;
     for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
 
     for(int bdtloop=0;bdtloop<bdt_boundary.size()-1;bdtloop++){
-	    if(catname.Contains(Form("Tag%d",tagloop*(bdt_boundary.size()-1)+bdtloop))){
+	    if(catname_t.Contains(Form("Tag%d",tagloop*(bdt_boundary.size()-1)+bdtloop))){
 	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f&&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary[bdtloop],bdt_boundary[bdtloop+1]);
 
 		    break;
