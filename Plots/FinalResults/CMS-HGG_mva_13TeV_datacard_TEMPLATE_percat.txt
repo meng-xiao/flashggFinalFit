@@ -9,19 +9,23 @@ kmax *
 
 shapes data_obs   TAG1_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:roohist_data_mass_TAG1
 shapes data_obs   TAG2_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:roohist_data_mass_TAG2
+shapes data_obs   TAG3_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:roohist_data_mass_TAG3
 shapes ttH_hgg    TAG1_13TeV CMS-HGG_mva_13TeV_0p_CHAN_sigfit_vVERSION.root  wsig_13TeV:hggpdfsmrel_13TeV_tth_TAG1
 shapes ttH_hgg    TAG2_13TeV CMS-HGG_mva_13TeV_0p_CHAN_sigfit_vVERSION.root  wsig_13TeV:hggpdfsmrel_13TeV_tth_TAG2
+shapes ttH_hgg    TAG3_13TeV CMS-HGG_mva_13TeV_0p_CHAN_sigfit_vVERSION.root  wsig_13TeV:hggpdfsmrel_13TeV_tth_TAG3
 shapes ttH_hgg_ALT    TAG1_13TeV CMS-HGG_mva_13TeV_0m_CHAN_sigfit_vVERSION.root  wsig_13TeV:hggpdfsmrel_13TeV_tth_ALT_TAG1
 shapes ttH_hgg_ALT    TAG2_13TeV CMS-HGG_mva_13TeV_0m_CHAN_sigfit_vVERSION.root  wsig_13TeV:hggpdfsmrel_13TeV_tth_ALT_TAG2
+shapes ttH_hgg_ALT    TAG3_13TeV CMS-HGG_mva_13TeV_0m_CHAN_sigfit_vVERSION.root  wsig_13TeV:hggpdfsmrel_13TeV_tth_ALT_TAG3
 shapes bkg_mass   TAG1_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:CMS_hgg_TAG1_13TeV_bkgshape
 shapes bkg_mass   TAG2_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:CMS_hgg_TAG2_13TeV_bkgshape
+shapes bkg_mass   TAG3_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:CMS_hgg_TAG3_13TeV_bkgshape
 
-bin             TAG1_13TeV TAG2_13TeV 
-observation     -1 -1 
-bin             TAG1_13TeV TAG1_13TeV TAG1_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV 
-process         ttH_hgg ttH_hgg_ALT bkg_mass ttH_hgg ttH_hgg_ALT bkg_mass 
-process         -2 -1 1 -2 -1 1 
-rate            8.712479 8.712479 1.115 8.712479 8.712479 1.115 
+bin             TAG1_13TeV TAG2_13TeV TAG3_13TeV 
+observation     -1 -1 -1 
+bin             TAG1_13TeV TAG1_13TeV TAG1_13TeV TAG3_13TeV TAG3_13TeV TAG3_13TeV TAG3_13TeV TAG3_13TeV TAG3_13TeV 
+process         ttH_hgg ttH_hgg_ALT bkg_mass ttH_hgg ttH_hgg_ALT bkg_mass ttH_hgg ttH_hgg_ALT bkg_mass 
+process         -2 -1 1 -2 -1 1 -2 -1 1 
+rate            8.713479 8.713479 1.115 8.713479 8.713479 1.115 8.713479 8.713479 1.115 
 
 CMS_hgg_nuisance_deltafracright          param 0.0 0.02
 CMS_hgg_nuisance_HighR9EE_13TeVscale     param 0.0 1.0
@@ -45,6 +49,7 @@ CMS_hgg_nuisance_LowR9EB_13TeVsmear      param 0.0 1.0
 
 pdfindex_TAG1_13TeV  discrete
 pdfindex_TAG2_13TeV  discrete
-BR_hgg                                lnN   0.980/1.021 0.980/1.021 - 0.980/1.021 0.980/1.021 - 
-lumi_13TeV                            lnN   1.025 1.025 - 1.025 1.025 - 
+pdfindex_TAG3_13TeV  discrete
+BR_hgg                                lnN   0.980/1.021 0.980/1.021 - 0.980/1.021 0.980/1.021 - 0.980/1.021 0.980/1.021 - 
+lumi_13TeV                            lnN   1.025 1.025 - 1.025 1.025 - 1.025 1.025 - 
 
