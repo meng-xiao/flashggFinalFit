@@ -1,5 +1,5 @@
 #include "CMS_lumi.C"
-const int nmax=10;
+const int nmax=22;
 int co[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 int sy[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 TString tex[nmax]={
@@ -57,11 +57,27 @@ TString rootfname[nmax]={
 //	"optimization/higgsCombineversion1.MultiDimFit.mH125.root",
 
 	"optimization/higgsCombineversion1_bdt.MultiDimFit.mH125.root",
-//	"optimization/higgsCombineversion2_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion2_bdt.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion3_bdt.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion4_bdt.MultiDimFit.mH125.root",
 	"optimization/higgsCombineversion5_bdt.MultiDimFit.mH125.root",
-	"optimization/higgsCombineversion6_bdt.MultiDimFit.mH125.root"
+	"optimization/higgsCombineversion6_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion7_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion8_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion9_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion10_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion11_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion12_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion13_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion14_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion15_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion16_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion17_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion18_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion19_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion20_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion21_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion22_bdt.MultiDimFit.mH125.root"
 
 //	"higgsCombinefcp_scan_fullRun2.MultiDimFit.mH125.root"
 //	"higgsCombineMuScanFull.MultiDimFit.mH125.root"
