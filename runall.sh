@@ -13,7 +13,8 @@ do
         #v=$((i+1))
         v=$((v+1))
         echo runBDTConfig_lep.sh $k $m $v
-./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root -p bkg -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext hadronic_bdt_BDT3binTuneV$3 --intLumi 41.5 --backgroundOnly --isData --batch none --dataFile /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root --boundaries 0.9675,0.9917,1 --bdt_boundary -1,$1,$2,1 
+#./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root -p bkg -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext hadronic_bdt_BDT3binTuneV$v --intLumi 41.5 --backgroundOnly --isData --batch none --dataFile /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root --boundaries 0.9675,0.9917,1 --bdt_boundary -1,$k,$m,1 
+./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/ttHgg_0M_had_new_2018_bdt.root -p tth_ALT -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext hadronic_0m_BDT3binTuneV$v --intLumi 41.5 --signalOnly --batch none  --boundaries 0.9675,0.9917,1 --bdt_boundary -1,$k,$m,1
 done
 #background model preparation
 #./runFinalFitsScripts.sh -i /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root -p bkg -f TTHHadronicTag0,TTHHadronicTag1,TTHHadronicTag2,TTHHadronicTag3,TTHHadronicTag4,TTHHadronicTag5 --ext hadronic_bdt_tuneV$v --intLumi 41.5 --backgroundOnly --isData --batch none --dataFile /eos/home-x/xiaomeng/ttH/data_all_had_bdt.root --boundaries 0.9675,0.9937,0.9971,1 --bdt_boundary $j_had  
