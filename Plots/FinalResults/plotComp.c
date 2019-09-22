@@ -111,7 +111,8 @@ void dodo(TString fn="version"){
 		gr0->Sort();
 //		gr0->SetMarkerColor(co[i]);
 //		gr0->SetMarkerStyle(sy[i]);
-		gr0->SetLineColor(co[i]);
+		//gr0->SetLineColor(co[i]);
+		gr0->SetLineColor(i+1);
 		gr0->SetLineWidth(2);
 		gr0->GetYaxis()->SetRangeUser(0,8);
 		gr0->GetYaxis()->SetTitle("-2#Deltaln L");
@@ -125,7 +126,8 @@ void dodo(TString fn="version"){
 		if(fn.Contains("lep"))
 		leg->AddEntry(gr0,tex_lep[i],"l");
 		else
-		leg->AddEntry(gr0,tex[i],"l");
+//		leg->AddEntry(gr0,tex[i],"l");
+		leg->AddEntry(gr0,Form("%d",i+1),"l");
 	}
 	        CMS_lumi( c2, 4, 0, true);
 	leg->Draw();
