@@ -10,4 +10,5 @@
 
 #--batch <batch system: LSF (Cern) or IC>
 
-condor_submit condor.submit
+condor_submit condor.submit.SM
+#condor_submit condor.submit

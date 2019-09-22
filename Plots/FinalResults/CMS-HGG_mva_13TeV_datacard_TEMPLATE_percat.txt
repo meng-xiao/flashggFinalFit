@@ -21,7 +21,7 @@ observation     -1 -1
 bin             TAG1_13TeV TAG1_13TeV TAG1_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV 
 process         ttH_hgg ttH_hgg_ALT bkg_mass ttH_hgg ttH_hgg_ALT bkg_mass 
 process         -2 -1 1 -2 -1 1 
-rate            8.712479 8.712479 1.0 8.712479 8.712479 1.0 
+rate            8.712479 8.712479 1.115 8.712479 8.712479 1.115 
 
 CMS_hgg_nuisance_deltafracright          param 0.0 0.02
 CMS_hgg_nuisance_HighR9EE_13TeVscale     param 0.0 1.0
@@ -43,6 +43,8 @@ CMS_hgg_nuisance_LowR9EE_13TeVsmear      param 0.0 1.0
 CMS_hgg_nuisance_HighR9EB_13TeVsmear     param 0.0 1.0
 CMS_hgg_nuisance_LowR9EB_13TeVsmear      param 0.0 1.0
 
+pdfindex_TAG1_13TeV  discrete
+pdfindex_TAG2_13TeV  discrete
 BR_hgg                                lnN   0.980/1.021 0.980/1.021 - 0.980/1.021 0.980/1.021 - 
 lumi_13TeV                            lnN   1.025 1.025 - 1.025 1.025 - 
 

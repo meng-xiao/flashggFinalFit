@@ -1,0 +1,16 @@
+executable = runSMConfig.sh 
+arguments = $(j_had) $(j_lep) $(j) 
+should_transfer_files = NO
+output = sub$(ProcId).out
+log = sub$(ProcId).log
+error = sub$(ProcId).err
+request_memory          = 4000M
++JobFlavour             = "longlunch"
+queue j_had,j_lep,j from(
+.9877 .9253 1
+.9897 .9346 2
+.9917 .9439 3
+.9937 .9532 4
+.9957 .9625 5
+.9977 .9718 6
+) 
