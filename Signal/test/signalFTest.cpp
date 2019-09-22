@@ -70,7 +70,7 @@ void OptionParser(int argc, char *argv[]){
 		("mass,m", po::value<int>(&mass_)->default_value(125),                                    "Mass to run at")
 		("procs,p", po::value<string>(&procString_)->default_value("ggh,vbf,wh,zh,tth"),          "Processes")
 		("boundaries,b", po::value<string>(&boundaries_)->default_value("0.9675, 0.9937, 0.9971,1."),          "Boundaries")
-		("bdt_boundary", po::value<string>(&bdt_boundary_)->default_value(0.),          "BDT Boundaries")
+		("bdt_boundary", po::value<string>(&bdt_boundary_)->default_value("0."),          "BDT Boundaries")
 		("recursive",																																							"Recursive fraction")
 		("forceFracUnity",																																				"Force fraction unity")
 		("isFlashgg",	po::value<bool>(&isFlashgg_)->default_value(true),													"Use flashgg format")
@@ -213,7 +213,7 @@ int main(int argc, char *argv[]){
 		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
 	}
 	for (int bdtloop=0;bdtloop<bdt_boundary_s.size();bdtloop++){
-		bdt_boundary.push_back(atof(bdt_boundary_s[tagloop].c_str()));
+		bdt_boundary.push_back(atof(bdt_boundary_s[bdtloop].c_str()));
 	}
   
   // automatically determine nCats from flashggCats input

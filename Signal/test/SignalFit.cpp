@@ -238,7 +238,7 @@ void OptionParser(int argc, char *argv[]){
 		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
 	}
 	for (int bdtloop=0;bdtloop<bdt_boundary_s.size();bdtloop++){
-		bdt_boundary.push_back(atof(bdt_boundary_s[tagloop].c_str()));
+		bdt_boundary.push_back(atof(bdt_boundary_s[bdtloop].c_str()));
 	}
 
 }
