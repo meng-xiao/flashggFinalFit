@@ -52,7 +52,7 @@ bool recursive_=false;
 string flashggCatsStr_;
 vector<string> flashggCats_;
 string boundaries_;
-float bdt_boundary;
+string bdt_boundary_;
 string considerOnlyStr_;
 vector<string> considerOnly_;
 bool forceFracUnity_=false;
@@ -70,7 +70,7 @@ void OptionParser(int argc, char *argv[]){
 		("mass,m", po::value<int>(&mass_)->default_value(125),                                    "Mass to run at")
 		("procs,p", po::value<string>(&procString_)->default_value("ggh,vbf,wh,zh,tth"),          "Processes")
 		("boundaries,b", po::value<string>(&boundaries_)->default_value("0.9675, 0.9937, 0.9971,1."),          "Boundaries")
-		("bdt_boundary", po::value<float>(&bdt_boundary)->default_value(0.),          "BDT Boundaries")
+		("bdt_boundary", po::value<string>(&bdt_boundary_)->default_value(0.),          "BDT Boundaries")
 		("recursive",																																							"Recursive fraction")
 		("forceFracUnity",																																				"Force fraction unity")
 		("isFlashgg",	po::value<bool>(&isFlashgg_)->default_value(true),													"Use flashgg format")
@@ -202,12 +202,18 @@ int main(int argc, char *argv[]){
 	vector<string> procs;
 	vector<float> boundaries;
 	vector<string> boundaries_s;
+	vector<float> bdt_boundary;
+	vector<string> bdt_boundary_s;
 	split(procs,procString_,boost::is_any_of(","));
 	split(boundaries_s,boundaries_,boost::is_any_of(","));
+	split(bdt_boundary_s,bdt_boundary_,boost::is_any_of(","));
 	split(flashggCats_,flashggCatsStr_,boost::is_any_of(","));
 	split(considerOnly_,considerOnlyStr_,boost::is_any_of(","));
 	for (int tagloop=0;tagloop<boundaries_s.size();tagloop++){
 		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
+	}
+	for (int bdtloop=0;bdtloop<bdt_boundary_s.size();bdtloop++){
+		bdt_boundary.push_back(atof(bdt_boundary_s[tagloop].c_str()));
 	}
   
   // automatically determine nCats from flashggCats input
@@ -364,14 +370,12 @@ int main(int argc, char *argv[]){
     TString catname = flashggCats_[cat]; 
     TString cutstring="";
     for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
-	    if(catname.Contains(Form("Tag%d",tagloop*2))){
-	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+    for(int bdtloop=0;bdtloop<bdt_boundary.size()-1;bdtloop++){
+	    if(catname.Contains(Form("Tag%d",tagloop*(bdt_boundary.size()-1)+bdtloop))){
+	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f&&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary[bdtloop],bdt_boundary[bdtloop+1]);
 	    break;
 	    }
-	    if(catname.Contains(Form("Tag%d",tagloop*2+1))){
-	   cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
-		break;
-	    }
+    }
 	    }
 	    cout<< catname <<"\t"<<cutstring<<endl;
     data0 = (RooDataSet*)dataFull->reduce(cutstring); 

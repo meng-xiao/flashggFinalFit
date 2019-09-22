@@ -65,7 +65,8 @@ vector<string> procs_;
 string procStr_;
 string boundaries_;
 vector<float> boundaries;
-float bdt_boundary;
+string bdt_boundary_;
+vector <float> bdt_boundary;
 bool isCutBased_=false;
 bool is2011_=false;
 bool is2012_=false;
@@ -154,7 +155,7 @@ void OptionParser(int argc, char *argv[]){
 		("doQuadraticSigmaSum",  										        "Add sigma systematic terms in quadrature")
 		("procs", po::value<string>(&procStr_)->default_value("ggh,vbf,wh,zh,tth"),					"Processes (comma sep)")
 		("boundaries,b", po::value<string>(&boundaries_)->default_value("0.9675, 0.9937, 0.9971,1."),          "Boundaries")
-		("bdt_boundary", po::value<float>(&bdt_boundary)->default_value(0.),          "BDT Boundaries")
+		("bdt_boundary", po::value<string>(&bdt_boundary_)->default_value("0."),          "BDT Boundaries")
 		//("massList", po::value<string>(&massListStr_)->default_value("120,125,130"),					"Masses to process.")
 		("massList", po::value<string>(&massListStr_)->default_value("120,125,130"),					"Masses to process.")
 		("skipMasses", po::value<string>(&massesToSkip_)->default_value(""),					"Skip these mass points - used eg for the 7TeV where there's no mc at 145")
@@ -225,13 +226,19 @@ void OptionParser(int argc, char *argv[]){
 
 	// split options which are fiven as lists
 	vector<string> boundaries_s;
+	vector<string> bdt_boundary_s;
 	split(procs_,procStr_,boost::is_any_of(","));
 	split(flashggCats_,flashggCatsStr_,boost::is_any_of(","));
 	split(boundaries_s,boundaries_,boost::is_any_of(","));
+	split(bdt_boundary_s,bdt_boundary_,boost::is_any_of(","));
 	split(filename_,filenameStr_,boost::is_any_of(","));
 	split(split_,splitStr_,boost::is_any_of(",")); // proc,cat
+
 	for (int tagloop=0;tagloop<boundaries_s.size();tagloop++){
 		boundaries.push_back(atof(boundaries_s[tagloop].c_str()));
+	}
+	for (int bdtloop=0;bdtloop<bdt_boundary_s.size();bdtloop++){
+		bdt_boundary.push_back(atof(bdt_boundary_s[tagloop].c_str()));
 	}
 
 }
@@ -800,15 +807,13 @@ int main(int argc, char *argv[]){
     TString catname = cat; 
     TString cutstring="";
     for(int tagloop=0;tagloop<boundaries.size()-1;tagloop++){
-	    if(catname.Contains(Form("Tag%d",tagloop*2))){
-	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
+    for(int bdtloop=0;bdtloop<bdt_boundary.size()-1;bdtloop++){
+	    if(catname.Contains(Form("Tag%d",tagloop*(bdt_boundary.size()-1)+bdtloop))){
+	    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f&&BDTG<%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary[bdtloop],bdt_boundary[bdtloop+1]);
 	    break;
 	    }
-	    if(catname.Contains(Form("Tag%d",tagloop*2+1))){
-		    cutstring = Form("tthMVA_RunII>%f && tthMVA_RunII<%f &&BDTG>%f",boundaries[tagloop],boundaries[tagloop+1],bdt_boundary);
-		    break;
 	    }
-	    }
+    }
 	    cout<< catname <<"\t"<<cutstring<<endl;
 	       dataFull = (RooDataSet*)data->reduce(cutstring);
 			/*
