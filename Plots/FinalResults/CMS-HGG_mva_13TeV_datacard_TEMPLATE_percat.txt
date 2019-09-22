@@ -22,7 +22,7 @@ shapes bkg_mass   TAG3_13TeV CMS-HGG_multipdf_CHAN_bdt_vVERSION.root multipdf:CM
 
 bin             TAG1_13TeV TAG2_13TeV TAG3_13TeV 
 observation     -1 -1 -1 
-bin             TAG1_13TeV TAG1_13TeV TAG1_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV 
+bin             TAG1_13TeV TAG1_13TeV TAG1_13TeV TAG2_13TeV TAG2_13TeV TAG2_13TeV TAG3_13TeV TAG3_13TeV TAG3_13TeV 
 process         ttH_hgg ttH_hgg_ALT bkg_mass ttH_hgg ttH_hgg_ALT bkg_mass ttH_hgg ttH_hgg_ALT bkg_mass 
 process         -2 -1 1 -2 -1 1 -2 -1 1 
 rate            8.713479 8.713479 1.115 8.713479 8.713479 1.115 8.713479 8.713479 1.115 
