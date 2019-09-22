@@ -33,7 +33,7 @@ do
 			sed -i "s/CHAN/$j/g" $filename 
 		cd optimization
 		#combineCards.py CMS-HGG_mva_13TeV_datacard_"$j"_cat*_v"$i"_bdt.txt > CMS-HGG_mva_13TeV_datacard_"$j"_v"$i"_bdt.txt
-			text2workspace.py CMS-HGG_mva_13TeV_datacard_"$j"_v"$i"_bdt.txt -o CMS-HGG_mva_13TeV_"$j"_v"$i"_bdt.root -P HiggsAnalysis.CombinedLimit.HiggsJPC:twoHypothesisHiggs  --PO=muFloating
-			combine CMS-HGG_mva_13TeV_"$j"_v"$i"_bdt.root -M MultiDimFit --algo=grid  --points=50  -n "$j"_v"$i"_bdt --setParameterRanges r=0.00,4.0 -m 125.00 -t -1  --expectSignal 1.00 -S 0 --freezeParameters MH 
+			text2workspace.py CMS-HGG_mva_13TeV_datacard_"$j"_cat"$k"_v"$i"_bdt.txt -o CMS-HGG_mva_13TeV_"$j"_cat"$k"_v"$i"_bdt.root -P HiggsAnalysis.CombinedLimit.HiggsJPC:twoHypothesisHiggs  --PO=muFloating
+			combine CMS-HGG_mva_13TeV_"$j"_cat"$k"_v"$i"_bdt.root -M MultiDimFit --algo=grid  --points=50  -n "$j"_cat"$k"_v"$i"_bdt --setParameterRanges r=0.00,4.0 -m 125.00 -t -1  --expectSignal 1.00 -S 0 --freezeParameters MH 
 	done
 done
