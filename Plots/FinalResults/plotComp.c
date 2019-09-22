@@ -1,5 +1,5 @@
 #include "CMS_lumi.C"
-const int nmax=5;
+const int nmax=10;
 int co[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 int sy[14]={1,2,3,4,6,kViolet,kCyan, kMagenta,kBlue-10, 3,kYellow,93};
 TString tex[nmax]={
@@ -8,20 +8,40 @@ TString tex[nmax]={
 //	"BDT boundary=0",
 //	"BDT boundary=0.1",
 //	"BDT boundary=0.2"
-"MVA boundary = .9877",
-//"MVA boundary = .9897",
-"MVA boundary = .9917",
-"MVA boundary = .9937",
-"MVA boundary = .9957",
-"MVA boundary = .9977"
+//"MVA boundary = .9877",
+////"MVA boundary = .9897",
+//"MVA boundary = .9917",
+//"MVA boundary = .9937",
+//"MVA boundary = .9957",
+//"MVA boundary = .9977"
+	"v1",
+	"v2",
+	"v3",
+	"v4",
+	"v5",
+	"v6",
+	"v7",
+	"v8",
+	"v9",
+	"v10"
 };
 TString tex_lep[nmax]={
-"MVA boundary = .9253",
-//"MVA boundary = .9346",
-"MVA boundary = .9439",
-"MVA boundary = .9532",
-"MVA boundary = .9625",
-"MVA boundary = .9718"
+	"v1",
+	"v2",
+	"v3",
+	"v4",
+	"v5",
+	"v6",
+	"v7",
+	"v8",
+	"v9",
+	"v10"
+//"MVA boundary = .9253",
+////"MVA boundary = .9346",
+//"MVA boundary = .9439",
+//"MVA boundary = .9532",
+//"MVA boundary = .9625",
+//"MVA boundary = .9718"
 //	"BDT boundary=-0.2",
 //	"BDT boundary=-0.05",
 //	"BDT boundary=0",
@@ -36,12 +56,12 @@ TString rootfname[nmax]={
 //	"higgsCombinefcp_scan_fullRun2_2cat_stat.MultiDimFit.mH125.root"
 //	"optimization/higgsCombineversion1.MultiDimFit.mH125.root",
 
-	"optimization/higgsCombineversion1_sm.MultiDimFit.mH125.root",
-//	"optimization/higgsCombineversion2_sm.MultiDimFit.mH125.root",
-	"optimization/higgsCombineversion3_sm.MultiDimFit.mH125.root",
-	"optimization/higgsCombineversion4_sm.MultiDimFit.mH125.root",
-	"optimization/higgsCombineversion5_sm.MultiDimFit.mH125.root",
-	"optimization/higgsCombineversion6_sm.MultiDimFit.mH125.root"
+	"optimization/higgsCombineversion1_bdt.MultiDimFit.mH125.root",
+//	"optimization/higgsCombineversion2_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion3_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion4_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion5_bdt.MultiDimFit.mH125.root",
+	"optimization/higgsCombineversion6_bdt.MultiDimFit.mH125.root"
 
 //	"higgsCombinefcp_scan_fullRun2.MultiDimFit.mH125.root"
 //	"higgsCombineMuScanFull.MultiDimFit.mH125.root"
@@ -97,14 +117,14 @@ void dodo(TString fn="version"){
 	c2->Print(fn+".pdf");
 }
 void plotComp(){
-//	for (int i =0;i<2;i++){
-//		TString treename = Form("leptonic_cat%d_v",i+1);
-//		TString treename_had = Form("hadronic_cat%d_v",i+1);
-//		cout<< treename<<endl;
-//	dodo(treename);
-//	dodo(treename_had);
-//	}
-dodo("leptonic_v");
-dodo("hadronic_v");
+	for (int i =0;i<2;i++){
+		TString treename = Form("leptonic_cat%d_v",i+1);
+		TString treename_had = Form("hadronic_cat%d_v",i+1);
+		cout<< treename<<endl;
+	dodo(treename);
+	dodo(treename_had);
+	}
+//dodo("leptonic_v");
+//dodo("hadronic_v");
 ////	dodo("version");
 }
